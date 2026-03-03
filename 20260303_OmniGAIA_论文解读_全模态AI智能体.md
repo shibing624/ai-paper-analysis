@@ -94,7 +94,7 @@ $$\tau = [(s_t, a_t, o_t)]_{t=0}^{T}$$
 
 其中 $s_t$ 是第 $t$ 步的推理思考，$a_t$ 是动作（工具调用或最终回答），$o_t$ 是工具返回的观察结果。模型根据交互历史生成下一个思考和动作：
 
-$$p_\theta(\tau \mid \mathbf{x}) = \prod_{t=0}^T p_\theta(s_t, a_t \mid \mathbf{x}, s_{<t}, a_{<t}, o_{<t})$$
+$$p_\theta(\tau \mid \mathbf{x}) = \prod_{t=0}^{T} p_\theta(s_t, a_t \mid \mathbf{x}, s_{\lt t}, a_{\lt t}, o_{\lt t})$$
 
 当检测到工具调用token时，生成暂停，执行相应工具，将返回的观察 $o_t$ 追加到上下文中，然后模型继续生成。
 
@@ -129,7 +129,7 @@ OmniAtlas的训练流程包含三个关键阶段：
 
 使用标准teacher forcing进行轨迹级SFT，但施加**掩码监督**：仅在智能体生成的token（推理和工具调用token）上计算损失，同时屏蔽工具观察结果，以防止记忆环境反馈：
 
-$$\mathcal{L}_{\text{SFT}}(\theta) = - \frac{1}{\sum_{i=1}^L m_i} \sum_{i=1}^{L} m_i \log p_\theta(y_i \mid y_{<i}, \mathbf{x})$$
+$$\mathcal{L}_{\text{SFT}}(\theta) = - \frac{1}{\sum_{i=1}^{L} m_i} \sum_{i=1}^{L} m_i \log p_\theta(y_i \mid y_{\lt i}, \mathbf{x})$$
 
 其中 $m_i=1$ 当且仅当 $y_i$ 属于智能体的思考或动作。
 
