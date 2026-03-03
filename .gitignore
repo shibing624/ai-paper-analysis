@@ -205,3 +205,38 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ===== Project specific =====
+
+# 每日论文筛选日志（临时文件）
+2026-*.md
+
+# arXiv 论文原始素材
+arXiv-*/
+
+# 数据/日志/临时/输出目录
+data/
+logs/
+temp/
+outputs/
+
+# 旧文章和其他非发布内容
+old_articles/
+openclaw深度解读/
+write-industry-paper/
+
+# 工具和脚本目录
+RAG_read_paper/
+
+# 其他临时文件
+select_papers.json
+*.canvas
+
+# CodeBuddy
+.codebuddy/
+
+# macOS
+.DS_Store
+
+# Obsidian
+.obsidian/
