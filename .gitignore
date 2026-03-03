@@ -240,3 +240,5 @@ select_papers.json
 
 # Obsidian
 .obsidian/
+
+.claude/
