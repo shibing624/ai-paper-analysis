@@ -6,7 +6,7 @@
 - **标题**：Legal RAG Bench: an end-to-end benchmark for legal RAG
 - **作者**：Abdur-Rahman Butler, Umar Butler
 - **机构**：Isaacus（一家基础法律 AI 研究公司，两位作者是联合创始人）
-- **日期**：2026年3月2日
+- **日期**：2026年3月
 - **链接**：[arXiv:2603.01710](https://arxiv.org/abs/2603.01710)
 - **开源**：[GitHub](https://github.com/isaacus-dev/legal-rag-bench) | [HuggingFace Dataset](https://huggingface.co/datasets/isaacus/legal-rag-bench)
 

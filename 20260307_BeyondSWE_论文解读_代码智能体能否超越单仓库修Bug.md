@@ -8,7 +8,7 @@
 >
 > 机构：中国人民大学高瓴人工智能学院、Independent Researcher、AweAI Team
 >
-> 日期：2026年2月18日
+> 日期：2026年3月
 
 ## 一、引言：SWE-bench 之后，代码智能体的下一站在哪？
 
