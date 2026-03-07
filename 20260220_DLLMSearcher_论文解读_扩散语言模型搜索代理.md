@@ -8,7 +8,7 @@
 >
 > 作者：Jiahao Zhao, Shaoxuan Xu, Zhongxiang Sun, Fengqi Zhu, Jingyang Ou, Yuling Shi, Chongxuan Li, Xiao Zhang, Jun Xu
 >
-> 日期：2026年2月3日
+> 日期：2026年2月
 
 ---
 
