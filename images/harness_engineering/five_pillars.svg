@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="center_g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="sh2">
+      <feDropShadow dx="1" dy="3" stdDeviation="3" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="900" height="520" fill="url(#bg2)" rx="16"/>
+  <text x="450" y="38" text-anchor="middle" fill="#fff" font-size="22" font-weight="bold" font-family="Arial,sans-serif">Harness Engineering 五大核心组件</text>
+  <!-- Center circle -->
+  <circle cx="450" cy="270" r="65" fill="url(#center_g)" filter="url(#glow)"/>
+  <text x="450" y="260" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold" font-family="Arial,sans-serif">AI Agent</text>
+  <text x="450" y="282" text-anchor="middle" fill="#ffe" font-size="11" font-family="Arial,sans-serif">自主执行核心</text>
+  <!-- Lines from center to pillars -->
+  <line x1="385" y1="230" x2="200" y2="135" stroke="#667eea" stroke-width="2" opacity="0.6"/>
+  <line x1="515" y1="230" x2="700" y2="135" stroke="#f093fb" stroke-width="2" opacity="0.6"/>
+  <line x1="385" y1="310" x2="160" y2="410" stroke="#4facfe" stroke-width="2" opacity="0.6"/>
+  <line x1="515" y1="310" x2="740" y2="410" stroke="#43e97b" stroke-width="2" opacity="0.6"/>
+  <line x1="450" y1="340" x2="450" y2="430" stroke="#ffd700" stroke-width="2" opacity="0.6"/>
+  <!-- Pillar 1: Knowledge System (top-left) -->
+  <rect x="50" y="70" width="230" height="110" rx="12" fill="#667eea" opacity="0.9" filter="url(#sh2)"/>
+  <text x="165" y="98" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold" font-family="Arial,sans-serif">📖 结构化知识系统</text>
+  <text x="165" y="120" text-anchor="middle" fill="#ddd" font-size="11" font-family="Arial,sans-serif">AGENTS.md 作为目录/地图</text>
+  <text x="165" y="138" text-anchor="middle" fill="#ddd" font-size="11" font-family="Arial,sans-serif">渐进式披露 → 按需深入</text>
+  <text x="165" y="156" text-anchor="middle" fill="#ddd" font-size="11" font-family="Arial,sans-serif">Doc-gardening Agent 自动维护</text>
+  <text x="165" y="172" text-anchor="middle" fill="#ffd700" font-size="10" font-family="Arial,sans-serif">— OpenAI / Anthropic</text>
+  <!-- Pillar 2: Architecture Constraints (top-right) -->
+  <rect x="620" y="70" width="230" height="110" rx="12" fill="#f093fb" opacity="0.85" filter="url(#sh2)"/>
+  <text x="735" y="98" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold" font-family="Arial,sans-serif">🔧 机械化架构约束</text>
+  <text x="735" y="120" text-anchor="middle" fill="#ddd" font-size="11" font-family="Arial,sans-serif">自定义 Linter 强制执行规则</text>
+  <text x="735" y="138" text-anchor="middle" fill="#ddd" font-size="11" font-family="Arial,sans-serif">层级依赖模型 CI 门禁</text>
+  <text x="735" y="156" text-anchor="middle" fill="#ddd" font-size="11" font-family="Arial,sans-serif">Lint 错误即 Agent 的上下文</text>
+  <text x="735" y="172" text-anchor="middle" fill="#ffd700" font-size="10" font-family="Arial,sans-serif">— OpenAI / Martin Fowler</text>
+  <!-- Pillar 3: Observability (bottom-left) -->
+  <rect x="20" y="370" width="230" height="110" rx="12" fill="#4facfe" opacity="0.9" filter="url(#sh2)"/>
+  <text x="135" y="398" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold" font-family="Arial,sans-serif">👁️ 可观测性注入</text>
+  <text x="135" y="420" text-anchor="middle" fill="#ddd" font-size="11" font-family="Arial,sans-serif">Chrome DevTools + LogQL 接入</text>
+  <text x="135" y="438" text-anchor="middle" fill="#ddd" font-size="11" font-family="Arial,sans-serif">截图验证 + 端到端测试</text>
+  <text x="135" y="456" text-anchor="middle" fill="#ddd" font-size="11" font-family="Arial,sans-serif">日志/指标设计为机器可读</text>
+  <text x="135" y="472" text-anchor="middle" fill="#ffd700" font-size="10" font-family="Arial,sans-serif">— OpenAI / Anthropic / LangChain</text>
+  <!-- Pillar 4: Self-Healing (bottom-center) -->
+  <rect x="325" y="435" width="250" height="75" rx="12" fill="#ffd700" opacity="0.85" filter="url(#sh2)"/>
+  <text x="450" y="463" text-anchor="middle" fill="#1a1a2e" font-size="15" font-weight="bold" font-family="Arial,sans-serif">♻️ 自修复闭环</text>
+  <text x="450" y="483" text-anchor="middle" fill="#333" font-size="11" font-family="Arial,sans-serif">「垃圾回收」Agent：扫描偏差 → 自动重构 PR → CI 合并</text>
+  <text x="450" y="500" text-anchor="middle" fill="#555" font-size="10" font-family="Arial,sans-serif">— OpenAI 称之为 Garbage Collection for Code</text>
+  <!-- Pillar 5: Agent Review (bottom-right) -->
+  <rect x="650" y="370" width="230" height="110" rx="12" fill="#43e97b" opacity="0.85" filter="url(#sh2)"/>
+  <text x="765" y="398" text-anchor="middle" fill="#1a1a2e" font-size="15" font-weight="bold" font-family="Arial,sans-serif">🤖 Agent 互审机制</text>
+  <text x="765" y="420" text-anchor="middle" fill="#222" font-size="11" font-family="Arial,sans-serif">AI Reviewer 自动 Code Review</text>
+  <text x="765" y="438" text-anchor="middle" fill="#222" font-size="11" font-family="Arial,sans-serif">Ralph Wiggum 循环</text>
+  <text x="765" y="456" text-anchor="middle" fill="#222" font-size="11" font-family="Arial,sans-serif">人类仅介入架构决策</text>
+  <text x="765" y="472" text-anchor="middle" fill="#555" font-size="10" font-family="Arial,sans-serif">— OpenAI</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29"/>
+      <stop offset="50%" style="stop-color:#302b63"/>
+      <stop offset="100%" style="stop-color:#24243e"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe"/>
+      <stop offset="100%" style="stop-color:#00f2fe"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="900" height="400" fill="url(#bg)" rx="16"/>
+  <text x="450" y="45" text-anchor="middle" fill="#fff" font-size="22" font-weight="bold" font-family="Arial,sans-serif">AI 工程范式演进路线</text>
+  <!-- Stage 1 -->
+  <rect x="30" y="80" width="250" height="280" rx="14" fill="url(#g1)" opacity="0.85" filter="url(#shadow)"/>
+  <text x="155" y="115" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold" font-family="Arial,sans-serif">🗣️ Prompt Engineering</text>
+  <text x="155" y="140" text-anchor="middle" fill="#ddd" font-size="13" font-family="Arial,sans-serif">2023 — 2024</text>
+  <line x1="60" y1="155" x2="250" y2="155" stroke="#ffffff55" stroke-width="1"/>
+  <text x="155" y="180" text-anchor="middle" fill="#eee" font-size="12" font-family="Arial,sans-serif">核心：怎么把话说清楚</text>
+  <text x="155" y="205" text-anchor="middle" fill="#ccc" font-size="11" font-family="Arial,sans-serif">• 精心设计提示词</text>
+  <text x="155" y="225" text-anchor="middle" fill="#ccc" font-size="11" font-family="Arial,sans-serif">• 优化单次对话质量</text>
+  <text x="155" y="245" text-anchor="middle" fill="#ccc" font-size="11" font-family="Arial,sans-serif">• 一问一答模式</text>
+  <text x="155" y="275" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold" font-family="Arial,sans-serif">交互模式</text>
+  <rect x="75" y="288" width="160" height="30" rx="8" fill="#ffffff22"/>
+  <text x="155" y="308" text-anchor="middle" fill="#fff" font-size="11" font-family="Arial,sans-serif">人 → 提示词 → AI 回答</text>
+  <text x="155" y="345" text-anchor="middle" fill="#ffdd57" font-size="12" font-weight="bold" font-family="Arial,sans-serif">优化的是「说什么」</text>
+  <!-- Arrow 1→2 -->
+  <polygon points="290,220 310,210 310,215 340,215 340,225 310,225 310,230" fill="#fff" opacity="0.7"/>
+  <!-- Stage 2 -->
+  <rect x="325" y="80" width="250" height="280" rx="14" fill="url(#g2)" opacity="0.85" filter="url(#shadow)"/>
+  <text x="450" y="115" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold" font-family="Arial,sans-serif">📚 Context Engineering</text>
+  <text x="450" y="140" text-anchor="middle" fill="#ddd" font-size="13" font-family="Arial,sans-serif">2025</text>
+  <line x1="355" y1="155" x2="545" y2="155" stroke="#ffffff55" stroke-width="1"/>
+  <text x="450" y="180" text-anchor="middle" fill="#eee" font-size="12" font-family="Arial,sans-serif">核心：怎么把信息给全</text>
+  <text x="450" y="205" text-anchor="middle" fill="#ccc" font-size="11" font-family="Arial,sans-serif">• 提供完整上下文</text>
+  <text x="450" y="225" text-anchor="middle" fill="#ccc" font-size="11" font-family="Arial,sans-serif">• 检索增强生成(RAG)</text>
+  <text x="450" y="245" text-anchor="middle" fill="#ccc" font-size="11" font-family="Arial,sans-serif">• 工具调用结果注入</text>
+  <text x="450" y="275" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold" font-family="Arial,sans-serif">交互模式</text>
+  <rect x="370" y="288" width="160" height="30" rx="8" fill="#ffffff22"/>
+  <text x="450" y="308" text-anchor="middle" fill="#fff" font-size="11" font-family="Arial,sans-serif">人 → 上下文+提示 → AI</text>
+  <text x="450" y="345" text-anchor="middle" fill="#ffdd57" font-size="12" font-weight="bold" font-family="Arial,sans-serif">优化的是「给什么」</text>
+  <!-- Arrow 2→3 -->
+  <polygon points="585,220 605,210 605,215 635,215 635,225 605,225 605,230" fill="#fff" opacity="0.7"/>
+  <!-- Stage 3 -->
+  <rect x="620" y="80" width="250" height="280" rx="14" fill="url(#g3)" opacity="0.85" filter="url(#shadow)"/>
+  <text x="745" y="115" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold" font-family="Arial,sans-serif">🏗️ Harness Engineering</text>
+  <text x="745" y="140" text-anchor="middle" fill="#ddd" font-size="13" font-family="Arial,sans-serif">2026 —</text>
+  <line x1="650" y1="155" x2="840" y2="155" stroke="#ffffff55" stroke-width="1"/>
+  <text x="745" y="180" text-anchor="middle" fill="#eee" font-size="12" font-family="Arial,sans-serif">核心：怎么让 AI 可控运行</text>
+  <text x="745" y="205" text-anchor="middle" fill="#ccc" font-size="11" font-family="Arial,sans-serif">• 构建约束与控制系统</text>
+  <text x="745" y="225" text-anchor="middle" fill="#ccc" font-size="11" font-family="Arial,sans-serif">• 自动验证+自修复闭环</text>
+  <text x="745" y="245" text-anchor="middle" fill="#ccc" font-size="11" font-family="Arial,sans-serif">• Agent 互审机制</text>
+  <text x="745" y="275" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold" font-family="Arial,sans-serif">交互模式</text>
+  <rect x="665" y="288" width="160" height="30" rx="8" fill="#ffffff22"/>
+  <text x="745" y="308" text-anchor="middle" fill="#fff" font-size="11" font-family="Arial,sans-serif">人造环境 → AI 自主运行</text>
+  <text x="745" y="345" text-anchor="middle" fill="#ffdd57" font-size="12" font-weight="bold" font-family="Arial,sans-serif">优化的是「造什么环境」</text>
+</svg>

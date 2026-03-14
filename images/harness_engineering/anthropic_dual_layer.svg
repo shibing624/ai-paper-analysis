@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f2027"/>
+      <stop offset="50%" style="stop-color:#203a43"/>
+      <stop offset="100%" style="stop-color:#2c5364"/>
+    </linearGradient>
+    <filter id="sh3">
+      <feDropShadow dx="1" dy="3" stdDeviation="3" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="900" height="450" fill="url(#bg3)" rx="16"/>
+  <text x="450" y="38" text-anchor="middle" fill="#fff" font-size="20" font-weight="bold" font-family="Arial,sans-serif">Anthropic 长期运行 Agent 双层架构</text>
+  <!-- Initializer Agent -->
+  <rect x="30" y="65" width="380" height="350" rx="14" fill="#ffffff11" stroke="#4facfe" stroke-width="2"/>
+  <text x="220" y="95" text-anchor="middle" fill="#4facfe" font-size="17" font-weight="bold" font-family="Arial,sans-serif">🚀 初始化 Agent（运行一次）</text>
+  <rect x="55" y="115" width="330" height="40" rx="8" fill="#4facfe33"/>
+  <text x="220" y="140" text-anchor="middle" fill="#eee" font-size="13" font-family="Arial,sans-serif">① 创建 Git 仓库 + init.sh 启动脚本</text>
+  <rect x="55" y="165" width="330" height="40" rx="8" fill="#4facfe33"/>
+  <text x="220" y="190" text-anchor="middle" fill="#eee" font-size="13" font-family="Arial,sans-serif">② 创建 claude-progress.txt 进度日志</text>
+  <rect x="55" y="215" width="330" height="55" rx="8" fill="#4facfe55"/>
+  <text x="220" y="237" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold" font-family="Arial,sans-serif">③ 创建结构化功能列表（JSON）</text>
+  <text x="220" y="257" text-anchor="middle" fill="#ccc" font-size="11" font-family="Arial,sans-serif">所有功能初始标记为 "失败"</text>
+  <rect x="55" y="285" width="330" height="40" rx="8" fill="#4facfe33"/>
+  <text x="220" y="310" text-anchor="middle" fill="#eee" font-size="13" font-family="Arial,sans-serif">④ 生成初始 Git commit</text>
+  <rect x="55" y="340" width="330" height="55" rx="8" fill="#e9456022" stroke="#e94560" stroke-width="1"/>
+  <text x="220" y="360" text-anchor="middle" fill="#f5576c" font-size="12" font-weight="bold" font-family="Arial,sans-serif">⚠️ 关键设计：Agent 不能删除/编辑测试</text>
+  <text x="220" y="380" text-anchor="middle" fill="#ccc" font-size="11" font-family="Arial,sans-serif">防止 Agent 通过「降低标准」来通过</text>
+  <!-- Arrow -->
+  <polygon points="420,240 445,225 445,233 470,233 470,247 445,247 445,255" fill="#ffd700" opacity="0.8"/>
+  <text x="445" y="215" text-anchor="middle" fill="#ffd700" font-size="11" font-family="Arial,sans-serif">环境交接</text>
+  <!-- Coding Agent -->
+  <rect x="485" y="65" width="390" height="350" rx="14" fill="#ffffff11" stroke="#43e97b" stroke-width="2"/>
+  <text x="680" y="95" text-anchor="middle" fill="#43e97b" font-size="17" font-weight="bold" font-family="Arial,sans-serif">🔄 编码 Agent（循环运行）</text>
+  <rect x="510" y="115" width="340" height="35" rx="8" fill="#43e97b33"/>
+  <text x="680" y="138" text-anchor="middle" fill="#eee" font-size="12" font-family="Arial,sans-serif">① pwd → 读取 git log + progress.txt</text>
+  <rect x="510" y="160" width="340" height="35" rx="8" fill="#43e97b33"/>
+  <text x="680" y="183" text-anchor="middle" fill="#eee" font-size="12" font-family="Arial,sans-serif">② 查看功能列表 → 选最高优先级未完成项</text>
+  <rect x="510" y="205" width="340" height="35" rx="8" fill="#43e97b33"/>
+  <text x="680" y="228" text-anchor="middle" fill="#eee" font-size="12" font-family="Arial,sans-serif">③ 跑端到端测试确认现有功能完好</text>
+  <rect x="510" y="250" width="340" height="35" rx="8" fill="#43e97b55"/>
+  <text x="680" y="273" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold" font-family="Arial,sans-serif">④ 完成当前功能 + 截图验证</text>
+  <rect x="510" y="295" width="340" height="35" rx="8" fill="#43e97b33"/>
+  <text x="680" y="318" text-anchor="middle" fill="#eee" font-size="12" font-family="Arial,sans-serif">⑤ Git commit + 更新 progress.txt</text>
+  <rect x="510" y="340" width="340" height="55" rx="8" fill="#ffd70033" stroke="#ffd700" stroke-width="1"/>
+  <text x="680" y="362" text-anchor="middle" fill="#ffd700" font-size="13" font-weight="bold" font-family="Arial,sans-serif">⑥ 只做一个功能就停下来！</text>
+  <text x="680" y="382" text-anchor="middle" fill="#ccc" font-size="11" font-family="Arial,sans-serif">「贪多嚼不烂」→ 总体完成率更高</text>
+  <!-- Loop arrow for coding agent -->
+  <path d="M 860 200 Q 890 270 860 340" fill="none" stroke="#43e97b" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="858,340 865,325 870,340" fill="#43e97b"/>
+  <text x="888" y="275" text-anchor="middle" fill="#43e97b" font-size="10" font-family="Arial,sans-serif" transform="rotate(90,888,275)">下一会话</text>
+  <!-- Bottom label -->
+  <text x="450" y="438" text-anchor="middle" fill="#888" font-size="12" font-family="Arial,sans-serif">来源：Anthropic Engineering, "Effective Harnesses for Long-Running Agents", 2025.11</text>
+</svg>
