@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="reactGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="planGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="reflectGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="400" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">Agent 三种思维模式</text>
+  
+  <!-- ReAct Card -->
+  <g transform="translate(30, 70)">
+    <rect width="260" height="300" rx="16" fill="white" filter="url(#shadow)"/>
+    <rect width="260" height="60" rx="16" fill="url(#reactGrad)"/>
+    <rect x="0" y="44" width="260" height="16" fill="url(#reactGrad)"/>
+    <text x="130" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">🔄 ReAct</text>
+    <text x="130" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#667eea">边想边干</text>
+    
+    <!-- Cycle diagram -->
+    <circle cx="130" cy="170" r="50" fill="none" stroke="#667eea" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="130" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#334155">推理</text>
+    <text x="175" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#334155">执行</text>
+    <text x="130" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#334155">观察</text>
+    
+    <!-- Arrows -->
+    <path d="M155 140 L170 155" stroke="#667eea" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M170 190 L155 205" stroke="#667eea" stroke-width="2" fill="none"/>
+    <path d="M105 205 L90 190" stroke="#667eea" stroke-width="2" fill="none"/>
+    <path d="M90 155 L105 140" stroke="#667eea" stroke-width="2" fill="none"/>
+    
+    <text x="130" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">✅ 简单任务</text>
+    <text x="130" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">✅ 灵活应变</text>
+    <text x="130" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ef4444">⚠️ Token消耗大</text>
+  </g>
+  
+  <!-- Plan-and-Execute Card -->
+  <g transform="translate(320, 70)">
+    <rect width="260" height="300" rx="16" fill="white" filter="url(#shadow)"/>
+    <rect width="260" height="60" rx="16" fill="url(#planGrad)"/>
+    <rect x="0" y="44" width="260" height="16" fill="url(#planGrad)"/>
+    <text x="130" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">📋 Plan-Execute</text>
+    <text x="130" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f5576c">先规划后执行</text>
+    
+    <!-- Linear flow -->
+    <rect x="30" y="120" width="200" height="30" rx="6" fill="#fef2f2" stroke="#f5576c" stroke-width="1"/>
+    <text x="130" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#334155">📝 制定计划</text>
+    
+    <path d="M130 150 L130 160" stroke="#f5576c" stroke-width="2"/>
+    <polygon points="125,158 130,168 135,158" fill="#f5576c"/>
+    
+    <rect x="30" y="170" width="60" height="25" rx="4" fill="#fef2f2" stroke="#f5576c" stroke-width="1"/>
+    <text x="60" y="187" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#334155">任务1</text>
+    
+    <rect x="100" y="170" width="60" height="25" rx="4" fill="#fef2f2" stroke="#f5576c" stroke-width="1"/>
+    <text x="130" y="187" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#334155">任务2</text>
+    
+    <rect x="170" y="170" width="60" height="25" rx="4" fill="#fef2f2" stroke="#f5576c" stroke-width="1"/>
+    <text x="200" y="187" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#334155">任务3</text>
+    
+    <path d="M130 195 L130 205" stroke="#f5576c" stroke-width="2"/>
+    <polygon points="125,203 130,213 135,203" fill="#f5576c"/>
+    
+    <rect x="30" y="215" width="200" height="25" rx="6" fill="#fef2f2" stroke="#f5576c" stroke-width="1"/>
+    <text x="130" y="232" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#334155">✅ 汇总结果</text>
+    
+    <text x="130" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">✅ 复杂长任务</text>
+    <text x="130" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">✅ 结构化流程</text>
+    <text x="130" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ef4444">⚠️ 不够灵活</text>
+  </g>
+  
+  <!-- Reflection Card -->
+  <g transform="translate(610, 70)">
+    <rect width="260" height="300" rx="16" fill="white" filter="url(#shadow)"/>
+    <rect width="260" height="60" rx="16" fill="url(#reflectGrad)"/>
+    <rect x="0" y="44" width="260" height="16" fill="url(#reflectGrad)"/>
+    <text x="130" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">🔍 Reflection</text>
+    <text x="130" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4facfe">自我审视改进</text>
+    
+    <!-- Reflection loop -->
+    <rect x="30" y="120" width="200" height="28" rx="6" fill="#f0f9ff" stroke="#4facfe" stroke-width="1"/>
+    <text x="130" y="139" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#334155">💭 生成输出</text>
+    
+    <path d="M130 148 L130 158" stroke="#4facfe" stroke-width="2"/>
+    <polygon points="125,156 130,166 135,156" fill="#4facfe"/>
+    
+    <rect x="30" y="165" width="200" height="28" rx="6" fill="#f0f9ff" stroke="#4facfe" stroke-width="1"/>
+    <text x="130" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#334155">🔎 审视反思</text>
+    
+    <path d="M130 193 L130 203" stroke="#4facfe" stroke-width="2"/>
+    <polygon points="125,201 130,211 135,201" fill="#4facfe"/>
+    
+    <rect x="30" y="210" width="200" height="28" rx="6" fill="#f0f9ff" stroke="#4facfe" stroke-width="1"/>
+    <text x="130" y="229" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#334155">✏️ 修正改进</text>
+    
+    <!-- Feedback arrow -->
+    <path d="M235 224 Q 250 175 235 135" stroke="#4facfe" stroke-width="2" fill="none" stroke-dasharray="4,2"/>
+    <polygon points="233,138 235,128 240,137" fill="#4facfe"/>
+    
+    <text x="130" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">✅ 高质量输出</text>
+    <text x="130" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#64748b">✅ 自我纠错</text>
+    <text x="130" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ef4444">⚠️ 计算成本高</text>
+  </g>
+</svg>

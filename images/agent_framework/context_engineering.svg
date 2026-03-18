@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="cpuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ramGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="osGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="#0f172a"/>
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  
+  <!-- Title -->
+  <text x="400" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#f8fafc">上下文工程：Karpathy 的类比</text>
+  <text x="400" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8">"LLM 是 CPU，上下文窗口是 RAM，上下文工程师就是操作系统"</text>
+  
+  <!-- Computer analogy - Left side -->
+  <g transform="translate(80, 110)">
+    <text x="120" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#94a3b8">🖥️ 计算机架构</text>
+    
+    <!-- CPU -->
+    <rect x="60" y="30" width="120" height="80" rx="8" fill="url(#cpuGrad)" filter="url(#shadow2)"/>
+    <text x="120" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">CPU</text>
+    <text x="120" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#e0e7ff">处理计算</text>
+    
+    <!-- Arrow -->
+    <path d="M120 115 L120 135" stroke="#475569" stroke-width="3"/>
+    <polygon points="115,132 120,145 125,132" fill="#475569"/>
+    
+    <!-- RAM -->
+    <rect x="30" y="150" width="180" height="70" rx="8" fill="url(#ramGrad)" filter="url(#shadow2)"/>
+    <text x="120" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">RAM 内存</text>
+    <text x="120" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#d1fae5">有限容量 · 快速访问</text>
+    
+    <!-- Arrow -->
+    <path d="M120 225 L120 245" stroke="#475569" stroke-width="3"/>
+    <polygon points="115,242 120,255 125,242" fill="#475569"/>
+    
+    <!-- OS -->
+    <rect x="0" y="260" width="240" height="80" rx="8" fill="url(#osGrad)" filter="url(#shadow2)"/>
+    <text x="120" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">操作系统</text>
+    <text x="120" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fef3c7">内存管理 · 资源调度</text>
+  </g>
+  
+  <!-- Equals sign -->
+  <text x="400" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#475569">=</text>
+  
+  <!-- Agent analogy - Right side -->
+  <g transform="translate(480, 110)">
+    <text x="120" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#94a3b8">🤖 Agent 架构</text>
+    
+    <!-- LLM -->
+    <rect x="60" y="30" width="120" height="80" rx="8" fill="url(#cpuGrad)" filter="url(#shadow2)"/>
+    <text x="120" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">LLM</text>
+    <text x="120" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#e0e7ff">推理引擎</text>
+    
+    <!-- Arrow -->
+    <path d="M120 115 L120 135" stroke="#475569" stroke-width="3"/>
+    <polygon points="115,132 120,145 125,132" fill="#475569"/>
+    
+    <!-- Context Window -->
+    <rect x="30" y="150" width="180" height="70" rx="8" fill="url(#ramGrad)" filter="url(#shadow2)"/>
+    <text x="120" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">上下文窗口</text>
+    <text x="120" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#d1fae5">有限 Token · 即时信息</text>
+    
+    <!-- Arrow -->
+    <path d="M120 225 L120 245" stroke="#475569" stroke-width="3"/>
+    <polygon points="115,242 120,255 125,242" fill="#475569"/>
+    
+    <!-- Context Engineering -->
+    <rect x="0" y="260" width="240" height="80" rx="8" fill="url(#osGrad)" filter="url(#shadow2)"/>
+    <text x="120" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">上下文工程</text>
+    <text x="120" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fef3c7">记忆管理 · 信息调度</text>
+  </g>
+  
+  <!-- Bottom insight -->
+  <rect x="100" y="395" width="600" height="45" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="400" y="423" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#f8fafc">💡 核心洞察：决定 Agent 智能的不是模型大小，而是上下文中塞了什么信息</text>
+</svg>
