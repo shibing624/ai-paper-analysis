@@ -243,3 +243,4 @@ select_papers.json
 
 .claude/
 .workbuddy/
+output/
