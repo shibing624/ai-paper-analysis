@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="400" viewBox="0 0 760 400">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#4A5568"/>
+    </marker>
+    <marker id="ab" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#3182CE"/>
+    </marker>
+    <marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#38A169"/>
+    </marker>
+  </defs>
+  <rect width="760" height="400" fill="#F7FAFC" rx="12"/>
+  <text x="380" y="34" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="bold" fill="#1A202C">Subagent — 上下文隔离架构</text>
+
+  <!-- Parent Agent -->
+  <rect x="30" y="60" width="200" height="280" rx="8" fill="#EBF8FF" stroke="#3182CE" stroke-width="2"/>
+  <text x="130" y="84" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="bold" fill="#2B6CB0">Parent Agent</text>
+  <rect x="46" y="96" width="168" height="28" rx="4" fill="#BEE3F8" stroke="#63B3ED" stroke-width="1"/>
+  <text x="130" y="115" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#2C5282">messages = [历史记录...]</text>
+  <rect x="46" y="132" width="168" height="28" rx="4" fill="#BEE3F8" stroke="#63B3ED" stroke-width="1"/>
+  <text x="130" y="151" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#2C5282">工具: task(prompt="...")</text>
+  <text x="130" y="185" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#718096">⋮</text>
+  <rect x="46" y="198" width="168" height="28" rx="4" fill="#BEE3F8" stroke="#63B3ED" stroke-width="1"/>
+  <text x="130" y="217" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#2C5282">result = "pytest"</text>
+  <text x="130" y="252" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#3182CE" font-style="italic">上下文保持干净</text>
+  <rect x="46" y="262" width="168" height="60" rx="4" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="130" y="282" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#1E40AF">子任务的读文件/执行</text>
+  <text x="130" y="298" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#1E40AF">过程不在这里</text>
+  <text x="130" y="312" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#3182CE">✓ 不污染父上下文</text>
+
+  <!-- Arrow Parent → Sub (dispatch) -->
+  <line x1="232" y1="165" x2="298" y2="165" stroke="#3182CE" stroke-width="2" marker-end="url(#ab)"/>
+  <text x="265" y="158" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#3182CE">派发任务</text>
+
+  <!-- Subagent -->
+  <rect x="302" y="60" width="200" height="280" rx="8" fill="#FFF5F5" stroke="#E53E3E" stroke-width="2"/>
+  <text x="402" y="84" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="bold" fill="#C53030">Subagent</text>
+  <rect x="318" y="96" width="168" height="28" rx="4" fill="#FED7D7" stroke="#FC8181" stroke-width="1"/>
+  <text x="402" y="115" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9B2C2C">messages = []  ← 全新空白</text>
+
+  <rect x="318" y="132" width="168" height="24" rx="4" fill="#FED7D7" stroke="#FC8181" stroke-width="1"/>
+  <text x="402" y="149" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9B2C2C">读 requirements.txt</text>
+  <rect x="318" y="160" width="168" height="24" rx="4" fill="#FED7D7" stroke="#FC8181" stroke-width="1"/>
+  <text x="402" y="177" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9B2C2C">读 setup.py</text>
+  <rect x="318" y="188" width="168" height="24" rx="4" fill="#FED7D7" stroke="#FC8181" stroke-width="1"/>
+  <text x="402" y="205" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9B2C2C">读 pytest.ini</text>
+  <rect x="318" y="216" width="168" height="24" rx="4" fill="#FED7D7" stroke="#FC8181" stroke-width="1"/>
+  <text x="402" y="233" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9B2C2C">读 tox.ini ...</text>
+
+  <rect x="318" y="252" width="168" height="36" rx="4" fill="#C6F6D5" stroke="#68D391" stroke-width="1.5"/>
+  <text x="402" y="270" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" font-weight="bold" fill="#22543D">返回："pytest"</text>
+  <text x="402" y="284" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#38A169">仅最终文本，其余全丢</text>
+
+  <!-- Arrow Sub → Parent (summary) -->
+  <line x1="300" y1="270" x2="235" y2="215" stroke="#38A169" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="262" y="238" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#276749">摘要回传</text>
+
+  <!-- Discard indicator -->
+  <line x1="504" y1="200" x2="540" y2="200" stroke="#4A5568" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="544" y="60" width="186" height="280" rx="8" fill="#F7FAFC" stroke="#CBD5E0" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="637" y="84" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#A0AEC0">sub_messages</text>
+  <text x="637" y="104" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#A0AEC0">（执行完毕后丢弃）</text>
+  <text x="637" y="160" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" fill="#CBD5E0">🗑</text>
+  <text x="637" y="200" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#A0AEC0">30+ 次工具调用</text>
+  <text x="637" y="218" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#A0AEC0">所有中间结果</text>
+  <text x="637" y="236" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#A0AEC0">读取的文件内容</text>
+  <text x="637" y="254" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#A0AEC0">……全部丢弃</text>
+
+  <!-- Safety note: no recursive task -->
+  <rect x="30" y="356" width="700" height="32" rx="6" fill="#FEFCBF" stroke="#D69E2E" stroke-width="1.5"/>
+  <text x="380" y="377" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#744210">⚠ 子 Agent 不能使用 task 工具——禁止递归派生，避免上下文指数爆炸</text>
+</svg>

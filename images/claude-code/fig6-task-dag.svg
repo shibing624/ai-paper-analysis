@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="400" viewBox="0 0 760 400">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#4A5568"/>
+    </marker>
+    <marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#38A169"/>
+    </marker>
+    <marker id="ao" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#DD6B20"/>
+    </marker>
+  </defs>
+  <rect width="760" height="400" fill="#F7FAFC" rx="12"/>
+  <text x="380" y="34" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="bold" fill="#1A202C">持久化任务 DAG — 多 Agent 协作骨架</text>
+
+  <!-- task 1 -->
+  <rect x="60" y="80" width="140" height="68" rx="8" fill="#C6F6D5" stroke="#38A169" stroke-width="2"/>
+  <text x="130" y="104" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#22543D">task 1</text>
+  <text x="130" y="122" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#276749">status: completed</text>
+  <text x="130" y="140" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#38A169">blockedBy: []</text>
+
+  <!-- Arrows from task1 -->
+  <line x1="202" y1="100" x2="298" y2="120" stroke="#38A169" stroke-width="1.8" marker-end="url(#ag)"/>
+  <line x1="202" y1="128" x2="298" y2="220" stroke="#38A169" stroke-width="1.8" marker-end="url(#ag)"/>
+
+  <!-- task 2 -->
+  <rect x="302" y="80" width="156" height="68" rx="8" fill="#FEEBC8" stroke="#DD6B20" stroke-width="2"/>
+  <text x="380" y="104" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#9C4221">task 2</text>
+  <text x="380" y="122" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#C05621">status: pending</text>
+  <text x="380" y="140" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#DD6B20">blockedBy: [1] → 解锁</text>
+
+  <!-- task 3 -->
+  <rect x="302" y="188" width="156" height="68" rx="8" fill="#FEEBC8" stroke="#DD6B20" stroke-width="2"/>
+  <text x="380" y="212" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#9C4221">task 3</text>
+  <text x="380" y="230" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#C05621">status: pending</text>
+  <text x="380" y="248" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#DD6B20">blockedBy: [1] → 解锁</text>
+
+  <!-- Parallel note -->
+  <text x="380" y="172" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#805AD5" font-weight="bold">⟵ 可并行执行 ⟶</text>
+
+  <!-- Arrows task2,3 → task4 -->
+  <line x1="460" y1="116" x2="538" y2="164" stroke="#4A5568" stroke-width="1.8" marker-end="url(#a)"/>
+  <line x1="460" y1="224" x2="538" y2="200" stroke="#4A5568" stroke-width="1.8" marker-end="url(#a)"/>
+
+  <!-- task 4 -->
+  <rect x="542" y="148" width="158" height="68" rx="8" fill="#E9D8FD" stroke="#805AD5" stroke-width="2"/>
+  <text x="621" y="172" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#553C9A">task 4</text>
+  <text x="621" y="190" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6B46C1">status: blocked</text>
+  <text x="621" y="208" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#805AD5">blockedBy: [2, 3]</text>
+
+  <!-- File store -->
+  <rect x="30" y="294" width="700" height="88" rx="8" fill="#EBF8FF" stroke="#3182CE" stroke-width="1.5"/>
+  <text x="380" y="314" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#2B6CB0">.tasks/ 磁盘存储 — 任务图跨会话存活</text>
+
+  <rect x="50" y="324" width="155" height="46" rx="5" fill="#FFF" stroke="#90CDF4" stroke-width="1"/>
+  <text x="127" y="342" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#2C5282">task_1.json</text>
+  <text x="127" y="358" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#4299E1">{"status":"completed"}</text>
+
+  <rect x="220" y="324" width="155" height="46" rx="5" fill="#FFF" stroke="#90CDF4" stroke-width="1"/>
+  <text x="297" y="342" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#2C5282">task_2.json</text>
+  <text x="297" y="358" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#4299E1">{"blockedBy":[1]}</text>
+
+  <rect x="390" y="324" width="155" height="46" rx="5" fill="#FFF" stroke="#90CDF4" stroke-width="1"/>
+  <text x="467" y="342" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#2C5282">task_3.json</text>
+  <text x="467" y="358" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#4299E1">{"blockedBy":[1]}</text>
+
+  <rect x="560" y="324" width="155" height="46" rx="5" fill="#FFF" stroke="#90CDF4" stroke-width="1"/>
+  <text x="637" y="342" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#2C5282">task_4.json</text>
+  <text x="637" y="358" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#4299E1">{"blockedBy":[2,3]}</text>
+</svg>

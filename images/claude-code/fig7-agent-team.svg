@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#4A5568"/>
+    </marker>
+    <marker id="ab" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#3182CE"/>
+    </marker>
+    <marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#38A169"/>
+    </marker>
+    <marker id="ap" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#805AD5"/>
+    </marker>
+  </defs>
+  <rect width="760" height="440" fill="#F7FAFC" rx="12"/>
+  <text x="380" y="34" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="bold" fill="#1A202C">多 Agent 团队通信架构</text>
+
+  <!-- Lead Agent -->
+  <rect x="270" y="56" width="220" height="90" rx="8" fill="#EBF8FF" stroke="#3182CE" stroke-width="2"/>
+  <text x="380" y="80" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="bold" fill="#2B6CB0">Lead Agent（领导）</text>
+  <text x="380" y="100" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#4299E1">spawn / send / broadcast</text>
+  <text x="380" y="118" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#4299E1">读 lead.jsonl 收件箱</text>
+  <text x="380" y="134" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#2B6CB0">维护 config.json 名册</text>
+
+  <!-- Arrows Lead → Alice, Bob -->
+  <line x1="300" y1="148" x2="190" y2="196" stroke="#3182CE" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#ab)"/>
+  <text x="220" y="178" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#3182CE">spawn</text>
+  <line x1="460" y1="148" x2="570" y2="196" stroke="#3182CE" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#ab)"/>
+  <text x="540" y="178" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#3182CE">spawn</text>
+
+  <!-- Alice -->
+  <rect x="60" y="200" width="180" height="90" rx="8" fill="#F0FFF4" stroke="#38A169" stroke-width="2"/>
+  <text x="150" y="224" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="bold" fill="#276749">Alice（coder）</text>
+  <text x="150" y="244" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#38A169">独立 Agent Loop</text>
+  <text x="150" y="262" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#38A169">读 alice.jsonl 收件箱</text>
+  <text x="150" y="280" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#276749">status: working/idle</text>
+
+  <!-- Bob -->
+  <rect x="520" y="200" width="180" height="90" rx="8" fill="#FFFAF0" stroke="#DD6B20" stroke-width="2"/>
+  <text x="610" y="224" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="bold" fill="#9C4221">Bob（tester）</text>
+  <text x="610" y="244" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#DD6B20">独立 Agent Loop</text>
+  <text x="610" y="262" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#DD6B20">读 bob.jsonl 收件箱</text>
+  <text x="610" y="280" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9C4221">status: working/idle</text>
+
+  <!-- Alice → Bob message -->
+  <path d="M 242 240 Q 380 170 518 240" fill="none" stroke="#805AD5" stroke-width="1.8" marker-end="url(#ap)"/>
+  <text x="380" y="192" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#805AD5">send("bob", "代码已提交，请测试")</text>
+
+  <!-- Bob → Alice message -->
+  <path d="M 518 268 Q 380 340 242 268" fill="none" stroke="#E53E3E" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#a)"/>
+  <text x="380" y="354" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#E53E3E">send("alice", "测试通过 ✓")</text>
+
+  <!-- JSONL Mailboxes -->
+  <rect x="30" y="316" width="700" height="104" rx="8" fill="#F7FAFC" stroke="#805AD5" stroke-width="1.5"/>
+  <text x="380" y="336" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#553C9A">.team/inbox/ — JSONL 收件箱（append-only，读取后清空）</text>
+
+  <rect x="50" y="346" width="185" height="60" rx="5" fill="#FFF" stroke="#68D391" stroke-width="1"/>
+  <text x="142" y="364" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="bold" fill="#276749">alice.jsonl</text>
+  <text x="142" y="381" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#38A169">{"from":"bob","content":"..."}</text>
+  <text x="142" y="396" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#38A169">{"from":"lead","content":"..."}</text>
+
+  <rect x="288" y="346" width="185" height="60" rx="5" fill="#FFF" stroke="#F6AD55" stroke-width="1"/>
+  <text x="380" y="364" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="bold" fill="#9C4221">bob.jsonl</text>
+  <text x="380" y="381" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#DD6B20">{"from":"alice","content":"..."}</text>
+  <text x="380" y="396" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#DD6B20">{"from":"lead","content":"..."}</text>
+
+  <rect x="526" y="346" width="185" height="60" rx="5" fill="#FFF" stroke="#90CDF4" stroke-width="1"/>
+  <text x="618" y="364" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="bold" fill="#2B6CB0">lead.jsonl</text>
+  <text x="618" y="381" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#3182CE">{"from":"alice","content":"..."}</text>
+  <text x="618" y="396" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#3182CE">崩溃重启后依然存在</text>
+</svg>

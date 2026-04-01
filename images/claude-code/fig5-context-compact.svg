@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#4A5568"/>
+    </marker>
+    <marker id="ar" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#E53E3E"/>
+    </marker>
+  </defs>
+  <rect width="760" height="430" fill="#F7FAFC" rx="12"/>
+  <text x="380" y="34" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="bold" fill="#1A202C">三层上下文压缩策略</text>
+
+  <!-- Token accumulation visual -->
+  <rect x="30" y="56" width="700" height="50" rx="6" fill="#EBF8FF" stroke="#3182CE" stroke-width="1.5"/>
+  <text x="380" y="76" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#2B6CB0">上下文 Token 压力</text>
+  <text x="380" y="94" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#4A90D9">读10个文件(40k) + 跑20条命令(20k) + 工具结构(5k) ≈ 65k token → 持续累积 → 超窗口</text>
+
+  <!-- Layer 1 -->
+  <rect x="30" y="124" width="210" height="130" rx="8" fill="#F0FFF4" stroke="#38A169" stroke-width="2"/>
+  <text x="135" y="148" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#276749">第一层：micro_compact</text>
+  <text x="135" y="166" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#38A169">每轮静默执行</text>
+  <rect x="46" y="176" width="178" height="24" rx="4" fill="#C6F6D5" stroke="#68D391" stroke-width="1"/>
+  <text x="135" y="193" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#22543D">旧 tool_result → 占位符</text>
+  <text x="135" y="215" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#276749">✓ 几乎无信息损失</text>
+  <text x="135" y="232" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#276749">✓ 模型无感知</text>
+  <text x="135" y="245" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#68D391">触发：每轮 / 超60min缓存失效</text>
+
+  <!-- Arrow 1 → 2 -->
+  <line x1="242" y1="189" x2="278" y2="189" stroke="#4A5568" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="260" y="182" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#718096">仍超阈值</text>
+
+  <!-- Layer 2 -->
+  <rect x="282" y="124" width="210" height="130" rx="8" fill="#FFFAF0" stroke="#DD6B20" stroke-width="2"/>
+  <text x="387" y="148" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#9C4221">第二层：auto_compact</text>
+  <text x="387" y="166" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#DD6B20">token 阈值触发</text>
+  <rect x="298" y="176" width="178" height="24" rx="4" fill="#FEEBC8" stroke="#F6AD55" stroke-width="1"/>
+  <text x="387" y="193" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#7B341E">LLM 摘要 + 磁盘备份</text>
+  <text x="387" y="215" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9C4221">⚠ 有信息损失</text>
+  <text x="387" y="232" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9C4221">✓ 完整历史存 .transcripts/</text>
+  <text x="387" y="245" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#F6AD55">触发：tokens &gt; context_window-13k</text>
+
+  <!-- Arrow 2 → 3 -->
+  <line x1="494" y1="189" x2="530" y2="189" stroke="#4A5568" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="512" y="182" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#718096">API报错</text>
+
+  <!-- Layer 3 -->
+  <rect x="534" y="124" width="196" height="130" rx="8" fill="#FFF5F5" stroke="#E53E3E" stroke-width="2"/>
+  <text x="632" y="148" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#C53030">第三层：reactive</text>
+  <text x="632" y="166" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#E53E3E">应急响应</text>
+  <rect x="550" y="176" width="164" height="24" rx="4" fill="#FED7D7" stroke="#FC8181" stroke-width="1"/>
+  <text x="632" y="193" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#9B2C2C">prompt_too_long 紧急压缩</text>
+  <text x="632" y="215" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#C53030">⚠ 最大信息损失</text>
+  <text x="632" y="232" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#C53030">✓ 最后的安全网</text>
+  <text x="632" y="245" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="9" fill="#FC8181">触发：API 返回错误</text>
+
+  <!-- auto_compact detail -->
+  <rect x="30" y="276" width="700" height="100" rx="8" fill="#FEFCBF" stroke="#D69E2E" stroke-width="1.5"/>
+  <text x="380" y="296" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="bold" fill="#744210">auto_compact 保护机制</text>
+
+  <rect x="50" y="308" width="170" height="54" rx="6" fill="#FFF" stroke="#D69E2E" stroke-width="1"/>
+  <text x="135" y="326" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="bold" fill="#744210">Circuit Breaker</text>
+  <text x="135" y="342" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#975A16">连续失败 3 次</text>
+  <text x="135" y="356" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#975A16">停止重试</text>
+
+  <rect x="240" y="308" width="170" height="54" rx="6" fill="#FFF" stroke="#D69E2E" stroke-width="1"/>
+  <text x="325" y="326" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="bold" fill="#744210">磁盘安全网</text>
+  <text x="325" y="342" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#975A16">完整历史 → .transcripts/</text>
+  <text x="325" y="356" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#975A16">信息未真正丢失</text>
+
+  <rect x="430" y="308" width="170" height="54" rx="6" fill="#FFF" stroke="#D69E2E" stroke-width="1"/>
+  <text x="515" y="326" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" font-weight="bold" fill="#744210">递归保护</text>
+  <text x="515" y="342" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#975A16">压缩自身不触发</text>
+  <text x="515" y="356" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="10" fill="#975A16">再次压缩（防死锁）</text>
+
+  <!-- Summary bar -->
+  <rect x="30" y="392" width="700" height="28" rx="6" fill="#EBF8FF" stroke="#3182CE" stroke-width="1.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" font-weight="bold" fill="#2B6CB0">三层协同 = 无限会话：轻量静默清理 → 阈值触发摘要 → 应急兜底，激进程度依次递增</text>
+</svg>
