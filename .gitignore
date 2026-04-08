@@ -244,3 +244,8 @@ select_papers.json
 .claude/
 .workbuddy/
 output/
+config.yaml
+.manifest.json
+.sage
+_papers_root/
+_wiki/
