@@ -249,3 +249,4 @@ config.yaml
 .sage
 _papers_root/
 _wiki/
+paper_filter_prompt.md
