@@ -2,14 +2,12 @@
 
 [![Cloudflare Pages](https://img.shields.io/badge/在线阅读-ai--paper--analysis.pages.dev-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://ai-paper-analysis.pages.dev/)
 [![GitHub Pages](https://img.shields.io/badge/备用站-shibing624.github.io-2962FF?style=for-the-badge&logo=github&logoColor=white)](https://shibing624.github.io/ai-paper-analysis/)
-[![GitHub stars](https://img.shields.io/github/stars/shibing624/ai-paper-analysis?style=for-the-badge&logo=github)](https://github.com/shibing624/ai-paper-analysis/stargazers)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge)](LICENSE)
 
 AI 相关论文深度解读，每天中文解读前沿学术论文，涵盖 LLM、Agent、RAG、RL 等方向。
 
 > 📖 **在线阅读（推荐，国内免梯子）**：<https://ai-paper-analysis.pages.dev/>
 > 备用 GitHub Pages 镜像：<https://shibing624.github.io/ai-paper-analysis/>
-> 站点由 mkdocs `readthedocs` 主题构建，新增文章 push 到 `main` 后通过 GitHub Actions 自动构建到 `gh-pages` 分支，Cloudflare Pages / GitHub Pages 同步发布。
 
 ## 文章列表
 
