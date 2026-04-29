@@ -26,6 +26,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
+SITE_ASSETS = ROOT / "scripts" / "site_assets"
 MONTH_DIRS = ["202601", "202602", "202603", "202604"]
 
 
@@ -69,6 +70,14 @@ def main() -> None:
     readme = ROOT / "README.md"
     if readme.exists():
         shutil.copy(readme, DOCS / "index.md")
+
+    # 拷贝自定义 CSS/JS（拓宽正文 + 右侧浮动 TOC + scrollspy）。
+    if SITE_ASSETS.is_dir():
+        dst_assets = DOCS / "assets"
+        dst_assets.mkdir(parents=True, exist_ok=True)
+        for f in SITE_ASSETS.iterdir():
+            if f.is_file():
+                shutil.copy(f, dst_assets / f.name)
 
     nav_by_month: dict[str, list[dict]] = defaultdict(list)
     total = 0
@@ -155,6 +164,9 @@ def main() -> None:
                 }
             },
         ],
+        # 自定义增强（仿 Material 体验）：正文加宽到 950px + 右侧浮动 TOC（>=1500px 屏幕显示）。
+        "extra_css": ["assets/extra.css"],
+        "extra_javascript": ["assets/right-toc.js"],
         "nav": nav,
     }
 

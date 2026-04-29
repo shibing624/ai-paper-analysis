@@ -52,6 +52,10 @@ plugins:
     minify_css: true
     htmlmin_opts:
       remove_comments: true
+extra_css:
+- assets/extra.css
+extra_javascript:
+- assets/right-toc.js
 nav:
 - 首页: index.md
 - 2026 年 4 月:
