@@ -1,14 +1,15 @@
 # AI Paper Analysis
 
-[![Site](https://img.shields.io/badge/在线阅读-shibing624.github.io%2Fai--paper--analysis-2962FF?style=for-the-badge&logo=readthedocs&logoColor=white)](https://shibing624.github.io/ai-paper-analysis/)
+[![Cloudflare Pages](https://img.shields.io/badge/在线阅读-ai--paper--analysis.pages.dev-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://ai-paper-analysis.pages.dev/)
+[![GitHub Pages](https://img.shields.io/badge/备用站-shibing624.github.io-2962FF?style=for-the-badge&logo=github&logoColor=white)](https://shibing624.github.io/ai-paper-analysis/)
 [![GitHub stars](https://img.shields.io/github/stars/shibing624/ai-paper-analysis?style=for-the-badge&logo=github)](https://github.com/shibing624/ai-paper-analysis/stargazers)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge)](LICENSE)
 
 AI 相关论文深度解读，每天解读前沿学术论文，中文解读，涵盖 LLM、Agent、RAG、强化学习等方向。
 
-> 📖 **在线阅读（带搜索 / prev-next 翻页 / 按月份导航）**：<https://shibing624.github.io/ai-paper-analysis/>
-> 站点由 mkdocs `readthedocs` 主题构建，每次新增文章 push 到 `main` 后通过 GitHub Actions 自动部署。
-> 国内访问慢可改走 Cloudflare Pages 镜像（见下方"部署到国内可访问的 CDN"）。
+> 📖 **在线阅读（推荐，国内免梯子）**：<https://ai-paper-analysis.pages.dev/>
+> 备用 GitHub Pages 镜像：<https://shibing624.github.io/ai-paper-analysis/>
+> 站点由 mkdocs `readthedocs` 主题构建，新增文章 push 到 `main` 后通过 GitHub Actions 自动构建到 `gh-pages` 分支，Cloudflare Pages / GitHub Pages 同步发布。
 
 ## 文章列表
 
@@ -209,7 +210,34 @@ python scripts/build_mkdocs.py   # 生成 docs/ 和 mkdocs.yml
 mkdocs serve                     # 浏览器打开 http://127.0.0.1:8000
 ```
 
-新增文章按 `YYYYMM/` 月份目录归档（如 `202605/`），push 到 `main` 后由 GitHub Actions 自动构建并部署到 [shibing624.github.io/ai-paper-analysis](https://shibing624.github.io/ai-paper-analysis/)。
+## 部署架构
+
+```
+push main
+   │
+   ▼
+GitHub Actions (.github/workflows/deploy-docs.yml)
+   │  pip install + python scripts/build_mkdocs.py + mkdocs gh-deploy
+   ▼
+gh-pages 分支（纯静态产物）
+   │
+   ├──► GitHub Pages    → https://shibing624.github.io/ai-paper-analysis/  （海外快）
+   └──► Cloudflare Pages → https://ai-paper-analysis.pages.dev/             （国内快，无需梯子）
+```
+
+`gh-pages` 是 GitHub Actions 跑 `mkdocs gh-deploy` 的纯静态产物。两边托管平台都监听这个分支，新 push 后 30~60 秒同步发布，全程零干预。
+
+### 自己 fork 后接 Cloudflare Pages（5 步）
+
+1. <https://dash.cloudflare.com/> → **Workers & Pages** → **Create application**
+2. 在弹窗最下方点 **"Looking to deploy Pages? Get started"**（Cloudflare 新 UI 把 Pages 入口降级藏起来了，必须从这里进，否则会建成 Worker）
+3. **Connect to Git** → 选你 fork 的仓库
+4. 配置：
+   - Production branch：`gh-pages` ← 关键，不是 main
+   - Framework preset：`None`
+   - Build command：留空（不要让 Cloudflare 跑 mkdocs，gh-pages 已经是构建好的产物）
+   - Build output directory：`/`
+5. **Save and Deploy** → 拿到 `<project>.pages.dev` 免备案域名
 
 ## License
 
