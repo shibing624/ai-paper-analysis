@@ -1,0 +1,156 @@
+images,ocr_results
+/Users/xuming/Documents/Codes/paper_analysis_md/images/2604.11045/background_compressed.jpg,"Capability Lock-in
+Programmable AI Engine
+What's
+So
+inside?
+modular!
+API
+Extension
+only
+Web
+O
+Sema
+CLI
+Rebuilt ×3
+oD
+Core
+IDE
+Sema
+Black Box
+Blocked workflow
+Code
+AI
+closed
+Router
+input →
+tndino↑
+Custom
+core
+Tools
+Write once,
+Context
+deliver anywhere
+Permissions
+Rules/
+Open
+Skiis
+Ecosystem
+Opaque System
+Opaque | Locked | Non-extensible
+Transparent | Decoupled | Extensible
+From closed black-boxes to transparent, extensible Al engines."
+/Users/xuming/Documents/Codes/paper_analysis_md/images/2604.11045/runtime_compressed.jpg,"(a) Background Task System
+(b) Multi-Agent Coordination
+(c) Context Compression
+Bash Tasks
+Persistentshell
+High pressure
+■75% - -
+ T = 0.75 threshold
+Background spown
+Normal
+Main Agent
+run_in_background
+Low usage
+run_in_background
+Spown
+taskid
+Can convert
+to Async
+Timeout recovery
+'Independent Signal
+Isoloted State Space
+ Sync Sub-Agent 1
+Shell
+Async
+Running….
+TaskManager
+Trigger
+Reset
+PSub-Agent
+ Shared Abort Signal
+Truncation
+LLM Summary
+p Sync Sub-Agent 2
+Agent Tasks
+k Compressed
+Y Fallback
+Context
+'Isolated Async Context
+Sub-Agent Lifecycle
+User can kllindividually
+B$
+Completion
+Background
+☆D
+Notification
+•·
+Reset
+Update
+Inject
+ Only result
+token
+history
+System
+returns to
+Cleanup
+Execute
+Result
+Create
+counter
+messages
+Reminder
+Main Agent
+① Bash and Agent tasks run independently,
+② Main Agent orchestrates sync/async
+③ Context compression activates at
+sub-agents with full lifecycle control
+threshold to keep token usage sustainable
+unified by completion notification"
+/Users/xuming/Documents/Codes/paper_analysis_md/images/2604.11045/core_compressed.jpg,"Sema Code: System Architecture
+Client Layer
+(3)
+Service Layer
+(1)
+(2) Sema Core (Core Engine Layer)
+/MCP
+MOOY
+?
+Sema-bot
+MCP Market
+Skill Store
+Dialogue
+Permissions
+Task
+npm ·Websocket·gRPC
+Management
+Management
+Engine
+GPT-5
+Llama
+Plugin Management
+C
+VSCode
+Sema CLI
+Tool
+State
+iapow
+Gemini
+Extension
+Execution
+Management
+Adaptation
+Claude
+Plugin Management Agent Management
+000
+Event Bus
+O
+□
+XX品
+Third-Party Platform Access
+□
+Skill
+Command
+Tool Set
+Registration Management"

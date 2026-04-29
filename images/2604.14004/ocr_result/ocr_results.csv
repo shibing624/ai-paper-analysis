@@ -1,0 +1,273 @@
+images,ocr_results
+./x2.png,"Trajectory
+Workflow
+Summary
+Goal
+Task Summary
+Whole Trajectory
+Workflow (reusable action sequence)
+Experience Summary
+Step1: <code> Is -al </code>
+Observation
+(environment, actions, and details explanation)
+Step4: <code>.important edits..</code>
+Step2: <code>grep</code>
+Observation
+Insight
+Step6: <code>..crucial steps.</code>
+Title
+Description (in one sentence)
+Step24: <code> DONE</code>
+Step9:<code></code>
+Content (general, task-agnostic insights)"
+./x3.png,"Algorithmic Strategy Transfer
+Iterative Workflow Discipline
+Repository
+5.5%
+Exploration Tactics
+6.4%
+15.0%
+File and Syntax
+7.8％
+Management
+Test Driven
+Verification
+14.5%
+Environmental
+8.1%
+Adaptation
+8.5%
+Interaction
+14.4%
+Protocol
+Anti-Pattern
+9.5%
+Adherence
+10.4%
+Avoidance
+API & Interface
+Input Validation &
+Compliance
+Robustness"
+./x1.png,"(A) Without Memory
+Fail
+Fail
+Fail
+Cannot reflect on previous
+successes and failures
+(B) Self-Evolving Agent
+SWE Task
+MLE Task
+Leverage limited memory
+SWE
+ML/AI
+from a single domain only
+Memory
+Memory
+Experience does not transfer
+X
+across tasks
+(C) Memory Transfer Learning
+'Can memory be transferred
+Testing
+Memories from
+across different domains?
+heterogenous domains
+SWE Task
+ML/AI
+Scientific
+Why does memory transfer
+Memory
+Paper Code
+yieldcross-domains benefits?
+DevOps
+Competitive
+How should memory be
+Memory
+Coding
+designed for effective transfer?
+(D) Average Performance across Coding Benchmarks
+Memory Format: Trajectory  Workflow Summary
+Insight
+Self-Evolve
+MTL (Ours)
+0.48
+g
+0.46
+Zero
+0
+-shot"
+./x4.png,"Task Embeddings
+Workflow Embeddings Summary Embeddings
+Insight Embeddings"
+./x5.png,"6.50
+DBI
+LISI
+5
+4.47
+4.02
+4.00
+3.09
+2.33
+2.34
+1.70
+Trajectory Workflow S
+Summary
+Insight
+."
+./x7.png,"Workflow Generation Prompt for a Success Trajectory
+#Task Description
+You are given a **successful command tajectory** for a code-editing task — a sequence of Bash commands that correctly achieved its goal.
+Your goal is to extract a **single reusable base workflow ** that captures the **core strategy behind the success**, so it can be reused in similar fiuture tasks.
+The workfl ow should abstract the effective problem-solving pattern, such as how files were found, edited, and verified.
+## What You Need to Produce
+You must identify:
+* The **goal** of the workflow
+Describe what kind of subproblem it solves and when it should be used.
+* The **sequence of Bash commands**
+Include the key command steps that made the trajectory succeed, focusing on reusable pattems rather than one-off details.
+#Workflow Requirements
+The workflow must satisfy all of the following:
+* It must come fiom the **given successful trajectory*
+* It must be a **reusable subroutine**, not just a command log
+* It should reflect **why the trajectory worked**, such as how files were found, code was modified, and results were checked
+* Long commands may be **shortened** as long as the core action remains
+##Output Format
+Your output must follow this exact JSON format:
+'json
+""goal"": ""Describe when this workflow can be applied."",
+""workflow"":
+""bash command 1"",
+""bash command 2"",
+""bash command 3"","
+./x6.png,"LiveCodeBench
+ReplicationBench
+SWEbench-Verified
+Average
+6
+6
+0/0
+∆ Avg Pass@1
+4
+4
+2
+2
+0
+0
+-2
+-2
+1/4
+2/4
+3/4
+Full
+2
+5
+Memory Pool Size
+Number of Domains"
+./x12.png,"Insight Generation Prompt for a Failed Trajectory
+You are an expert in repository-level code editing. You will be given a user query, the coresponding trajectory that represents how an agent attempted to resolve
+the task but failed.
+## Guidelines
+You need to extract and summarize useful insights in the format of memory items based on the agent's failed trajectory.
+The goal of summarized memory items is to be helpful and generalizable for future similar tasks.
+## Important notes
+- You must first reflect and think why the trajectory failed, and then summarize what lessons you have leamed or strategies to prevent the failure in the future.
+- Do not mention specific files or details, but rather focus on the generalizable insights.
+- You can extract only one memory item firom the trajectory.
+##Output Format
+Your output must strictly follw the json format shown below:
+""'json
+""description"": ""one sentence summary of the memory item""
+""content"": ""l-3 sentences describing the insights learned to successfully accomplishing the task"""
+./x8.png,"Workflow Generation Prompt for a Failed Trajectory
+Task Description
+You are given a **failed command trajectory** for a code-editing task — a sequence of Bash commands that did not reach the intended goal.
+Your goal is to extract a **single reusable base workflow** that captures a **bad or misleading strategy** that led to failure, so it can be avoided in similar
+fiuture tasks
+The workflow should abstract the **anti-patern** behind the failure, such as skipping inspection, editing the wrong fles, or making unchecked changes.
+## What You Need to Produce
+You must identify:
+* The **goal** of the workflow
+Describe what kind of mistake or failure pattem this workflow represents and when it tends to occur.
+* The **sequence of Bash commands**
+Include the key command steps that illustrate the **incorrect or harnful patten**, rather than how it was fixed.
+## Workflow Requirements
+The workfl ow must satisfy all of the following:
+* It must come firom the **given failed trajectory
+* It must be a **reusable negative example**, not just a random error
+* It should reflect **why the trajectory failed**, such as skipping checks, editing blindly, or validating the wrong thing
+* Long commands may be **shortened** as long as the core action remains
+##Output Format
+Your output must follow this exact JSON fornat:
+""goal"": ""Describe when this workflow can be applied."",
+""workflow"":
+""bash command 1"",
+""bash command 2"",
+""bash command 3"","
+./x11.png,"Insight Generation Prompt for a Success Trajectory
+You are an expert in repository-level code editing. You will be given a user query, the coresponding trajectory that represents how an agent successfully
+accomplished the task.
+Guidelines
+You need to extract and summarize useful insights in the format of memory items based on the agent's successful trajectory.
+The goal of summarized memory items is to be helpful and generalizable for future similar tasks.
+## Important notes
+- You must first think why the trajectory is successfiul, and then summarize the insights.
+- You can extract only one memory item firom the trajectory
+- Do not mention specific files or details, but rather focus on the generalizable insights.
+##Output Format
+Your output must strictly follow the json format shown below:
+""'json
+""title"": ""the title of the memory item""
+""description"": ""one sentence summary of the memory item""
+""content"": ""l-3 sentences describing the insights learned to successfully accomplishing the task"""
+./x10.png,"Summary Generation Prompt for a Failed Trajectory
+#Task Description
+You are given a **failed command trajectory** for a code-editing task — a sequence of actions and Bash commands that did not achieve the intended goal or
+produced incorrect results.
+Your goal is to produce a **stuctured sumary** that captures what was attempted, what went wrong, and why this trajectory is a usefial negative example for
+fiuture tasks.
+The summary should not just list mistakes, but explain the **task context, the approach taken, and the reasons the outome was incorrect or incomplete**.
+## What You Need to Produce
+You must produce two summaries:
+A short description of the task that was being attempted, written in two or three sentences.
+It should descnibe what needed to be changed or built and in what kind of codebase or environment.
+A one-paragraph summary of the entire trajectory.
+It should describe the given task, the code environment, the key actions or commands, the overall approach, and the final (failed) outcome.
+It should also explain why this trajectory failed, highlighting incorrect assumptions, missing checks, or flawed strategies so that others can avoid repeating them.
+## Summary Requirements
+The sunmaries must satisfy all of the following:
+* They must be based only on the **given failed trajectory*
+* They must be written so they are **useful as reference material** for fiuture similar tasks
+* The **experience_summary**should capture the **important technical and strategic details**
+* The **experience_summary** should include analysis of **why the approach did not work**, not just what happened
+## Output Format
+Your output must follow this exact JSON format:
+'json
+""task_summary"": ""A short description of the task that was being attempted.""
+""experience_summary"": ""A one-paragraph explanation of what was done, what and why went wrong, and how to avoid same failure in the future tasks."
+./x9.png,"Summary Generation Prompt for a Success Trajectory
+## Task Description
+You are given a **successful command trajectory** for a code-editing task - a sequence of actions and Bash commands that correctly achieved its goal.
+Your goal is to produce a **structured summary** that captures both what was done and why it worked, so this trajectory can be used as a reference for solving
+similar tasks in the future.
+The summary should not just restate the commands, but explain the **task context, the approach taken, and the factors that led to succesg**
+## What You Need to Produce
+You must produce two summaries:
+***task_summary**
+A short description of the task that was being solved, written in two or three sentences
+It should describe what needed to be changed or built and in what kind of codebase or environment
+***experience_summay**
+A one-paragraph summary of the entire trajectory.
+It should describe the code environment, the key actions or commands, the overall approach, and the final outcome
+It should also explain why this trajectory succeeded, highlighting useful strategies, checks, or decisions that contributed to the correct result
+# Summary Requirements
+The summaries must satisfy all of the following:
+* They must be based only on the *given successful trajectory**
+* They must be written so they are **useful as reference material** for fature similar tasks
+* The **experience_summary** should capture the **important technical and strategic detailg*:
+* The **experience_summary** should include some analysis of **why the approach worked**, not just what happened
+## Output Format
+Your output must follow this exact JSON format:
+""'json
+""task_summary"": ""A short description of the task and what needed to be accomplished."",
+""experience_summary"": ""A one-paragraph explanation of the trajectory, including the environnent, key actions, approach, outcome, and why it succeeded."

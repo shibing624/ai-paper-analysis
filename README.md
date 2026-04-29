@@ -6,6 +6,51 @@ AI相关论文深度解读，每天解读前沿学术论文，中文解读，涵
 
 | 日期 | 文章 |
 |------|------|
+| 2026-04-29 | [Agent-World：可扩展真实环境合成与自演化智能体训练](202604/20260429_Agent-World_论文解读_可扩展真实环境合成与自演化智能体训练.md) |
+| 2026-04-29 | [AgenticWorldModel：L1L2L3能力分层与四类世界规律](202604/20260429_AgenticWorldModel_论文解读_L1L2L3能力分层与四类世界规律.md) |
+| 2026-04-29 | [AgentSearchBench：执行驱动的智能体搜索评测](202604/20260429_AgentSearchBench_论文解读_执行驱动的智能体搜索评测.md) |
+| 2026-04-29 | [AgentSPEX：YAML声明式Agent工作流与可执行规约](202604/20260429_AgentSPEX_论文解读_YAML声明式Agent工作流与可执行规约.md) |
+| 2026-04-29 | [AJBench：Agent判官需要工具与环境](202604/20260429_AJBench_论文解读_Agent判官需要工具与环境.md) |
+| 2026-04-29 | [CluE：异质任务下的记忆提取自演化](202604/20260429_CluE_论文解读_异质任务下的记忆提取自演化.md) |
+| 2026-04-29 | [DR-Venus：4B小模型靠1万条数据冲到Deep Research前沿](202604/20260429_DR-Venus_论文解读_4B小模型靠1万条数据冲到Deep_Research前沿.md) |
+| 2026-04-29 | [DualView：指令检索的极性反转训练](202604/20260429_DualView_论文解读_指令检索的极性反转训练.md) |
+| 2026-04-29 | [GFT：把SFT当稀疏奖励RL重做](202604/20260429_GFT_论文解读_把SFT当稀疏奖励RL重做.md) |
+| 2026-04-29 | [GoodLLMOptimizer：LLM作为进化搜索算子的局部精修机制](202604/20260429_GoodLLMOptimizer_论文解读_LLM作为进化搜索算子的局部精修机制.md) |
+| 2026-04-29 | [Memanto：反图谱的Agent记忆与信息论检索](202604/20260429_Memanto_论文解读_反图谱的Agent记忆与信息论检索.md) |
+| 2026-04-29 | [MixedCUTS：饱和数据上GRPO的崩塌与破解](202604/20260429_MixedCUTS_论文解读_饱和数据上GRPO的崩塌与破解.md) |
+| 2026-04-29 | [NPO：RLVR用未来自己当老师](202604/20260429_NPO_论文解读_RLVR用未来自己当老师.md) |
+| 2026-04-29 | [PDR-RTV：Agentic Coding的测试时算力扩展](202604/20260429_PDR-RTV_论文解读_Agentic_Coding的测试时算力扩展.md) |
+| 2026-04-29 | [RLVR弱监督：饱和动力学与推理忠实度](202604/20260429_RLVR弱监督_论文解读_饱和动力学与推理忠实度.md) |
+| 2026-04-29 | [ShadowPEFT：共享影子网络重构PEFT范式](202604/20260429_ShadowPEFT_论文解读_共享影子网络重构PEFT范式.md) |
+| 2026-04-29 | [SimpleTES：评估驱动的科学发现规模化](202604/20260429_SimpleTES_论文解读_评估驱动的科学发现规模化.md) |
+| 2026-04-29 | [SkillFlow：Agent终身技能进化的能力鸿沟](202604/20260429_SkillFlow_论文解读_Agent终身技能进化的能力鸿沟.md) |
+| 2026-04-29 | [SLIDERS：长文档QA上下文永远不够用_结构化推理才是出路](202604/20260429_SLIDERS_论文解读_长文档QA上下文永远不够用结构化推理才是出路.md) |
+| 2026-04-29 | [TACO：终端Agent自演化上下文压缩](202604/20260429_TACO_论文解读_终端Agent自演化上下文压缩.md) |
+| 2026-04-29 | [TEMPO：测试时训练的EM拼图](202604/20260429_TEMPO_论文解读_测试时训练的EM拼图.md) |
+| 2026-04-29 | [WorldKnowledge：Agent无奖励自进化](202604/20260429_WorldKnowledge_论文解读_Agent无奖励自进化.md) |
+| 2026-04-24 | [DeepSeek-V4：百万级长上下文与混合稀疏注意力](202604/20260424_DeepSeek-V4_论文解读_百万级长上下文与混合稀疏注意力.md) |
+| 2026-04-21 | [AgentSwing：长时Agent自适应上下文管理路由](202604/20260421_AgentSwing_论文解读_长时Agent自适应上下文管理路由.md) |
+| 2026-04-21 | [AggAgent：智能体聚合的并行扩展](202604/20260421_AggAgent_论文解读_智能体聚合的并行扩展.md) |
+| 2026-04-21 | [AiScientist：自主长周期ML研究工程](202604/20260421_AiScientist_论文解读_自主长周期ML研究工程.md) |
+| 2026-04-21 | [CocoaBench：统一数字Agent评测](202604/20260421_CocoaBench_论文解读_统一数字Agent评测.md) |
+| 2026-04-21 | [CodeTracer：可追踪的Agent状态调试](202604/20260421_CodeTracer_论文解读_可追踪的Agent状态调试.md) |
+| 2026-04-21 | [CreditAssignment：从推理到智能体的信用分配](202604/20260421_CreditAssignment_论文解读_从推理到智能体的信用分配.md) |
+| 2026-04-21 | [DataLineage：后训练LLM数据谱系追踪](202604/20260421_DataLineage_论文解读_后训练LLM数据谱系追踪.md) |
+| 2026-04-21 | [ExploreExploit：LM Agent探索与利用误差可测量](202604/20260421_ExploreExploit_论文解读_LM_Agent探索与利用误差可测量.md) |
+| 2026-04-21 | [GraSP：图结构技能编排突破Agent技能过载](202604/20260421_GraSP_论文解读_图结构技能编排突破Agent技能过载.md) |
+| 2026-04-21 | [HingeMem：边界引导的长程记忆检索](202604/20260421_HingeMem_论文解读_边界引导的长程记忆检索.md) |
+| 2026-04-21 | [KnowRL：最小充分知识指导的推理强化学习](202604/20260421_KnowRL_论文解读_最小充分知识指导的推理强化学习.md) |
+| 2026-04-21 | [LightningOPD：离线在线策略蒸馏加速后训练](202604/20260421_LightningOPD_论文解读_离线在线策略蒸馏加速后训练.md) |
+| 2026-04-21 | [LLMReinventAlgo：LLM能否重新发明基础算法](202604/20260421_LLMReinventAlgo_论文解读_LLM能否重新发明基础算法.md) |
+| 2026-04-21 | [MEDS：记忆增强的动态奖励塑形](202604/20260421_MEDS_论文解读_记忆增强的动态奖励塑形.md) |
+| 2026-04-21 | [MemoryTransfer：Coding Agent跨域记忆迁移](202604/20260421_MemoryTransfer_论文解读_Coding_Agent跨域记忆迁移.md) |
+| 2026-04-21 | [p1：少样本提示优化](202604/20260421_p1_论文解读_少样本提示优化.md) |
+| 2026-04-21 | [ReasoningGraphs：证据驱动的推理图确定性Agent](202604/20260421_ReasoningGraphs_论文解读_证据驱动的推理图确定性Agent.md) |
+| 2026-04-21 | [RethinkingOPD：在线策略蒸馏的成功条件与机制](202604/20260421_RethinkingOPD_论文解读_在线策略蒸馏的成功条件与机制.md) |
+| 2026-04-21 | [SemaCode：AI编码Agent的可编程基础设施](202604/20260421_SemaCode_论文解读_AI编码Agent的可编程基础设施.md) |
+| 2026-04-21 | [SPPO：序列级PPO解决长链推理信用分配](202604/20260421_SPPO_论文解读_序列级PPO解决长链推理信用分配.md) |
+| 2026-04-21 | [TPO：目标策略优化分离评分与参数更新](202604/20260421_TPO_论文解读_目标策略优化分离评分与参数更新.md) |
+| 2026-04-21 | [TREX：Agent驱动的LLM微调自动化](202604/20260421_TREX_论文解读_Agent驱动的LLM微调自动化.md) |
 | 2026-03-29 | [AgentDS：AI数据科学Agent竞赛实测](202603/20260329_AgentDS_论文解读_AI数据科学Agent竞赛实测.md) |
 | 2026-03-29 | [BEAVER：免训练分层提示压缩](202603/20260329_BEAVER_论文解读_免训练分层提示压缩.md) |
 | 2026-03-29 | [CarePilot：医疗GUI智能体自动化](202603/20260329_CarePilot_论文解读_医疗GUI智能体自动化.md) |
@@ -108,15 +153,15 @@ AI相关论文深度解读，每天解读前沿学术论文，中文解读，涵
 
 ## 主题分类
 
-- **Agent 智能体**: A-Mem, Plan-and-Act, Voyager, Zep, AgentScope, OpenClaw, InternAgent-1.5, SkillOrchestra, OmniGAIA, EMPO2, Agent Teams, OpenClaw-RL, SimAgent, SearchAgent, EvoScientist, ReAct, AI Agent Framework, OpenSeeker, CarePilot, MetaClaw, AgentDS
-- **强化学习**: SkillRL, ERL, DrMAS, CompositionRL, TAROT, DSDR, Agent World Model, ICRL, Search-R1, ToolR0, ComplementaryRL, MultiAnswerRL, MARCH, MetaClaw, OpenClaw-RL
-- **RAG 检索增强**: RLFKV, FaithfulRAG, SearchP1, SAGE, DeR2, REDSearcher, TokenOverflow, HybridRAG-Bench, TextRanking, LegalRAGBench, DLLMSearcher, BubbleRAG
-- **推理与思维**: CoM, StateLM, SAGE(推理), ReIn, MiniCPM SALA, ThinkingToRecall, ReasoningJudge, CHIMERA, PRISM, MiroThinker, SelfDistill, LambdaRLM, AttentionResiduals, SRLM
-- **记忆系统**: MemSkill v2, MemFly, AnatomyAgenticMemory, MemSifter, MementoSkills
-- **评估基准**: GISA, LOCA, ResearchGym, ADBench, InnoEval, DeepImageSearch, How2Everything, BeyondSWE, UniG2U-Bench, ClawArena, ClawEval
-- **模型架构**: GLM5, Nanbeige4.1-3B, AveyB, Qwen3CoderNext, MixGRM, IndexCache, LSE, BEAVER
-- **AI科研**: Autoresearch, SciDER, EvoScientist, Claudini
-- **工程实践**: Claude Code玩法, Harness Engineering, AI Coding Agent, ADE-CoT, CoVe, Composer2, OpenSWE
+- **Agent 智能体**: A-Mem, Plan-and-Act, Voyager, Zep, AgentScope, OpenClaw, InternAgent-1.5, SkillOrchestra, OmniGAIA, EMPO2, Agent Teams, OpenClaw-RL, SimAgent, SearchAgent, EvoScientist, ReAct, AI Agent Framework, OpenSeeker, CarePilot, MetaClaw, AgentDS, Agent-World, AgentSPEX, AgentSwing, AggAgent, CodeTracer, CocoaBench, GraSP, ReasoningGraphs, SemaCode, TREX, WorldKnowledge
+- **强化学习**: SkillRL, ERL, DrMAS, CompositionRL, TAROT, DSDR, Agent World Model, ICRL, Search-R1, ToolR0, ComplementaryRL, MultiAnswerRL, MARCH, MetaClaw, OpenClaw-RL, GFT, KnowRL, MEDS, MixedCUTS, NPO, RLVR弱监督, SPPO, TPO, TEMPO, LightningOPD, RethinkingOPD, CreditAssignment
+- **RAG 检索增强**: RLFKV, FaithfulRAG, SearchP1, SAGE, DeR2, REDSearcher, TokenOverflow, HybridRAG-Bench, TextRanking, LegalRAGBench, DLLMSearcher, BubbleRAG, DR-Venus, DualView, SLIDERS
+- **推理与思维**: CoM, StateLM, SAGE(推理), ReIn, MiniCPM SALA, ThinkingToRecall, ReasoningJudge, CHIMERA, PRISM, MiroThinker, SelfDistill, LambdaRLM, AttentionResiduals, SRLM, AgenticWorldModel, GoodLLMOptimizer, LLMReinventAlgo, ExploreExploit, p1
+- **记忆系统**: MemSkill v2, MemFly, AnatomyAgenticMemory, MemSifter, MementoSkills, CluE, HingeMem, Memanto, MemoryTransfer, TACO
+- **评估基准**: GISA, LOCA, ResearchGym, ADBench, InnoEval, DeepImageSearch, How2Everything, BeyondSWE, UniG2U-Bench, ClawArena, ClawEval, AJBench, AgentSearchBench, CocoaBench
+- **模型架构**: GLM5, Nanbeige4.1-3B, AveyB, Qwen3CoderNext, MixGRM, IndexCache, LSE, BEAVER, DeepSeek-V4, ShadowPEFT, SkillFlow
+- **AI科研**: Autoresearch, SciDER, EvoScientist, Claudini, AiScientist, SimpleTES
+- **工程实践**: Claude Code玩法, Harness Engineering, AI Coding Agent, ADE-CoT, CoVe, Composer2, OpenSWE, DataLineage, PDR-RTV
 
 ## License
 

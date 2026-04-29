@@ -250,3 +250,5 @@ config.yaml
 _papers_root/
 _wiki/
 paper_filter_prompt.md
+ocr_result/
+ocr_results.csv
