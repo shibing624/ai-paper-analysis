@@ -1,6 +1,13 @@
 # AI Paper Analysis
 
-AI相关论文深度解读，每天解读前沿学术论文，中文解读，涵盖 LLM、Agent、RAG、强化学习等方向。
+[![Site](https://img.shields.io/badge/在线阅读-shibing624.github.io%2Fai--paper--analysis-2962FF?style=for-the-badge&logo=readthedocs&logoColor=white)](https://shibing624.github.io/ai-paper-analysis/)
+[![GitHub stars](https://img.shields.io/github/stars/shibing624/ai-paper-analysis?style=for-the-badge&logo=github)](https://github.com/shibing624/ai-paper-analysis/stargazers)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge)](LICENSE)
+
+AI 相关论文深度解读，每天解读前沿学术论文，中文解读，涵盖 LLM、Agent、RAG、强化学习等方向。
+
+> 📖 **在线阅读（带搜索 / 暗色模式 / 按月份导航）**：<https://shibing624.github.io/ai-paper-analysis/>
+> 站点由 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) 构建，每次新增文章自动通过 GitHub Actions 部署。
 
 ## 文章列表
 
@@ -192,6 +199,16 @@ AI相关论文深度解读，每天解读前沿学术论文，中文解读，涵
 - **模型架构**: GLM5, Nanbeige4.1-3B, AveyB, Qwen3CoderNext, MixGRM, IndexCache, LSE, BEAVER, DeepSeek-V4, ShadowPEFT, SkillFlow, TurboQuant, TriAttention
 - **AI科研**: Autoresearch, SciDER, EvoScientist, Claudini, AiScientist, SimpleTES, MedicalAIScientist, PaperRecon, GrandCode, MetaHarness
 - **工程实践**: Claude Code玩法, Harness Engineering, AI Coding Agent, ADE-CoT, CoVe, Composer2, OpenSWE, DataLineage, PDR-RTV, ClaudeCode源码精读, Squeez, SelfExecSim
+
+## 本地预览站点
+
+```bash
+pip install -r scripts/requirements.txt
+python scripts/build_mkdocs.py   # 生成 docs/ 和 mkdocs.yml
+mkdocs serve                     # 浏览器打开 http://127.0.0.1:8000
+```
+
+新增文章按 `YYYYMM/` 月份目录归档（如 `202605/`），push 到 `main` 后由 GitHub Actions 自动构建并部署到 [shibing624.github.io/ai-paper-analysis](https://shibing624.github.io/ai-paper-analysis/)。
 
 ## License
 
