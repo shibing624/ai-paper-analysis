@@ -165,8 +165,12 @@ def main() -> None:
             },
         ],
         # 自定义增强（仿 Material 体验）：正文加宽到 950px + 右侧浮动 TOC（>=1500px 屏幕显示）。
+        # mathjax-on-demand.js 只在页面包含 .arithmatex 时拉 MathJax，不带公式的文章零开销。
         "extra_css": ["assets/extra.css"],
-        "extra_javascript": ["assets/right-toc.js"],
+        "extra_javascript": [
+            "assets/right-toc.js",
+            "assets/mathjax-on-demand.js",
+        ],
         "nav": nav,
     }
 
