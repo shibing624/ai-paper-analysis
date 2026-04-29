@@ -51,6 +51,36 @@ AI相关论文深度解读，每天解读前沿学术论文，中文解读，涵
 | 2026-04-21 | [SPPO：序列级PPO解决长链推理信用分配](202604/20260421_SPPO_论文解读_序列级PPO解决长链推理信用分配.md) |
 | 2026-04-21 | [TPO：目标策略优化分离评分与参数更新](202604/20260421_TPO_论文解读_目标策略优化分离评分与参数更新.md) |
 | 2026-04-21 | [TREX：Agent驱动的LLM微调自动化](202604/20260421_TREX_论文解读_Agent驱动的LLM微调自动化.md) |
+| 2026-04-10 | [ManagedAgents：Anthropic如何把Agent拆成脑和手](202604/20260410_ManagedAgents_论文解读_Anthropic如何把Agent拆成脑和手.md) |
+| 2026-04-09 | [AgenticSkills：Agent技能在真实场景下到底好不好用](202604/20260409_AgenticSkills_论文解读_Agent技能在真实场景下到底好不好用.md) |
+| 2026-04-09 | [ASI-Evolve：AI自我加速闭环研究框架](202604/20260409_ASI-Evolve_论文解读_AI自我加速闭环研究框架.md) |
+| 2026-04-09 | [ClawArena：动态信息环境下的AI智能体基准测试](202604/20260409_ClawArena_论文解读_动态信息环境下的AI智能体基准测试.md) |
+| 2026-04-09 | [ClawEval：Agent可信评估](202604/20260409_ClawEval_论文解读_Agent可信评估.md) |
+| 2026-04-09 | [CORAL：自主多智能体协同进化](202604/20260409_CORAL_论文解读_自主多智能体协同进化.md) |
+| 2026-04-09 | [FileGram：文件系统行为轨迹驱动的智能体个性化](202604/20260409_FileGram_论文解读_文件系统行为轨迹驱动的智能体个性化.md) |
+| 2026-04-09 | [GrandCode：AI首次称霸竞赛编程](202604/20260409_GrandCode_论文解读_AI首次称霸竞赛编程.md) |
+| 2026-04-09 | [LightThinker++：推理压缩到记忆管理](202604/20260409_LightThinker++_论文解读_推理压缩到记忆管理.md) |
+| 2026-04-09 | [LRAT：从Agent轨迹中学习检索](202604/20260409_LRAT_论文解读_从Agent轨迹中学习检索.md) |
+| 2026-04-09 | [MetaHarness：端到端Harness优化](202604/20260409_MetaHarness_论文解读_端到端Harness优化.md) |
+| 2026-04-09 | [MIA：记忆驱动的深度研究智能体](202604/20260409_MIA_论文解读_记忆驱动的深度研究智能体.md) |
+| 2026-04-09 | [PaperCircle：多智能体论文发现与分析框架](202604/20260409_PaperCircle_论文解读_多智能体论文发现与分析框架.md) |
+| 2026-04-09 | [RLSD：自蒸馏遇上强化学习的信用分配突破](202604/20260409_RLSD_论文解读_自蒸馏遇上强化学习的信用分配突破.md) |
+| 2026-04-09 | [SelfExecSim：代码模型自执行模拟](202604/20260409_SelfExecSim_论文解读_代码模型自执行模拟.md) |
+| 2026-04-09 | [Skill0：技能内化零样本Agent](202604/20260409_Skill0_论文解读_技能内化零样本Agent.md) |
+| 2026-04-09 | [SkillX：自动构建智能体技能知识库](202604/20260409_SkillX_论文解读_自动构建智能体技能知识库.md) |
+| 2026-04-09 | [Squeez：用2B小模型给Coding Agent的工具输出做手术](202604/20260409_Squeez_论文解读_用2B小模型给Coding_Agent的工具输出做手术.md) |
+| 2026-04-09 | [SRPO：样本路由统一GRPO与自蒸馏策略优化](202604/20260409_SRPO_论文解读_样本路由统一GRPO与自蒸馏策略优化.md) |
+| 2026-04-09 | [T2：过度训练才是最优解](202604/20260409_T2_论文解读_过度训练才是最优解.md) |
+| 2026-04-09 | [ThereforeIAm：推理模型先决定再思考的证据](202604/20260409_ThereforeIAm_论文解读_推理模型先决定再思考的证据.md) |
+| 2026-04-09 | [ThinkTwice：联合优化推理与自我纠错](202604/20260409_ThinkTwice_论文解读_联合优化推理与自我纠错.md) |
+| 2026-04-09 | [TriAttention：三角函数KV压缩加速长推理](202604/20260409_TriAttention_论文解读_三角函数KV压缩加速长推理.md) |
+| 2026-04-07 | [PaperRecon：AI写的论文到底有多少幻觉](202604/20260407_PaperRecon_论文解读_AI写的论文到底有多少幻觉.md) |
+| 2026-04-03 | [ReasoningShift：上下文如何悄悄缩短LLM推理链](202604/20260403_ReasoningShift_论文解读_上下文如何悄悄缩短LLM推理链.md) |
+| 2026-04-01 | [ClaudeCode源码精读01：30行代码构建Agent的核心循环](202604/20260401_ClaudeCode源码精读01_30行代码构建Agent的核心循环.md) |
+| 2026-04-01 | [ClaudeCode源码精读02：上下文撑破之前如何清理记忆](202604/20260401_ClaudeCode源码精读02_上下文撑破之前如何清理记忆.md) |
+| 2026-04-01 | [ClaudeCode源码精读03：从一个Agent到一支团队多Agent协作架构全解](202604/20260401_ClaudeCode源码精读03_从一个Agent到一支团队多Agent协作架构全解.md) |
+| 2026-04-01 | [MedicalAIScientist：AI能自主做临床科研了吗](202604/20260401_MedicalAIScientist_论文解读_AI能自主做临床科研了吗.md) |
+| 2026-04-01 | [TurboQuant：KV Cache极致压缩](202604/20260401_TurboQuant_论文解读_KV%20Cache极致压缩.md) |
 | 2026-03-29 | [AgentDS：AI数据科学Agent竞赛实测](202603/20260329_AgentDS_论文解读_AI数据科学Agent竞赛实测.md) |
 | 2026-03-29 | [BEAVER：免训练分层提示压缩](202603/20260329_BEAVER_论文解读_免训练分层提示压缩.md) |
 | 2026-03-29 | [CarePilot：医疗GUI智能体自动化](202603/20260329_CarePilot_论文解读_医疗GUI智能体自动化.md) |
@@ -153,15 +183,15 @@ AI相关论文深度解读，每天解读前沿学术论文，中文解读，涵
 
 ## 主题分类
 
-- **Agent 智能体**: A-Mem, Plan-and-Act, Voyager, Zep, AgentScope, OpenClaw, InternAgent-1.5, SkillOrchestra, OmniGAIA, EMPO2, Agent Teams, OpenClaw-RL, SimAgent, SearchAgent, EvoScientist, ReAct, AI Agent Framework, OpenSeeker, CarePilot, MetaClaw, AgentDS, Agent-World, AgentSPEX, AgentSwing, AggAgent, CodeTracer, CocoaBench, GraSP, ReasoningGraphs, SemaCode, TREX, WorldKnowledge
-- **强化学习**: SkillRL, ERL, DrMAS, CompositionRL, TAROT, DSDR, Agent World Model, ICRL, Search-R1, ToolR0, ComplementaryRL, MultiAnswerRL, MARCH, MetaClaw, OpenClaw-RL, GFT, KnowRL, MEDS, MixedCUTS, NPO, RLVR弱监督, SPPO, TPO, TEMPO, LightningOPD, RethinkingOPD, CreditAssignment
-- **RAG 检索增强**: RLFKV, FaithfulRAG, SearchP1, SAGE, DeR2, REDSearcher, TokenOverflow, HybridRAG-Bench, TextRanking, LegalRAGBench, DLLMSearcher, BubbleRAG, DR-Venus, DualView, SLIDERS
-- **推理与思维**: CoM, StateLM, SAGE(推理), ReIn, MiniCPM SALA, ThinkingToRecall, ReasoningJudge, CHIMERA, PRISM, MiroThinker, SelfDistill, LambdaRLM, AttentionResiduals, SRLM, AgenticWorldModel, GoodLLMOptimizer, LLMReinventAlgo, ExploreExploit, p1
-- **记忆系统**: MemSkill v2, MemFly, AnatomyAgenticMemory, MemSifter, MementoSkills, CluE, HingeMem, Memanto, MemoryTransfer, TACO
+- **Agent 智能体**: A-Mem, Plan-and-Act, Voyager, Zep, AgentScope, OpenClaw, InternAgent-1.5, SkillOrchestra, OmniGAIA, EMPO2, Agent Teams, OpenClaw-RL, SimAgent, SearchAgent, EvoScientist, ReAct, AI Agent Framework, OpenSeeker, CarePilot, MetaClaw, AgentDS, Agent-World, AgentSPEX, AgentSwing, AggAgent, CodeTracer, CocoaBench, GraSP, ReasoningGraphs, SemaCode, TREX, WorldKnowledge, ManagedAgents, AgenticSkills, CORAL, FileGram, MIA, PaperCircle, Skill0, SkillX, ASI-Evolve
+- **强化学习**: SkillRL, ERL, DrMAS, CompositionRL, TAROT, DSDR, Agent World Model, ICRL, Search-R1, ToolR0, ComplementaryRL, MultiAnswerRL, MARCH, MetaClaw, OpenClaw-RL, GFT, KnowRL, MEDS, MixedCUTS, NPO, RLVR弱监督, SPPO, TPO, TEMPO, LightningOPD, RethinkingOPD, CreditAssignment, SRPO, RLSD, T2
+- **RAG 检索增强**: RLFKV, FaithfulRAG, SearchP1, SAGE, DeR2, REDSearcher, TokenOverflow, HybridRAG-Bench, TextRanking, LegalRAGBench, DLLMSearcher, BubbleRAG, DR-Venus, DualView, SLIDERS, LRAT
+- **推理与思维**: CoM, StateLM, SAGE(推理), ReIn, MiniCPM SALA, ThinkingToRecall, ReasoningJudge, CHIMERA, PRISM, MiroThinker, SelfDistill, LambdaRLM, AttentionResiduals, SRLM, AgenticWorldModel, GoodLLMOptimizer, LLMReinventAlgo, ExploreExploit, p1, ReasoningShift, ThereforeIAm, ThinkTwice
+- **记忆系统**: MemSkill v2, MemFly, AnatomyAgenticMemory, MemSifter, MementoSkills, CluE, HingeMem, Memanto, MemoryTransfer, TACO, LightThinker++
 - **评估基准**: GISA, LOCA, ResearchGym, ADBench, InnoEval, DeepImageSearch, How2Everything, BeyondSWE, UniG2U-Bench, ClawArena, ClawEval, AJBench, AgentSearchBench, CocoaBench
-- **模型架构**: GLM5, Nanbeige4.1-3B, AveyB, Qwen3CoderNext, MixGRM, IndexCache, LSE, BEAVER, DeepSeek-V4, ShadowPEFT, SkillFlow
-- **AI科研**: Autoresearch, SciDER, EvoScientist, Claudini, AiScientist, SimpleTES
-- **工程实践**: Claude Code玩法, Harness Engineering, AI Coding Agent, ADE-CoT, CoVe, Composer2, OpenSWE, DataLineage, PDR-RTV
+- **模型架构**: GLM5, Nanbeige4.1-3B, AveyB, Qwen3CoderNext, MixGRM, IndexCache, LSE, BEAVER, DeepSeek-V4, ShadowPEFT, SkillFlow, TurboQuant, TriAttention
+- **AI科研**: Autoresearch, SciDER, EvoScientist, Claudini, AiScientist, SimpleTES, MedicalAIScientist, PaperRecon, GrandCode, MetaHarness
+- **工程实践**: Claude Code玩法, Harness Engineering, AI Coding Agent, ADE-CoT, CoVe, Composer2, OpenSWE, DataLineage, PDR-RTV, ClaudeCode源码精读, Squeez, SelfExecSim
 
 ## License
 
