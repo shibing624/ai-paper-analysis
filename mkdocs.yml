@@ -8,20 +8,22 @@ edit_uri: edit/main/
 docs_dir: docs
 site_dir: site
 theme:
-  name: material
-  language: zh
-  features:
-  - navigation.tabs
-  - navigation.top
-  - search.highlight
-  - content.code.copy
-  - toc.follow
-  palette:
-    scheme: default
-    primary: indigo
-    accent: indigo
-  icon:
-    repo: fontawesome/brands/github
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+  - python
+  - yaml
+  - bash
+  - json
+  - go
+  - rust
+  navigation_depth: 2
+  collapse_navigation: true
+  titles_only: true
+  sticky_navigation: true
+  include_homepage_in_sidebar: true
+  prev_next_buttons_location: both
+  locale: zh_CN
 markdown_extensions:
 - admonition
 - footnotes
@@ -230,7 +232,3 @@ nav:
   - A-Mem：让LLM智能体拥有"会思考"的记忆系统: 202601/20260125_A-Mem_论文解读_智能体记忆的自主进化系统.md
   - Plan-and-Act：让AI智能体学会"先想后做": 202601/20260125_Plan-and-Act_论文解读_规划与执行分离的长周期任务智能体.md
   - Voyager：让 GPT-4 在《我的世界》里自主探索、终身学习: 202601/20260125_Voyager_论文解读_LLM驱动的开放式具身智能体.md
-extra:
-  social:
-  - icon: fontawesome/brands/github
-    link: https://github.com/shibing624

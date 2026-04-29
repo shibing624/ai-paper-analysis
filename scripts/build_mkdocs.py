@@ -110,25 +110,19 @@ def main() -> None:
         "edit_uri": "edit/main/",
         "docs_dir": "docs",
         "site_dir": "site",
+        # mkdocs 自带 readthedocs 主题：灰白配色，朴素清爽，不是 Material 那种蓝色。
+        # 底部原生支持 ← Previous / Next → 翻页，按 nav 顺序联动，无需额外插件。
         "theme": {
-            "name": "material",
-            "language": "zh",
-            # 关掉 navigation.instant：174 篇文章下，instant prefetch 会让首跳爆慢。
-            # 用最小可用的 feature 集合，保留搜索和顶栏跳转即可。
-            "features": [
-                "navigation.tabs",
-                "navigation.top",
-                "search.highlight",
-                "content.code.copy",
-                "toc.follow",
-            ],
-            # 强制 light 模式：去掉 light/dark 切换，避免首屏闪烁与多套样式加载。
-            "palette": {
-                "scheme": "default",
-                "primary": "indigo",
-                "accent": "indigo",
-            },
-            "icon": {"repo": "fontawesome/brands/github"},
+            "name": "readthedocs",
+            "highlightjs": True,
+            "hljs_languages": ["python", "yaml", "bash", "json", "go", "rust"],
+            "navigation_depth": 2,
+            "collapse_navigation": True,
+            "titles_only": True,
+            "sticky_navigation": True,
+            "include_homepage_in_sidebar": True,
+            "prev_next_buttons_location": "both",  # 顶部+底部都显示 prev/next
+            "locale": "zh_CN",
         },
         "markdown_extensions": [
             "admonition",
@@ -146,11 +140,10 @@ def main() -> None:
             "pymdownx.tabbed",
             "pymdownx.tasklist",
             # arithmatex 保留用于解析公式语法，但不再全站注入 MathJax，
-            # 实际带公式的文章很少，按需引入即可（可在文章 frontmatter 单独加 extra_javascript）。
+            # 实际带公式的文章很少，按需引入即可。
             {"pymdownx.arithmatex": {"generic": True}},
         ],
-        # search 只用中文分词，不重复加载英文索引，减小 search_index.json 体积。
-        # minify 插件压缩 HTML/CSS/JS，对 GitHub Pages 跨境访问体感影响最大。
+        # search 只用中文分词；minify 插件压缩 HTML/CSS/JS。
         "plugins": [
             {"search": {"lang": "zh"}},
             {
@@ -163,14 +156,6 @@ def main() -> None:
             },
         ],
         "nav": nav,
-        "extra": {
-            "social": [
-                {
-                    "icon": "fontawesome/brands/github",
-                    "link": "https://github.com/shibing624",
-                }
-            ]
-        },
     }
 
     with (ROOT / "mkdocs.yml").open("w", encoding="utf-8") as f:

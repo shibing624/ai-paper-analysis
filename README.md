@@ -6,8 +6,9 @@
 
 AI 相关论文深度解读，每天解读前沿学术论文，中文解读，涵盖 LLM、Agent、RAG、强化学习等方向。
 
-> 📖 **在线阅读（带搜索 / 暗色模式 / 按月份导航）**：<https://shibing624.github.io/ai-paper-analysis/>
-> 站点由 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) 构建，每次新增文章自动通过 GitHub Actions 部署。
+> 📖 **在线阅读（带搜索 / prev-next 翻页 / 按月份导航）**：<https://shibing624.github.io/ai-paper-analysis/>
+> 站点由 mkdocs `readthedocs` 主题构建，每次新增文章 push 到 `main` 后通过 GitHub Actions 自动部署。
+> 国内访问慢可改走 Cloudflare Pages 镜像（见下方"部署到国内可访问的 CDN"）。
 
 ## 文章列表
 
@@ -209,6 +210,30 @@ mkdocs serve                     # 浏览器打开 http://127.0.0.1:8000
 ```
 
 新增文章按 `YYYYMM/` 月份目录归档（如 `202605/`），push 到 `main` 后由 GitHub Actions 自动构建并部署到 [shibing624.github.io/ai-paper-analysis](https://shibing624.github.io/ai-paper-analysis/)。
+
+## 部署到国内可访问的 CDN
+
+GitHub Pages 在国内访问慢、有时被干扰。推荐 **Cloudflare Pages** 直接绑定本仓库的 `gh-pages` 分支，零 build、走 Cloudflare 全球 CDN（亚太节点），国内体感比 github.io 快 3~10 倍。
+
+### Cloudflare Pages（推荐，5 步搞定）
+
+1. 打开 <https://dash.cloudflare.com/> → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**。
+2. 授权 GitHub，选 `shibing624/ai-paper-analysis`。
+3. **Set up builds and deployments** 里这样填：
+   - Production branch：`gh-pages`（注意不是 main，gh-pages 是 Actions 已经构建好的静态产物）
+   - Framework preset：`None`
+   - Build command：留空
+   - Build output directory：`/`
+4. 点 **Save and Deploy**，30 秒后会拿到形如 `ai-paper-analysis.pages.dev` 的免备案域名。
+5. 之后每次 `main` 有 push → Actions 重新构建 `gh-pages` → Cloudflare Pages 自动检测并发布。
+
+可选：在 Cloudflare Pages 项目设置里绑定自定义域名（需要先把 NS 托管到 Cloudflare）。
+
+### Vercel（备选）
+
+同理：Vercel → New Project → Import 本仓库 → Branch 选 `gh-pages` → Framework Preset 选 `Other` → Build Command 留空 → Output Directory 填 `.` → Deploy。
+
+> 两种方案都不需要在仓库里额外加配置文件，配置全在对应平台 UI 里完成。`gh-pages` 分支是 GitHub Actions 跑 `mkdocs gh-deploy` 的产物，所有 CDN 平台共享同一份构建结果。
 
 ## License
 
