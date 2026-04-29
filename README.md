@@ -211,8 +211,6 @@ mkdocs serve                     # 浏览器打开 http://127.0.0.1:8000
 
 新增文章按 `YYYYMM/` 月份目录归档（如 `202605/`），push 到 `main` 后由 GitHub Actions 自动构建并部署到 [shibing624.github.io/ai-paper-analysis](https://shibing624.github.io/ai-paper-analysis/)。
 
-中国国内访问：https://ai-paper-analysis.pages.dev/
-
 ## License
 
 [Apache License 2.0](LICENSE)
