@@ -1,0 +1,56 @@
+name: Build & Deploy MkDocs Site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "202601/**"
+      - "202602/**"
+      - "202603/**"
+      - "202604/**"
+      - "README.md"
+      - "scripts/build_mkdocs.py"
+      - ".github/workflows/deploy-docs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-docs
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -U pip
+          pip install \
+            mkdocs-material \
+            "mkdocs-material[imaging]" \
+            pymdown-extensions \
+            pyyaml
+
+      - name: Generate docs/ and mkdocs.yml
+        run: python scripts/build_mkdocs.py
+
+      - name: Deploy to GitHub Pages (gh-pages branch)
+        env:
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: mkdocs gh-deploy --force --no-history

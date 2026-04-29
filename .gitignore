@@ -222,8 +222,16 @@ outputs/
 
 # 旧文章和其他非发布内容
 old_articles/
+digest_articles
 openclaw深度解读/
 write-industry-paper/
+
+# 论文图片：图床优先用 arXiv HTML / 木兰云在线 URL，本地 images/ 仅作中间临时文件，不入库
+images/
+
+# MkDocs 构建产物
+docs/
+site/
 
 # 工具和脚本目录
 RAG_read_paper/
