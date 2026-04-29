@@ -11,34 +11,15 @@ theme:
   name: material
   language: zh
   features:
-  - navigation.instant
-  - navigation.tracking
   - navigation.tabs
-  - navigation.tabs.sticky
-  - navigation.sections
   - navigation.top
-  - navigation.indexes
-  - search.suggest
   - search.highlight
-  - search.share
   - content.code.copy
-  - content.action.edit
   - toc.follow
   palette:
-  - media: '(prefers-color-scheme: light)'
     scheme: default
     primary: indigo
     accent: indigo
-    toggle:
-      icon: material/weather-night
-      name: 切换到深色模式
-  - media: '(prefers-color-scheme: dark)'
-    scheme: slate
-    primary: indigo
-    accent: indigo
-    toggle:
-      icon: material/weather-sunny
-      name: 切换到浅色模式
   icon:
     repo: fontawesome/brands/github
 markdown_extensions:
@@ -60,14 +41,15 @@ markdown_extensions:
 - pymdownx.tasklist
 - pymdownx.arithmatex:
     generic: true
-extra_javascript:
-- https://polyfill.io/v3/polyfill.min.js?features=es6
-- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 plugins:
 - search:
-    lang:
-    - zh
-    - en
+    lang: zh
+- minify:
+    minify_html: true
+    minify_js: true
+    minify_css: true
+    htmlmin_opts:
+      remove_comments: true
 nav:
 - 首页: index.md
 - 2026 年 4 月:

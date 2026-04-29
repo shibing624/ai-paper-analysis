@@ -113,43 +113,21 @@ def main() -> None:
         "theme": {
             "name": "material",
             "language": "zh",
+            # 关掉 navigation.instant：174 篇文章下，instant prefetch 会让首跳爆慢。
+            # 用最小可用的 feature 集合，保留搜索和顶栏跳转即可。
             "features": [
-                "navigation.instant",
-                "navigation.tracking",
                 "navigation.tabs",
-                "navigation.tabs.sticky",
-                "navigation.sections",
                 "navigation.top",
-                "navigation.indexes",
-                "search.suggest",
                 "search.highlight",
-                "search.share",
                 "content.code.copy",
-                "content.action.edit",
                 "toc.follow",
             ],
-            "palette": [
-                {
-                    "media": "(prefers-color-scheme: light)",
-                    "scheme": "default",
-                    "primary": "indigo",
-                    "accent": "indigo",
-                    "toggle": {
-                        "icon": "material/weather-night",
-                        "name": "切换到深色模式",
-                    },
-                },
-                {
-                    "media": "(prefers-color-scheme: dark)",
-                    "scheme": "slate",
-                    "primary": "indigo",
-                    "accent": "indigo",
-                    "toggle": {
-                        "icon": "material/weather-sunny",
-                        "name": "切换到浅色模式",
-                    },
-                },
-            ],
+            # 强制 light 模式：去掉 light/dark 切换，避免首屏闪烁与多套样式加载。
+            "palette": {
+                "scheme": "default",
+                "primary": "indigo",
+                "accent": "indigo",
+            },
             "icon": {"repo": "fontawesome/brands/github"},
         },
         "markdown_extensions": [
@@ -167,13 +145,23 @@ def main() -> None:
             "pymdownx.details",
             "pymdownx.tabbed",
             "pymdownx.tasklist",
+            # arithmatex 保留用于解析公式语法，但不再全站注入 MathJax，
+            # 实际带公式的文章很少，按需引入即可（可在文章 frontmatter 单独加 extra_javascript）。
             {"pymdownx.arithmatex": {"generic": True}},
         ],
-        "extra_javascript": [
-            "https://polyfill.io/v3/polyfill.min.js?features=es6",
-            "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
+        # search 只用中文分词，不重复加载英文索引，减小 search_index.json 体积。
+        # minify 插件压缩 HTML/CSS/JS，对 GitHub Pages 跨境访问体感影响最大。
+        "plugins": [
+            {"search": {"lang": "zh"}},
+            {
+                "minify": {
+                    "minify_html": True,
+                    "minify_js": True,
+                    "minify_css": True,
+                    "htmlmin_opts": {"remove_comments": True},
+                }
+            },
         ],
-        "plugins": [{"search": {"lang": ["zh", "en"]}}],
         "nav": nav,
         "extra": {
             "social": [
