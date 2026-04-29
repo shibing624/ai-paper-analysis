@@ -1,0 +1,4 @@
+mkdocs-material>=9.5
+mkdocs-material[imaging]
+pymdown-extensions>=10.0
+pyyaml>=6.0
