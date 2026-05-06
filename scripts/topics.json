@@ -73,11 +73,11 @@
   },
   "202602/20260219_InternAgent-1.5_论文解读_自主科学发现的统一智能体框架.md": {
     "hash": "f0a47ae65af0",
-    "topic": "AI 科研"
+    "topic": "Agent 智能体"
   },
   "202602/20260219_LOCA_论文解读_长上下文智能体基准.md": {
     "hash": "775a6915c8bf",
-    "topic": "Agent 智能体"
+    "topic": "评估与基准"
   },
   "202602/20260219_MemSkill_v2_论文解读_记忆技能进化驱动的自适应智能体.md": {
     "hash": "d4e24e710d96",
@@ -105,7 +105,7 @@
   },
   "202602/20260220_DeepImageSearch_论文解读_视觉历史中上下文感知图像检索基准.md": {
     "hash": "d40cbc7598b6",
-    "topic": "推理与思维链"
+    "topic": "评估与基准"
   },
   "202602/20260220_GLM5_论文解读_从氛围编码到智能体工程.md": {
     "hash": "9a2e2d990cbe",
@@ -137,7 +137,7 @@
   },
   "202602/20260220_ResearchGym_论文解读_AI智能体科研能力评估.md": {
     "hash": "74fac01ec8b8",
-    "topic": "AI 科研"
+    "topic": "评估与基准"
   },
   "202602/20260220_TAROT_论文解读_测试驱动能力自适应课程强化微调.md": {
     "hash": "47c0939255c9",
@@ -193,7 +193,7 @@
   },
   "202603/20260303_OmniGAIA_论文解读_全模态AI智能体.md": {
     "hash": "537044daf3af",
-    "topic": "Agent 智能体"
+    "topic": "评估与基准"
   },
   "202603/20260303_TextRanking_论文解读_深度研究中的文本排序.md": {
     "hash": "7c99e2d49ab5",
@@ -201,7 +201,7 @@
   },
   "202603/20260303_ToolR0_论文解读_零数据自进化工具学习.md": {
     "hash": "a22b07f3a631",
-    "topic": "强化学习"
+    "topic": "Agent 智能体"
   },
   "202603/20260307_ADE-CoT_论文解读_自适应测试时扩展图像编辑.md": {
     "hash": "950ee9aa5e94",
@@ -209,7 +209,7 @@
   },
   "202603/20260307_BeyondSWE_论文解读_代码智能体能否超越单仓库修Bug.md": {
     "hash": "80116f3474c5",
-    "topic": "工程实践与 Coding Agent"
+    "topic": "评估与基准"
   },
   "202603/20260307_CHIMERA_论文解读_紧凑合成数据驱动的通用推理.md": {
     "hash": "3b387f820c1b",
@@ -221,7 +221,7 @@
   },
   "202603/20260307_LegalRAGBench_论文解读_法律RAG基准评估.md": {
     "hash": "f5627adfd10f",
-    "topic": "RAG 检索增强"
+    "topic": "评估与基准"
   },
   "202603/20260307_MemSifter_论文解读_结果驱动代理推理卸载LLM记忆检索.md": {
     "hash": "33c865030de0",
@@ -309,7 +309,7 @@
   },
   "202603/20260317_OpenSWE_论文解读_147万美元打造最大开源SWE训练环境.md": {
     "hash": "16acc6a0fd02",
-    "topic": "Agent 智能体"
+    "topic": "工程实践与 Coding Agent"
   },
   "202603/20260317_OpenSeeker_论文解读_首个完全开源训练数据的前沿搜索Agent.md": {
     "hash": "e367a038209c",
@@ -329,7 +329,7 @@
   },
   "202603/20260323_MementoSkills_论文解读_让Agent自己设计Agent的自进化技能系统.md": {
     "hash": "2ecf8a80b223",
-    "topic": "记忆系统"
+    "topic": "Agent 智能体"
   },
   "202603/20260323_MetaClaw_论文解读_让AI智能体在失败中自我进化的持续元学习框架.md": {
     "hash": "b9c60d9e9900",
@@ -373,7 +373,7 @@
   },
   "202603/20260329_Composer2_论文解读_Cursor专用编程Agent模型训练全链路.md": {
     "hash": "18e457e94256",
-    "topic": "强化学习"
+    "topic": "工程实践与 Coding Agent"
   },
   "202603/20260329_LambdaRLM_论文解读_用Lambda演算解决长上下文推理衰减.md": {
     "hash": "0fe61f7e3085",
@@ -469,7 +469,7 @@
   },
   "202604/20260409_PaperCircle_论文解读_多智能体论文发现与分析框架.md": {
     "hash": "a68f73b2a5f0",
-    "topic": "Agent 智能体"
+    "topic": "AI 科研"
   },
   "202604/20260409_RLSD_论文解读_自蒸馏遇上强化学习的信用分配突破.md": {
     "hash": "9d7b621f7944",
@@ -481,7 +481,7 @@
   },
   "202604/20260409_SelfExecSim_论文解读_代码模型自执行模拟.md": {
     "hash": "05ad9e6706d6",
-    "topic": "工程实践与 Coding Agent"
+    "topic": "强化学习"
   },
   "202604/20260409_Skill0_论文解读_技能内化零样本Agent.md": {
     "hash": "ccb0f95a4f46",
@@ -525,7 +525,7 @@
   },
   "202604/20260421_AiScientist_论文解读_自主长周期ML研究工程.md": {
     "hash": "7cec553c51d6",
-    "topic": "AI 科研"
+    "topic": "工程实践与 Coding Agent"
   },
   "202604/20260421_CocoaBench_论文解读_统一数字Agent评测.md": {
     "hash": "abdaf14a7faa",
@@ -541,7 +541,7 @@
   },
   "202604/20260421_DataLineage_论文解读_后训练LLM数据谱系追踪.md": {
     "hash": "7083e4e42de2",
-    "topic": "AI 科研"
+    "topic": "Agent 智能体"
   },
   "202604/20260421_ExploreExploit_论文解读_LM_Agent探索与利用误差可测量.md": {
     "hash": "6e51dfc70bc1",
@@ -561,11 +561,11 @@
   },
   "202604/20260421_LLMReinventAlgo_论文解读_LLM能否重新发明基础算法.md": {
     "hash": "ad21c2023851",
-    "topic": "AI 科研"
+    "topic": "推理与思维链"
   },
   "202604/20260421_LightningOPD_论文解读_离线在线策略蒸馏加速后训练.md": {
     "hash": "cbbd32ce4d9b",
-    "topic": "模型架构与训练"
+    "topic": "强化学习"
   },
   "202604/20260421_MEDS_论文解读_记忆增强的动态奖励塑形.md": {
     "hash": "ef55d1d8dfc4",
@@ -577,11 +577,11 @@
   },
   "202604/20260421_ReasoningGraphs_论文解读_证据驱动的推理图确定性Agent.md": {
     "hash": "bd1291b0367b",
-    "topic": "Agent 智能体"
+    "topic": "推理与思维链"
   },
   "202604/20260421_RethinkingOPD_论文解读_在线策略蒸馏的成功条件与机制.md": {
     "hash": "9e0c8b9e18df",
-    "topic": "评估与基准"
+    "topic": "推理与思维链"
   },
   "202604/20260421_SPPO_论文解读_序列级PPO解决长链推理信用分配.md": {
     "hash": "adf6db1c6405",
@@ -597,7 +597,7 @@
   },
   "202604/20260421_TREX_论文解读_Agent驱动的LLM微调自动化.md": {
     "hash": "d3f096937822",
-    "topic": "工程实践与 Coding Agent"
+    "topic": "Agent 智能体"
   },
   "202604/20260421_p1_论文解读_少样本提示优化.md": {
     "hash": "c80dbed1273c",
@@ -637,7 +637,7 @@
   },
   "202604/20260429_DualView_论文解读_指令检索的极性反转训练.md": {
     "hash": "7d2d149c57c7",
-    "topic": "评估与基准"
+    "topic": "RAG 检索增强"
   },
   "202604/20260429_GFT_论文解读_把SFT当稀疏奖励RL重做.md": {
     "hash": "834aa6c9f0d6",
@@ -645,7 +645,7 @@
   },
   "202604/20260429_GoodLLMOptimizer_论文解读_LLM作为进化搜索算子的局部精修机制.md": {
     "hash": "c135298be24f",
-    "topic": "AI 科研"
+    "topic": "强化学习"
   },
   "202604/20260429_Memanto_论文解读_反图谱的Agent记忆与信息论检索.md": {
     "hash": "62eb881d8217",
@@ -681,11 +681,11 @@
   },
   "202604/20260429_SkillFlow_论文解读_Agent终身技能进化的能力鸿沟.md": {
     "hash": "e96f48bcac99",
-    "topic": "工程实践与 Coding Agent"
+    "topic": "评估与基准"
   },
   "202604/20260429_TACO_论文解读_终端Agent自演化上下文压缩.md": {
     "hash": "a299028df521",
-    "topic": "工程实践与 Coding Agent"
+    "topic": "Agent 智能体"
   },
   "202604/20260429_TEMPO_论文解读_测试时训练的EM拼图.md": {
     "hash": "dc18745effee",
