@@ -28,14 +28,20 @@ import asyncio
 import hashlib
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
 from openai import AsyncOpenAI
 
 ROOT = Path(__file__).resolve().parent.parent
-MONTH_DIRS = ["202601", "202602", "202603", "202604"]
 CACHE_FILE = ROOT / "scripts" / "topics.json"
+MONTH_RE = re.compile(r"^\d{6}$")
+
+
+def discover_month_dirs(root: Path) -> list[str]:
+    """扫描 root 下所有形如 YYYYMM 的目录名（按时间正序）。"""
+    return sorted(d.name for d in root.iterdir() if d.is_dir() and MONTH_RE.fullmatch(d.name))
 
 TAXONOMY = [
     "Agent 智能体",
@@ -146,10 +152,10 @@ async def main_async(force: bool) -> None:
 
     todo: list[tuple[str, str]] = []
     skipped = 0
-    for month in MONTH_DIRS:
+    month_dirs = discover_month_dirs(ROOT)
+    print(f"[classify] 扫描到月份目录：{', '.join(month_dirs) or '(空)'}")
+    for month in month_dirs:
         d = ROOT / month
-        if not d.is_dir():
-            continue
         for md in sorted(d.glob("*.md")):
             relpath = f"{month}/{md.name}"
             head = read_head(md)

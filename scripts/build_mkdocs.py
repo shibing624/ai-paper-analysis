@@ -29,7 +29,15 @@ ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 SITE_ASSETS = ROOT / "scripts" / "site_assets"
 TOPICS_CACHE = ROOT / "scripts" / "topics.json"
-MONTH_DIRS = ["202601", "202602", "202603", "202604"]
+README_FILE = ROOT / "README.md"
+MONTH_RE = re.compile(r"^\d{6}$")
+README_LIST_START = "<!-- AUTO-LIST-START -->"
+README_LIST_END = "<!-- AUTO-LIST-END -->"
+
+
+def discover_month_dirs(root: Path) -> list[str]:
+    """扫描 root 下所有形如 YYYYMM 的目录名（按时间正序）。"""
+    return sorted(d.name for d in root.iterdir() if d.is_dir() and MONTH_RE.fullmatch(d.name))
 
 # 主题展示顺序（与 classify_topics.py 的 TAXONOMY 一致；nav 里按这个顺序排）
 TOPIC_ORDER = [
@@ -78,14 +86,37 @@ def format_month_label(month_key: str) -> str:
     return f"{y} 年 {mo} 月"
 
 
+def update_readme_list(entries: list[dict]) -> None:
+    """用所有解读文章重写 README.md 的文章列表段（sentinel 之间的内容）。
+
+    sentinel 之外保持不动；如未找到 sentinel 则不改。entries 已按日期倒序。
+    """
+    if not README_FILE.exists():
+        return
+    text = README_FILE.read_text(encoding="utf-8")
+    if README_LIST_START not in text or README_LIST_END not in text:
+        print(f"[build_mkdocs] WARN: README 缺少 sentinel，跳过自动列表更新")
+        return
+
+    lines = ["", "| 日期 | 文章 |", "|------|------|"]
+    for e in entries:
+        lines.append(f"| {e['date'].isoformat()} | [{e['title']}]({e['file']}) |")
+    block = "\n".join(lines)
+
+    pattern = re.compile(
+        re.escape(README_LIST_START) + r".*?" + re.escape(README_LIST_END),
+        flags=re.DOTALL,
+    )
+    new = pattern.sub(f"{README_LIST_START}\n{block}\n{README_LIST_END}", text)
+    if new != text:
+        README_FILE.write_text(new, encoding="utf-8")
+        print(f"[build_mkdocs] README 文章列表已刷新（{len(entries)} 篇）")
+
+
 def main() -> None:
     if DOCS.exists():
         shutil.rmtree(DOCS)
     DOCS.mkdir()
-
-    readme = ROOT / "README.md"
-    if readme.exists():
-        shutil.copy(readme, DOCS / "index.md")
 
     # 拷贝自定义 CSS/JS（拓宽正文 + 右侧浮动 TOC + scrollspy）。
     if SITE_ASSETS.is_dir():
@@ -104,11 +135,12 @@ def main() -> None:
 
     nav_by_month: dict[str, list[dict]] = defaultdict(list)
     nav_by_topic: dict[str, list[dict]] = defaultdict(list)
+    all_entries: list[dict] = []
     total = 0
-    for month in MONTH_DIRS:
+    month_dirs = discover_month_dirs(ROOT)
+    print(f"[build_mkdocs] 扫描到月份目录：{', '.join(month_dirs) or '(空)'}")
+    for month in month_dirs:
         src_dir = ROOT / month
-        if not src_dir.is_dir():
-            continue
         dst_dir = DOCS / month
         dst_dir.mkdir(parents=True, exist_ok=True)
         for md in sorted(src_dir.glob("*.md")):
@@ -120,10 +152,16 @@ def main() -> None:
                 "date": parse_date(md.name),
             }
             nav_by_month[month].append(entry)
+            all_entries.append(entry)
             topic = topics_map.get(relpath)
             if topic:
                 nav_by_topic[topic].append(entry)
             total += 1
+
+    update_readme_list(sorted(all_entries, key=lambda x: (x["date"], x["file"]), reverse=True))
+
+    if README_FILE.exists():
+        shutil.copy(README_FILE, DOCS / "index.md")
 
     nav: list = [{"首页": "index.md"}]
 
