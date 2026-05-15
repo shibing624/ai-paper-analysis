@@ -61,7 +61,7 @@ nav:
 - 首页: index.md
 - 按主题:
   - Agent 智能体 (52):
-    - 记忆 Agent 也要「整体调参」：三星 × GMU 把自动提示优化做成工业闭环: 202605/20260507_ActivePromptMemoryAgent_论文解读_记忆增强对话Agent的数据高效主动提示优化.md
+    - 三套 Prompt 互相甩锅，怎么调？三星 × GMU 把记忆 Agent 的 APO 做成可落地闭环: 202605/20260507_ActivePromptMemoryAgent_论文解读_记忆增强对话Agent的数据高效主动提示优化.md
     - 决策和执行拆开训：一篇把 Agentic RAG 写成 MDP、再用剪枝把数据造快 6 倍的工业界论文: 202605/20260507_DecExRAG_论文解读_过程监督优化Agentic_RAG决策与执行.md
     - 好过程无需好答案：把 Agent 的规划和总结拆开训，工业 RL 才走得通: 202605/20260507_EGP_论文解读_好过程无需好答案的Agent规划RL.md
     - Agent别再"想都不想就动手"了：SAND教大模型先在脑子里把候选动作走一遍: 202605/20260507_SAND_论文解读_自我教学提升Agent行动深思.md
@@ -164,15 +164,13 @@ nav:
     - 腾讯广告的RAG实战：如何用强化学习干掉92.7%的URL幻觉？: 202602/20260227_FaithfulRAG_论文解读_工业级广告问答强化协同适应框架.md
     - 当RAG的"压缩包"爆了：如何检测Token溢出？: 202602/20260220_TokenOverflow_论文解读_RAG压缩Token溢出检测.md
     - 金融RAG的幻觉难题：用原子知识单元让模型"说实话": 202602/20260219_RLFKV_论文解读_金融RAG幻觉缓解.md
-  - 推理与思维链 (24):
+  - 推理与思维链 (22):
     - CODI：让模型把思维链"塞"进连续空间，6 个隐向量顶 20 个 token: 202605/20260507_CODI_论文解读_自蒸馏将思维链压缩到连续空间.md
-    - 推理写太长还不一定对？这篇 Industry Track 论文用「token 置信度」把 CoT 砍半还要涨分: 202605/20260507_ConfidenceAwareReasoning_论文解读_置信度感知的自引导推理轨迹.md
     - 别让模型「想太多」：中国联通团队把推理长度做成难度自适应——DAST 论文精读: 202605/20260507_DAST_论文解读_难度自适应慢思考推理模型.md
     - 让模型"故意答错"，反而把验证器训得更准——逻辑推理上的 ORM + Test-Time Scaling 实验: 202605/20260507_LogicalORM_论文解读_结果奖励模型驱动逻辑推理测试时扩展.md
     - 让奖励模型先"想清楚"再打分：R-PRM 把 PRM 从打分器升级成推理者: 202605/20260507_RPRM_论文解读_推理驱动的过程奖励建模.md
     - RethinkMCTS：让MCTS会"反省"，把走歪的思路改对再继续搜代码: 202605/20260507_RethinkMCTS_论文解读_MCTS精炼错误思路驱动代码生成.md
     - 让 o1 学会自己上网查资料：Search-o1 给大推理模型补上的那块知识短板: 202605/20260507_Searcho1_论文解读_Agentic搜索增强大推理模型.md
-    - Z1：用代码轨迹治模型的"过度思考"——只花 30% 的思考 token，效果对齐 R1-Distill-7B: 202605/20260507_Z1_论文解读_代码驱动的高效测试时扩展.md
     - LLM能从零重新发明基础算法吗？遗忘后再发明，最强模型成功率90%: 202604/20260421_LLMReinventAlgo_论文解读_LLM能否重新发明基础算法.md
     - Reasoning Graphs：让RAG Agent不再"翻车"的证据图谱: 202604/20260421_ReasoningGraphs_论文解读_证据驱动的推理图确定性Agent.md
     - OPD不是万能药：大模型在线策略蒸馏什么时候能work，什么时候一定崩: 202604/20260421_RethinkingOPD_论文解读_在线策略蒸馏的成功条件与机制.md
@@ -246,8 +244,7 @@ nav:
     - Avey-B：抛弃注意力机制，用"分拣员+处理器"重新定义双向编码器: 202602/20260225_AveyB_论文解读_无注意力双向编码器.md
     - GLM-5：当大模型学会"自己写代码"，从Vibe Coding到Agentic Engineering的跨越: 202602/20260220_GLM5_论文解读_从氛围编码到智能体工程.md
     - MiniCPM-SALA：让Transformer在百万token下跑起来: 202602/20260219_MiniCPM_SALA_论文解读_混合注意力长上下文.md
-  - AI 科研 (8):
-    - 当"世界模型"成了一个谁都看不懂彼此的词：一份给Agentic AI的能力分级地图: 202604/20260429_AgenticWorldModel_论文解读_L1L2L3能力分层与四类世界规律.md
+  - AI 科研 (7):
     - 'ASI-Evolve: 让AI自己搞研究、自己做实验、自己迭代进化 -- 这事靠谱吗？': 202604/20260409_ASI-Evolve_论文解读_AI自我加速闭环研究框架.md
     - '找论文这件事，是时候让 Agent 替你干了 -- Paper Circle: 多智能体学术发现与分析框架': 202604/20260409_PaperCircle_论文解读_多智能体论文发现与分析框架.md
     - AI能自主做临床科研了吗？港中文&斯坦福联手造出第一个医学AI科学家: 202604/20260401_MedicalAIScientist_论文解读_AI能自主做临床科研了吗.md
@@ -256,7 +253,7 @@ nav:
     - EvoScientist：让AI科学家学会"长记性"——多智能体进化框架如何实现端到端科研自动化: 202603/20260316_EvoScientist_论文解读_多智能体进化AI科学家的端到端科研发现.md
     - 🔬 Autoresearch 深度解读：Karpathy 的"AI 自主科研"到底有没有戏？: 202603/20260314_Autoresearch深度解读_AI自主科研循环的黎明还是幻觉.md
   - 工程实践与 Coding Agent (17):
-    - 先想清楚再搜、搜到了再改：Think-Search-Patch 把「仓库级修 bug」拆成可训练的流水线: 202605/20260507_ThinkSearchPatch_论文解读_检索增强的仓库级代码修复推理框架.md
+    - Think-Search-Patch：让 7B-14B 模型把仓库级 bug 修出 GPT-4 三倍的命中率: 202605/20260507_ThinkSearchPatch_论文解读_检索增强的仓库级代码修复推理框架.md
     - Agent Coding 测试时算力怎么花？Meta 给出了一个反直觉的答案：先做"摘要"再做"选拔": 202604/20260429_PDR-RTV_论文解读_Agentic_Coding的测试时算力扩展.md
     - 上下文永远不够用：SLIDERS 把长文档问答从"读完所有 token"换成"查数据库": 202604/20260429_SLIDERS_论文解读_长文档QA上下文永远不够用结构化推理才是出路.md
     - AiScientist：扔掉对话接力棒，用文件总线撑起23小时自主科研: 202604/20260421_AiScientist_论文解读_自主长周期ML研究工程.md
@@ -274,11 +271,46 @@ nav:
     - Qwen3-Coder-Next：80B参数只激活3B，如何用"小代价"训出最强编程智能体: 202603/20260307_Qwen3CoderNext_论文解读_80B参数3B激活的编程智能体如何登顶SWE-Bench.md
     - 扒开 Claude Code 的底裤：为什么你的 AI Agent 总是半途而废？: 202602/20260203_AI_Coding_Agent深度解读_高任务完成度背后的Prompt工程秘密.md
 - 2026 年 5 月:
+  - 不要再给Agent硬塞PRM了：百度这篇AEM用一个"熵的呼吸节奏"把信用分配做了: 202605/20260514_AEM_论文解读_Agent强化学习的自适应熵调制.md
+  - ARIS：当你怀疑 AI 在"看起来很对"地胡说八道——上海交大开源的跨模型对抗科研 Harness: 202605/20260514_ARIS_论文解读_跨模型对抗协作的自主科研Harness.md
+  - 多跳RAG总在桥接事实上栽跟头：NYU这套AdaGATE把证据装配当成了"修补题": 202605/20260514_AdaGATE_论文解读_多跳RAG的token受限证据装配.md
+  - Agentic Architect：让 LLM 帮你"进化"出 CPU 微架构——预取器跑赢 SMS 21%: 202605/20260514_AgenticArchitect_论文解读_LLM驱动CPU微架构进化设计.md
+  - 把"提想法-写代码-跑实验-改下一版"整个交给Agent：CMU这篇把ML自动研究跑成了一条可审计的轨迹: 202605/20260514_AutoResearch_论文解读_多专家智能体闭环ML研究.md
+  - BRIGHT-Pro 与 RTriever：把"推理密集型检索"从静态榜单拉回 Deep Research 真实战场: 202605/20260514_BRIGHT-Pro_论文解读_推理密集检索的Agentic评测与训练.md
+  - Claw-Eval-Live：连 Opus 都过不了 70%，工作流 Agent 离"自动化"还差一个数量级: 202605/20260514_ClawEvalLive_论文解读_可刷新Workflow_Agent活体评测.md
+  - Ctx2Skill：让模型读完一份文档就"自己出题考自己"——无反馈下的 skill 自演化: 202605/20260514_Ctx2Skill_论文解读_无反馈自演化的上下文技能发现.md
+  - 扔掉向量库，让 Agent 直接 grep 原始语料库——一篇打破检索神话的论文: 202605/20260514_DCI_论文解读_扔掉向量库让Agent直接grep语料库.md
+  - δ-mem：一个 8×8 的矩阵，能给 LLM 当"长期记忆"吗？: 202605/20260514_DeltaMem_论文解读_LLM在线关联记忆机制.md
+  - Eywa：当 LLM 不再"什么都自己来"，让科学基础模型上桌一起聊: 202605/20260514_Eywa_论文解读_异构科学基础模型协作Agent框架.md
+  - Fast-Slow Training：让 LLM 的"参数"和"上下文"一起学: 202605/20260514_FST_论文解读_LLM快慢权重协同训练.md
+  - Faithful Uncertainty：把"幻觉"重新定义为"自信地说错"——Google 在告诉你下一步该怎么走: 202605/20260514_FaithfulUncertainty_论文解读_用元认知重新框定LLM幻觉问题.md
+  - 当 LLM 不断"总结过去的经验"，记忆反而变坏：Agentic Memory 的隐性陷阱: 202605/20260514_FaultyMemory_论文解读_LLM连续记忆压缩的陷阱.md
+  - 当工具库膨胀到4万个，Agent该怎么"找工具"？UCLA这篇FitText把检索塞进了推理循环: 202605/20260514_FitText_论文解读_智能体工具检索的演化式发现.md
+  - G-Zero：开放域任务里，没有 verifier 也能跑出 self-play 的奇迹？: 202605/20260514_GZero_论文解读_无验证器自演化的开放域生成.md
+  - HeavySkill：撕掉 Agent Harness 这层壳，里面真正干活的其实是模型自己的"重思考": 202605/20260514_HeavySkill_论文解读_重思考即智能体内化技能.md
+  - LPO：把 GRPO 的"隐式投影"翻到台面上——RLVR 的几何统一视角: 202605/20260514_LPO_论文解读_把GRPO重新理解为响应单纯形上的目标投影.md
+  - LenVM：把"还剩多少 token"建模成 value——给 LLM 装上了一个 token 级长度刻度尺: 202605/20260514_LenVM_论文解读_Token级生成长度价值模型.md
+  - 往 Prompt 前面拼一段 Lorem 乱码，GRPO 居然就训出来了——LoPE 是怎么靠"废话"破开零优势困境的: 202605/20260514_LoPE_论文解读_Lorem乱码扰动破解GRPO零优势困境.md
+  - NanoResearch：研究自动化跑得起来不算赢，跑出"你这个研究员要的东西"才算赢: 202605/20260514_NanoResearch_论文解读_技能记忆策略共演化的个性化科研自动化.md
+  - 多智能体 LLM 的 RL 该往哪走？这篇 84 篇综述把"编排轨迹"作为新单元: 202605/20260514_OrchestrationTraceRL_论文解读_多智能体RL的编排轨迹视角.md
+  - Ψ-RAG：把 Tree-RAG 从"单文档玩具"推到"语料库级跨文档多跳"——比 RAPTOR 强 25.9%、比 HippoRAG 2 强 7.4%: 202605/20260514_PsiRAG_论文解读_跨文档多跳的层次抽象树RAG.md
+  - RubricEM：当 Deep Research Agent 没有 ground truth，RL 还怎么训？: 202605/20260514_RubricEM_论文解读_面向深度研究的元强化学习.md
+  - S2G-RAG：让 RAG 学会回答"我到底还差什么"——HotpotQA 上 F1 暴涨 13 个点: 202605/20260514_S2GRAG_论文解读_结构化充分性与缺口判断的迭代RAG.md
+  - SEIF：让模型自己出题考自己——指令跟随能力的自演化训练: 202605/20260514_SEIF_论文解读_指令跟随的自演化强化学习.md
+  - SLIM：Agent 的"技能仓库"不应该一味变大或变小——技能要有生命周期: 202605/20260514_SLIM_论文解读_Agent技能生命周期管理.md
+  - SSL：把 SKILL.md 拆成三层结构化图谱——技能检索 MRR 涨 8 个点、风险评估 F1 涨 10 个点: 202605/20260514_SSL_论文解读_Agent技能从文本到三层结构化表征.md
+  - Skill1：用一个奖励信号，把 Agent 的"选、用、攒"三件事一起练出来: 202605/20260514_Skill1_论文解读_Agent技能库协同进化.md
+  - SkillOS：与其训练 Agent 自己变强，不如训练一个专门管"技能库"的小模型: 202605/20260514_SkillOS_论文解读_RL训练智能体技能管家.md
+  - 让 Agent 先「想清楚再动手」：StraTA 给长程 Agent RL 加上一层策略抽象: 202605/20260514_StraTA_论文解读_长程Agent的策略级抽象.md
+  - TMAS：当并行多路推理不够用，怎么让多 Agent 真正"协同"起来？: 202605/20260514_TMAS_论文解读_多智能体协同的测试时扩展框架.md
+  - ThinC：让模型用代码"思考"，而不是用代码"验证": 202605/20260514_ThinC_论文解读_让模型用代码思考.md
+  - UniPrefill：当稀疏注意力遇到混合架构，长上下文 Prefill 该怎么加速？: 202605/20260514_UniPrefill_论文解读_通用长上下文预填充加速框架.md
+  - UniSD：不靠"更强的老师"，LLM 能不能自己教自己变强？: 202605/20260514_UniSD_论文解读_统一自蒸馏框架.md
+  - Web2BigTable：用 GPT-5 mini + Gemini 3 Flash 干翻 GPT-5 High——双层 Agent + 自演化 skill bank 把 SR 拉到 7.5 倍: 202605/20260514_Web2BigTable_论文解读_双层多智能体互联网级信息抽取.md
   - 多目标文本生成里，权重别再手写：AW-GRPO 把 GRPO 从「偏科」拉回正轨: 202605/20260507_AWGRPO_论文解读_多目标文本生成的自动加权GRPO.md
-  - 记忆 Agent 也要「整体调参」：三星 × GMU 把自动提示优化做成工业闭环: 202605/20260507_ActivePromptMemoryAgent_论文解读_记忆增强对话Agent的数据高效主动提示优化.md
+  - 三套 Prompt 互相甩锅，怎么调？三星 × GMU 把记忆 Agent 的 APO 做成可落地闭环: 202605/20260507_ActivePromptMemoryAgent_论文解读_记忆增强对话Agent的数据高效主动提示优化.md
   - CODI：让模型把思维链"塞"进连续空间，6 个隐向量顶 20 个 token: 202605/20260507_CODI_论文解读_自蒸馏将思维链压缩到连续空间.md
   - CodeRAG：把"检索什么"和"重排什么"都想清楚——仓库级代码补全的一次系统性重做: 202605/20260507_CodeRAG_论文解读_仓库级代码补全的相关必要知识检索.md
-  - 推理写太长还不一定对？这篇 Industry Track 论文用「token 置信度」把 CoT 砍半还要涨分: 202605/20260507_ConfidenceAwareReasoning_论文解读_置信度感知的自引导推理轨迹.md
   - 别让模型「想太多」：中国联通团队把推理长度做成难度自适应——DAST 论文精读: 202605/20260507_DAST_论文解读_难度自适应慢思考推理模型.md
   - 决策和执行拆开训：一篇把 Agentic RAG 写成 MDP、再用剪枝把数据造快 6 倍的工业界论文: 202605/20260507_DecExRAG_论文解读_过程监督优化Agentic_RAG决策与执行.md
   - 把 RL Agent 直接扔进真实互联网：DeepResearcher 撕开了 RAG 训练的舒适区: 202605/20260507_DeepResearcher_论文解读_真实环境RL驱动深度研究Agent.md
@@ -297,19 +329,17 @@ nav:
   - 把 Reward Model 拆成五个"专科医生"——SRM 用工程套路在 RM 上又榨了 8 个点: 202605/20260507_SRM_论文解读_结构化奖励模型.md
   - 让 o1 学会自己上网查资料：Search-o1 给大推理模型补上的那块知识短板: 202605/20260507_Searcho1_论文解读_Agentic搜索增强大推理模型.md
   - 部署即固化的Agent，怎么在线学新规则？ARIA给了一个能落地的答案: 202605/20260507_SelfImproveHITL_论文解读_测试时人在回路引导的自进化Agent.md
-  - 先想清楚再搜、搜到了再改：Think-Search-Patch 把「仓库级修 bug」拆成可训练的流水线: 202605/20260507_ThinkSearchPatch_论文解读_检索增强的仓库级代码修复推理框架.md
+  - Think-Search-Patch：让 7B-14B 模型把仓库级 bug 修出 GPT-4 三倍的命中率: 202605/20260507_ThinkSearchPatch_论文解读_检索增强的仓库级代码修复推理框架.md
   - TokenSelect：把 KV Cache 的"块级粗筛"砸碎到 Token 级，128K→1M 上下文加速 23.84 倍: 202605/20260507_TokenSelect_论文解读_动态Token级KV_Cache选择实现长上下文高效推理.md
   - TurboRAG：把RAG的Prefill搬到离线，TTFT直接快9.4倍: 202605/20260507_TurboRAG_论文解读_预计算KV_Cache加速RAG推理.md
   - WebAgent-R1：8B小模型在网页操作上把o3拉下马，多轮RL把分从8.5%硬拉到44.8%: 202605/20260507_WebAgentR1_论文解读_端到端多轮RL训练Web智能体.md
   - 让 Web Agent 自学不停滞——WebEvolver 用一个共演化世界模型撑起多步 Look-Ahead: 202605/20260507_WebEvolver_论文解读_共演化世界模型驱动Web智能体自进化.md
-  - Z1：用代码轨迹治模型的"过度思考"——只花 30% 的思考 token，效果对齐 R1-Distill-7B: 202605/20260507_Z1_论文解读_代码驱动的高效测试时扩展.md
   - iTool：合成数据加越多越没用？哈工大+华为用 MCTS 找出"那一小片错"，8B 反超 GPT-4o: 202605/20260507_iTool_论文解读_动态缺陷校准的强化微调工具使用.md
 - 2026 年 4 月:
   - Agent 当裁判光看 Trajectory 不够，它得自己去环境里查证 —— AJ-Bench 论文解读: 202604/20260429_AJBench_论文解读_Agent判官需要工具与环境.md
   - Agent-World：当智能体训练终于不用再"假装"在跟世界打交道: 202604/20260429_Agent-World_论文解读_可扩展真实环境合成与自演化智能体训练.md
   - AgentSPEX：当 Agent 框架开始把"控制流"从 Python 里抠出来: 202604/20260429_AgentSPEX_论文解读_YAML声明式Agent工作流与可执行规约.md
   - AgentSearchBench：在 1 万个真实 Agent 里挑一个能干活的，到底有多难？: 202604/20260429_AgentSearchBench_论文解读_执行驱动的智能体搜索评测.md
-  - 当"世界模型"成了一个谁都看不懂彼此的词：一份给Agentic AI的能力分级地图: 202604/20260429_AgenticWorldModel_论文解读_L1L2L3能力分层与四类世界规律.md
   - 异质任务下的记忆提取：为什么单一Prompt就是搞不定，得"先聚类再演化": 202604/20260429_CluE_论文解读_异质任务下的记忆提取自演化.md
   - DR-Venus：4B 小模型靠 1 万条开源数据，把 Deep Research 干到 9B 全员碾压: 202604/20260429_DR-Venus_论文解读_4B小模型靠1万条数据冲到Deep_Research前沿.md
   - 你的检索器其实在"假装"听指令——Snowflake 用一个反转技巧把 305M 小模型拉到 SOTA: 202604/20260429_DualView_论文解读_指令检索的极性反转训练.md
