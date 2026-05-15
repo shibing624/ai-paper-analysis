@@ -4,11 +4,11 @@
 
 你有没有碰到过这种情况——拿一个能打的 base 模型，在 MATH 这种"经典"数学集上跑 GRPO，结果训了半天，MATH 涨一两个点意思一下，AIME 这种真正有难度的题完全推不动，policy entropy 跌到地板上不再变化？
 
-这篇来自 Tencent AI Lab 和 University of Notre Dame 的工作给了一个挺干净的诊断：**问题不在模型不会做，而在它"做得太对了"**。当一个组里 16 个 rollout 全是正确答案，组内 reward 方差 → 0，标准化之后 advantage 也 → 0，梯度信号直接消失——这就是作者起的名字"saturation-induced collapse"。
+这篇来自 Tencent AI Lab 和 University of Notre Dame 的工作给了一个挺干净的诊断：**问题不在模型不会做，而在它"做得太对了"这件事**。当一个组里 16 个 rollout 全是正确答案，组内 reward 方差 → 0，标准化之后 advantage 也 → 0，梯度信号直接消失——这就是作者起的名字"saturation-induced collapse"。
 
 解法叫 **Mixed-CUTS**（Mixed Constrained Uniform Top-K Sampling），思路特别朴素：**别动训练目标，动 decoding**。一半 rollout 走标准采样（exploitation），另一半走 CUTS——在 Top-K 候选里做 δ 概率过滤后**均匀采样**（exploration）。两条流合并喂给 GRPO 算 advantage，强行把组内方差撑住。
 
-效果说实话挺打脸 baseline 的：Qwen3-4B 在 AIME25 上 Pass@1 比标准 GRPO 涨 **+15.1%**，maj@16 直接干到 **+23.2%**，甚至超过了 base 模型自己的 Thinking Mode。这告诉我一件事——**饱和的"简单数据"里其实还藏着大量 RL 没榨出来的信号**，前提是你得让模型在它的高置信区域里认真"分头走走"。
+效果说实话挺打脸 baseline 的：Qwen3-4B 在 AIME25 上 Pass@1 比标准 GRPO 涨 **+15.1 个点**，maj@16 直接干到 **+23.2 个点**，甚至超过了 base 模型自己的 Thinking Mode。这告诉我一件事——**饱和的"简单数据"里其实还藏着大量 RL 没榨出来的信号**，前提是你得让模型在它的高置信区域里认真"分头走走"。
 
 ---
 

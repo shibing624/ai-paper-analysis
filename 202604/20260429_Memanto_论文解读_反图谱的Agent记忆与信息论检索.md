@@ -10,7 +10,7 @@
 
 - **标题**：Memanto: Typed Semantic Memory with Information-Theoretic Retrieval for Long-Horizon Agents
 - **作者**：Seyed Moein Abtahi, Rasa Rahnema, Hetkumar Patel, Neel Patel, Majid Fekri, Tara Khani
-- **机构**：Moorcheh.ai / Memanto.ai 团队（论文未在抽象页明确署单位，但从作者历史工作[2]和Memanto/Moorcheh产品归属可以确认）
+- **机构**：Moorcheh.ai / Memanto.ai 团队 
 - **arXiv**：[2604.22085](https://arxiv.org/abs/2604.22085)
 - **日期**：2026-04-23
 - **页数 / 体量**：13页，10表，8图
