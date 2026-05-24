@@ -52,7 +52,7 @@ TAXONOMY = [
     "评估与基准",
     "模型架构与训练",
     "AI 科研",
-    "工程实践与 Coding Agent",
+    "工程实践与 Coding Agent", 
     "其他",
 ]
 

@@ -57,7 +57,7 @@
 
 ## 方法核心：从 query→retriever→top-k 到 grep→raw file→inspect
 
-![图 1：两种检索接口的对比。左：retriever-mediated retrieval，agent 经过 retriever 拿 top-k snippets；右：DCI（论文方案），agent 直接对原始语料用 grep / glob / bash 做细粒度搜索。](/Users/xuming/Documents/Codes/paper_analysis_md/images/2605.05242/fig1_overview.jpg)
+![图 1：两种检索接口的对比。左：retriever-mediated retrieval，agent 经过 retriever 拿 top-k snippets；右：DCI（论文方案），agent 直接对原始语料用 grep / glob / bash 做细粒度搜索。](https://www.mulanai.com/fs/files/0525_b233764a_fig1_ove.jpg)
 
 *图 1：两种检索接口的对比。左边是传统流水线——先离线建索引，再 retriever 把 corpus 压成 top-k snippets 喂给 agent；右边是 DCI——agent 直接用 `bash`、`grep`、`glob`、`read`、`python` 等终端工具命中原始 corpus，没有任何 embedding 或向量索引介入。注意右下角那个"Index Building Free"的小图标，这是 DCI 的核心物理特性之一。*
 
@@ -86,7 +86,7 @@
 
 DCI-Agent-Lite 设计了三件套来应对：
 
-![图 2：长程 DCI 的运行时上下文管理三件套——Truncation、Compaction、Summarization](/Users/xuming/Documents/Codes/paper_analysis_md/images/2605.05242/fig_context_mgmt.jpg)
+![图 2：长程 DCI 的运行时上下文管理三件套——Truncation、Compaction、Summarization](https://www.mulanai.com/fs/files/0525_877f8475_fig_cont.jpg)
 
 *图 2：上下文管理的三种机制。左侧 Truncation——每个 tool result 超过 20K 字符就硬截断；中间 Compaction——把更早的 tool 输出整体置换成 placeholder，但保留"调用过这个工具"的结构；右侧 Summarization——把所有压缩过的历史让模型重写成一段总结，最近 20K token 保留原文。*
 
@@ -123,7 +123,7 @@ $$\texttt{seg-score}(d_{t,i};d^*)=\max\left(1-\frac{\log \nu(\ell)}{\log \nu(|d^
 
 ### BrowseComp-Plus：agentic deep research
 
-![图 3：BrowseComp-Plus 上准确率 vs. 成本的 Pareto 前沿。绿色五角星是 DCI-Agent-Lite（GPT-5.4 nano），红色五角星是 DCI-Agent-CC（Claude Sonnet 4.6），灰色方块和橙色花朵是各家强模型 + Qwen3-Embed-8B retriever 的 baseline。](/Users/xuming/Documents/Codes/paper_analysis_md/images/2605.05242/fig_pareto.png)
+![图 3：BrowseComp-Plus 上准确率 vs. 成本的 Pareto 前沿。绿色五角星是 DCI-Agent-Lite（GPT-5.4 nano），红色五角星是 DCI-Agent-CC（Claude Sonnet 4.6），灰色方块和橙色花朵是各家强模型 + Qwen3-Embed-8B retriever 的 baseline。](https://www.mulanai.com/fs/files/0525_04330571_fig_pare.png)
 
 *图 3：BrowseComp-Plus 的成本-性能 Pareto 图。红星 DCI-Agent-CC 在 80.0% 准确率、$1016 成本的位置上，比同模型 retriever baseline（Claude Sonnet 4.6 + Qwen3-Embed-8B：65% 左右，$1440 成本）涨 +11pp 同时省 $424；左下角绿星 DCI-Agent-Lite 用 GPT-5.4 nano 在 $93 成本下做到 62.9%，跟用 Claude 4.6 / o3 配 retriever 的方案打得有来有回。*
 
@@ -179,7 +179,7 @@ NDCG@10 平均比专门做 reasoning rerank 的 ReasonRank-32B 还高 21.5。
 
 ### RQ2：DCI 多出来的对题，到底赢在哪？
 
-![图 4：左——830 题 BrowseComp-Plus 上 DCI-Agent-CC 与同底座 retriever agent 的重叠分析；右——DCI-Agent-CC 的工具调用分布与 bash 命令意图分布。](/Users/xuming/Documents/Codes/paper_analysis_md/images/2605.05242/fig_overlap.png)
+![图 4：左——830 题 BrowseComp-Plus 上 DCI-Agent-CC 与同底座 retriever agent 的重叠分析；右——DCI-Agent-CC 的工具调用分布与 bash 命令意图分布。](https://www.mulanai.com/fs/files/0525_d7f4228d_fig_over.png)
 
 *图 4-左：830 道题里两边都对的 484 题（58.3%）、只有 DCI 对的 176 题（21.2%）、只有 retriever 对的 76 题（9.2%）、都错的 94 题（11.3%）。下方柱状图把 176 道"只有 DCI 对"的题按 retriever 的 gold-doc recall 切片——只有 34 道（19%）是 retriever 完全没找到 gold doc；83 道（47%）retriever 部分召回；59 道（34%）retriever 已经完整召回了所有 gold doc，但仍然答错。*
 
@@ -189,7 +189,7 @@ NDCG@10 平均比专门做 reasoning rerank 的 ReasonRank-32B 还高 21.5。
 
 那 59 道 recall=100 还答错的题尤其说明问题——retriever pipeline 因为 snippet 截断、读错文件、抓错决定性那一行而失手；DCI 因为可以直接 `grep -n` + `sed -n '100,200p'` 把那一行钉死在屏幕上而过关。
 
-![图 5：DCI-Agent-CC 的工具调用分布——Bash 62.4%、Grep 33.0%，其他不到 5%；右侧把 Bash 拆成 10 类意图。](/Users/xuming/Documents/Codes/paper_analysis_md/images/2605.05242/fig_tool_ribbon.png)
+![图 5：DCI-Agent-CC 的工具调用分布——Bash 62.4%、Grep 33.0%，其他不到 5%；右侧把 Bash 拆成 10 类意图。](https://www.mulanai.com/fs/files/0525_4598741b_fig_tool.png)
 
 *图 5：工具调用与 Bash 意图分布。Bash 占 62.4%，平均每 query 26.33 次；Grep（Claude Code 内建的快速搜索）占 33.0%，13.94 次/query。Bash 内部前四大用法分别是 chain search（管道串 grep，22.3%）、document peek（head/tail/sed 看局部，18.0%）、regex 匹配（17.0%）、locate file（14.0%）。完整文件读取只占 9.1%。*
 
@@ -218,7 +218,7 @@ NDCG@10 平均比专门做 reasoning rerank 的 ReasonRank-32B 还高 21.5。
 
 ### RQ4：corpus 一变大，DCI 撑得住吗？
 
-![图 6：corpus 从 100K → 200K → 400K，DCI-Agent-CC 各项指标的变化（log 轴）。](/Users/xuming/Documents/Codes/paper_analysis_md/images/2605.05242/fig_scale.png)
+![图 6：corpus 从 100K → 200K → 400K，DCI-Agent-CC 各项指标的变化（log 轴）。](https://www.mulanai.com/fs/files/0525_cc310e5e_fig_scal.png)
 
 *图 6：corpus scaling。100K→400K，平均工具调用 38→123（+220%），延迟 360s→4188s（+1064%！），单 query 成本 $1.06→$3.06（+189%），准确率从 82.7% 跌到 43.0%（-39.7pp）。*
 

@@ -31,7 +31,7 @@
 
 论文用一个 Harry Potter 的经典问题来串起整个故事——"斯内普为什么杀邓布利多"。我特别喜欢这个例子，它把传统 RAG 的几种失败模式一次性展示了出来。
 
-![图1：三种 RAG 推理范式的对比示意。从上到下分别是 single-step retrieval（一次性检索拿到的证据相互矛盾）、multi-step retrieval（多步但每步独立、缺乏记忆）、ComoRAG 的 Stateful Reasoning（动态记忆工作区中的状态从"因果不完整"演化到"表面矛盾"再到"形成连贯上下文"）](https://www.mulanai.com/fs/files/0524_8ac97707_figure1.jpg)
+![图1：三种 RAG 推理范式的对比示意。左上 single-step RAG 拿到"斯内普是忠诚食死徒"的浅层证据，理解流于表面；左下 multi-step RAG 召回若干拼图碎片但相互矛盾、动机不明；右侧 ComoRAG 的 Stateful Reasoning 在动态记忆工作区里经过三轮 Context-Grounded Exploratory Probing 与 Knowledge Consolidation，从"因果不完整事件"演化到"表面矛盾"，再到"形成连贯上下文"，最终给出"这是忠诚而非背叛"的答案](https://www.mulanai.com/fs/files/0525_3dc62f30_fig1_thr.png)
 
 *图1：三种 RAG 范式对比。ComoRAG 的核心区别在右侧——记忆工作区里的认知状态会随着检索轮次演化*
 
@@ -49,7 +49,7 @@
 
 ComoRAG 的整体架构如下图。看起来有点复杂，但拆开看每一步其实都很直观。
 
-![图2：ComoRAG 整体框架。当推理陷入僵局（Failure）时进入元认知循环，包含 5 个核心算子：Self-Probe 生成新探查 query，Tri-Retrieve 在三层知识源上检索，Mem-Encode 生成新记忆单元，Mem-Fuse 融合历史记忆，Try-Answer 尝试给出答案](https://www.mulanai.com/fs/files/0524_694774c1_figure3.jpg)
+![图2：ComoRAG 整体框架与 Mrs. McGinty 案例。左上 Step 0/1 检索失败后进入元认知循环，包含五个核心算子：①Self-Probe 基于历史 probe 和上轮 cue 生成 3 个新探查 query；②Tri-Retrieve 在 Hierarchical Knowledge Source（真实/语义/情景三层）上同时检索；③Mem-Encode 把每条证据压成记忆单元；④Mem-Fuse 召回历史 cue 并融合成高层背景摘要；⑤Try-Answer 尝试给出答案，成功则输出 Final Answer，失败则 Mem-Update 后继续下一轮。下方展示了从"为什么 Mrs. MacIntyre 突然买墨水"出发，迭代探查到"她想给 Sunday Comet 报社写信"这条关键证据，最终选出选项 C 的完整推理链](https://www.mulanai.com/fs/files/0525_17247765_fig2_fra.png)
 
 *图2：完整框架。下方的 query 是 Mrs. McGinty 案例，最终在第 1-2 轮通过迭代探查找到"她想给报社写信"这条关键证据*
 
