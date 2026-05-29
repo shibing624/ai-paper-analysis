@@ -200,7 +200,7 @@ $$
 
 ## 七、Agent 数量越多就越好吗——有趣的反转
 
-![图4 不同基座模型在MMLU-PRO上随Agent数量变化的准确率曲线](https://www.mulanai.com/fs/files/0524_56eec32e_img3.jpg)
+![图4 不同基座模型在MMLU-PRO上随Agent数量变化的准确率曲线](https://www.mulanai.com/fs/files/0529_b06bf89a_20260529.png)
 
 *图4：随着 Agent 数量从 3 增加到 10，五个基座模型表现出截然相反的趋势。GPT-4、Qwen-2-72B、glm-4-9b 稳定上升或饱和；Llama-3-8B 基本持平；Mistral-7B 反而越来越差，从 62 跌到 60 出头。*
 
