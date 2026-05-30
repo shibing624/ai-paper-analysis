@@ -58,7 +58,7 @@ TAXONOMY = [
 
 HEAD_CHARS = 600
 CONCURRENCY = 10
-MODEL = "hunyuan-turbos-latest"
+MODEL = "hy3-preview"
 
 API_KEY = os.environ.get("HUNYUAN_API_KEY")
 if not API_KEY:
@@ -66,7 +66,7 @@ if not API_KEY:
 
 client = AsyncOpenAI(
     api_key=API_KEY,
-    base_url="http://hunyuanapi.woa.com/openapi/v1",
+    base_url="http://api.taiji.woa.com/openapi/v2",
 )
 
 SYSTEM_PROMPT = f"""你是一个论文分类助手。给定一篇 AI 论文中文解读的开头片段，从下面 10 个主题中**选且只选一个**最贴切的：
@@ -131,8 +131,9 @@ async def classify_one(relpath: str, head: str, sem: asyncio.Semaphore) -> tuple
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user", "content": head},
                 ],
+                stream=False,
                 temperature=0.0,
-                max_tokens=20,
+                max_tokens=50,
             )
             raw = resp.choices[0].message.content.strip()
             for t in TAXONOMY:
