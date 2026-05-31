@@ -4,9 +4,9 @@
 
 **论文标题：** Mitigating Length Bias in RLHF through a Causal Lens
 
-**arXiv 编号：** 2511.12573v1（2025-11-16 提交，AAAI 2026 录用）
+**arXiv 编号：** 2511.12573（AAAI 2026）
 
-**作者团队：** Hyeonji Kim、Sujeong Oh、Sanghack Lee（首尔大学方向，从署名习惯和 sty 文件 `snu-causal-2024.sty` 推断）
+**作者团队：** Hyeonji Kim、Sujeong Oh、Sanghack Lee 
 
 **一句话总结：** 这篇论文从因果视角重新审视 RLHF 中的长度偏差问题——奖励模型把"长"当成"好"是因为训练数据里 content quality 和 verbosity 这两个因子是纠缠的（confounded）。作者用 GPT-4o-mini 大规模反事实生成两类样本对（**length-divergent** 内容相同长度不同 / **content-divergent** 长度相同内容不同），让奖励模型在数据层面就把这两个变量解耦。在 49861 个原始样本里诊断出 23651 个（**47.43 个百分点**）确实有长度偏差，用反事实增强后训出的 reward model 在 RewardBench-1/2 + Chatbot Arena LC accuracy 上整体提升，下游 PPO 训练后 AlpacaEval 上 length-controlled winrate 达到 37.18%（baseline PPO_HRO 仅约 28%）。
 
@@ -31,7 +31,7 @@
 
 ## 2. 从因果视角看：长度偏差到底是什么
 
-![方法整体框架](https://www.mulanai.com/fs/files/0524_45c84ad0_method-o.jpg)
+![方法整体框架](https://arxiv.org/html/2511.12573v1/x2.png)
 
 ### 2.1 把长度偏差形式化
 

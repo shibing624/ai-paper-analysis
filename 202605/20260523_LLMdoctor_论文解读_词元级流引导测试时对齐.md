@@ -1,7 +1,7 @@
 # LLMdoctor：用小模型 doctor 在 token 级别给冻结的 patient 大模型做"对齐处方"
 
 > 论文：LLMdoctor: Token-Level Flow-Guided Preference Optimization for Efficient Test-Time Alignment of Large Language Models
-> arXiv: 2601.10416v1（2026-01-15）｜AAAI 2026 接收
+> arXiv: 2601.10416 ｜AAAI 2026
 > 作者：Tiesunlong Shen, Rui Mao, Jin Wang, Heming Sun, Jian Zhang, Xuejie Zhang, Erik Cambria
 
 ## 我读这篇之前的几个执念

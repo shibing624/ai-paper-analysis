@@ -14,8 +14,8 @@
 |------|------|
 | **标题** | From Mathematical Reasoning to Code: Generalization of Process Reward Models in Test-Time Scaling |
 | **作者** | Zhengyu Chen, Yudong Wang, Teng Xiao, Ruochen Zhou, Xuesheng Yang, Wei Wang, Zhifang Sui, Jingang Wang |
-| **机构** | 美团（Meituan）、北京大学（多媒体信息处理国家重点实验室）、宾夕法尼亚州立大学 |
-| **发表** | AAAI 2026（arXiv v1：2025 年 5 月 24 日） |
+| **机构** | 美团、北京大学、宾夕法尼亚州立大学 |
+| **发表** | AAAI 2026  |
 | **arXiv** | <https://arxiv.org/abs/2506.00027v1> |
 | **资助** | NSFC 62476009 |
 

@@ -4,9 +4,9 @@
 
 **论文标题：** MEML-GRPO: Heterogeneous Multi-Expert Mutual Learning for RLVR Advancement
 
-**arXiv 编号：** 2508.09670v2（v1 于 2025-08-13 提交，v2 于 2025-12-18 更新，AAAI 2026 录用）
+**arXiv 编号：** 2508.09670，AAAI 2026
 
-**作者团队：** Weitao Jia、Jinghui Lu、Haiyang Yu（通讯）等共 20 位作者，从署名习惯（Jingqun Tang、Can Huang）和实验里把 Doubao-1.5-thinking 列为重要 expert 来看，主体应该是字节跳动方向的研究
+**作者团队：** Weitao Jia、Jinghui Lu、Haiyang Yu et al.
 
 **一句话总结：** 这篇论文从 GRPO 的核心痛点切入——**当一道难题的所有 rollout 都答错时，零奖励无法提供任何梯度信号**。作者的解法是引入"异构多专家"：用三个不同的 system prompt（ground truth 风格、DeepSeek-R1 风格、Doubao-1.5-thinking 风格）扮演三个专家，在同一个 base model 上各跑一组 rollout，再通过 KL 蒸馏让弱专家向强专家靠拢，并配一个 "Hard Example Buffer" 在最难的样本上做周期性 SFT 兜底。Qwen2.5-1.5B-Math 上平均涨 4.89 个点，Llama3.2-1B-Instruct 上平均涨 11.33 个点。
 
@@ -34,7 +34,7 @@ MEML-GRPO 的切入点是从源头解决：**与其在一个 prompt 下采 8 次
 
 ## 2. 核心问题：reward sparsity 到底有多严重
 
-![异构模型在不同数据集上的错误分布与互补性](https://www.mulanai.com/fs/files/0524_c257ae0b_error_an.jpg)
+![异构模型在不同数据集上的错误分布与互补性](https://www.mulanai.com/fs/files/0531_6f94b2af_20260531.png)
 
 作者在 Introduction 里给出了一组很有说服力的统计：在 GSM8K、StrategyQA、MathQA 三个数据集上，分别让 Qwen2.5-1.5B-Math（按 Expert0 ground truth SFT 后的版本）、用 DeepSeek-R1 reasoning trajectory 训出的版本、用 Doubao-1.5-thinking 训出的版本各跑 8 次。
 
