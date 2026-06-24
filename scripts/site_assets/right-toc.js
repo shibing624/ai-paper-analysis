@@ -67,9 +67,20 @@
     onScroll();
   }
 
+  function fixGithubEditLink() {
+    var editLinks = document.querySelectorAll('a[href*="edit/main/index.md"]');
+    editLinks.forEach(function (link) {
+      link.href = 'https://github.com/shibing624/ai-paper-analysis/blob/main/README.md';
+    });
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', build);
+    document.addEventListener('DOMContentLoaded', function () {
+      build();
+      fixGithubEditLink();
+    });
   } else {
     build();
+    fixGithubEditLink();
   }
 })();

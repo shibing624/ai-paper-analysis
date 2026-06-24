@@ -196,7 +196,7 @@ def main() -> None:
         "site_author": "shibing624",
         "repo_url": "https://github.com/shibing624/ai-paper-analysis",
         "repo_name": "shibing624/ai-paper-analysis",
-        "edit_uri": "edit/main/docs/",
+        "edit_uri": "edit/main/",
         "docs_dir": "docs",
         "site_dir": "site",
         # mkdocs 自带 readthedocs 主题：灰白配色，朴素清爽，不是 Material 那种蓝色。

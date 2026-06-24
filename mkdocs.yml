@@ -4,7 +4,7 @@ site_url: https://shibing624.github.io/ai-paper-analysis/
 site_author: shibing624
 repo_url: https://github.com/shibing624/ai-paper-analysis
 repo_name: shibing624/ai-paper-analysis
-edit_uri: edit/main/docs/
+edit_uri: edit/main/
 docs_dir: docs
 site_dir: site
 theme:
