@@ -1677,7 +1677,7 @@
   },
   "202606/20260629_FACTOR_论文解读_声明级风险感知自适应事实验证.md": {
     "hash": "291bb62b8ad2",
-    "topic": "其他"
+    "topic": "RAG 检索增强"
   },
   "202606/20260629_SPIRAL_论文解读_顺序并行聚合统一RL推理.md": {
     "hash": "c9e376b2d9f3",
@@ -1689,298 +1689,298 @@
   },
   "202607/20260701_AsyncOPD_论文解读_异步蒸馏能多旧.md": {
     "hash": "0ea8ad460d7b",
-    "topic": "强化学习"
+    "topic": "模型架构与训练"
   },
   "202607/20260701_ReFreeKV_论文解读_免阈值自适应KV缓存压缩.md": {
     "hash": "b44710ba6454",
-    "topic": "其他"
+    "topic": "模型架构与训练"
   },
   "202607/20260701_SWETogether_论文解读_把真人拽回评测中心.md": {
     "hash": "6df5ee33d17e",
-    "topic": "其他"
+    "topic": "评估与基准"
   },
   "202607/20260701_ScalingHorizon_论文解读_35B撬动万亿_以时程换参数.md": {
     "hash": "881298cd3e76",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260701_TACO_论文解读_差分探针破解工具调用信用归因.md": {
     "hash": "494587f50c24",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260703_AutoTrainess_论文解读_让模型自己训练自己.md": {
     "hash": "f31c895bd2d3",
-    "topic": "其他"
+    "topic": "工程实践与 Coding Agent"
   },
   "202607/20260703_DiscoPER_论文解读_元反思驱动的自主科学发现.md": {
     "hash": "1ec179cfdc22",
-    "topic": "其他"
+    "topic": "AI 科研"
   },
   "202607/20260703_MemSycoBench_论文解读_Agent记忆里的奉承陷阱：当长期记忆开始替用户说话.md": {
     "hash": "7546678c4f74",
-    "topic": "其他"
+    "topic": "评估与基准"
   },
   "202607/20260703_PerfBenchAudit_论文解读_性能优化基准真能测准编码Agent吗.md": {
     "hash": "410585db0ab5",
-    "topic": "其他"
+    "topic": "评估与基准"
   },
   "202607/20260703_TableDRE_论文解读_LLM读表格总抄错数.md": {
     "hash": "cd8b3cd96119",
-    "topic": "其他"
+    "topic": "评估与基准"
   },
   "202607/20260706_ContextRot_论文解读_长context下的放弃与不确定如何治.md": {
     "hash": "a727b44e8beb",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260706_FARS_论文解读_166篇论文背后的全自动流水线.md": {
     "hash": "a8ce0fbe1560",
-    "topic": "其他"
+    "topic": "AI 科研"
   },
   "202607/20260706_RAG_SLMs_FCA_论文解读_检索增强形式概念分析扩展可验证知识.md": {
     "hash": "49a96df92e9b",
-    "topic": "其他"
+    "topic": "RAG 检索增强"
   },
   "202607/20260707_AGE_论文解读_自适应掩码让图嵌入不再盲猜.md": {
     "hash": "8fbcd402302a",
-    "topic": "其他"
+    "topic": "RAG 检索增强"
   },
   "202607/20260707_MIPU_论文解读_训练侧在狂飙部署侧在翻车：LLM_RL真正的优化目标到底是谁.md": {
     "hash": "983740b776d5",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260707_TasteGap_论文解读_量化人类与LLM研究想法的差距.md": {
     "hash": "cbc5b043a209",
-    "topic": "其他"
+    "topic": "评估与基准"
   },
   "202607/20260708_IdeaSpark_论文解读_把会议成败打包成可复用的研究构思技能.md": {
     "hash": "25e9f6272770",
-    "topic": "其他"
+    "topic": "AI 科研"
   },
   "202607/20260708_KVpop_论文解读_预测式在线KV缓存剪枝.md": {
     "hash": "cc6cd0a50fbf",
-    "topic": "其他"
+    "topic": "模型架构与训练"
   },
   "202607/20260708_LLMVerifier_论文解读_把logit期望当成新scaling轴.md": {
     "hash": "07041941f595",
-    "topic": "其他"
+    "topic": "评估与基准"
   },
   "202607/20260708_PaperPilot_论文解读_把多轮文献搜索重写成可编辑DAG工作流.md": {
     "hash": "1da67e46139a",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260708_SeKV_论文解读_分级语义内存的KV缓存压缩.md": {
     "hash": "c480d572a1ba",
-    "topic": "其他"
+    "topic": "模型架构与训练"
   },
   "202607/20260708_UIMOPD_论文解读_多平台GUI智能体的蒸馏防遗忘术.md": {
     "hash": "1265c2d6e739",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260709_HiLS_论文解读_层次稀疏注意力做到位_8K训练解锁4M上下文.md": {
     "hash": "374175792819",
-    "topic": "其他"
+    "topic": "模型架构与训练"
   },
   "202607/20260709_LLMTutor_论文解读_把prompt调成动态难度.md": {
     "hash": "b460781597fd",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260709_OneLayerRL_论文解读_只动一层就够RL后训练的层贡献集中现象.md": {
     "hash": "835e3beff361",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260709_TREK_论文解读_GRPO的难题救星把蒸馏变探路.md": {
     "hash": "877135db07a6",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260709_TurnOPD_论文解读_把轮次当成分配单位让长程Agent蒸馏提速2倍.md": {
     "hash": "28a29c93efd6",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260710_AgentLens_论文解读_轨迹评审代码Agent评测.md": {
     "hash": "99245864f69a",
-    "topic": "其他"
+    "topic": "评估与基准"
   },
   "202607/20260710_EPPO_论文解读_多任务智能体RL的熵速调度.md": {
     "hash": "7fd3ae694935",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260710_SAO_论文解读_单轨迹异步优化破解智体RL训练崩溃.md": {
     "hash": "57806ed1a9e4",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260710_SDM_论文解读_用稀疏内存把RNN状态放大1000倍.md": {
     "hash": "0bab80c75027",
-    "topic": "其他"
+    "topic": "模型架构与训练"
   },
   "202607/20260710_SoftClamp_论文解读_多教师在线蒸馏的行为杠杆失衡与软钳位校正.md": {
     "hash": "6019f998a9b4",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260714_FARMA_论文解读_智能体推理记忆的伪造术.md": {
     "hash": "77f783979b2e",
-    "topic": "其他"
+    "topic": "记忆系统"
   },
   "202607/20260714_HarnessRL_论文解读_把Harness当成可学习控制层.md": {
     "hash": "4e6cc2eb1010",
-    "topic": "其他"
+    "topic": "工程实践与 Coding Agent"
   },
   "202607/20260714_KnowingUsingGap_论文解读_记而不用知识的电路错位解释.md": {
     "hash": "42f4a39c4762",
-    "topic": "其他"
+    "topic": "模型架构与训练"
   },
   "202607/20260714_SelfGuidedTTT_论文解读_自引导测试时训练.md": {
     "hash": "6a62e0b9e30e",
-    "topic": "其他"
+    "topic": "模型架构与训练"
   },
   "202607/20260716_ACQUIRE_论文解读_先问再修_QA驱动的仓库知识获取.md": {
     "hash": "4e2bbe01b7ff",
-    "topic": "其他"
+    "topic": "工程实践与 Coding Agent"
   },
   "202607/20260716_CEB_论文解读_自进化步骤级信心估计.md": {
     "hash": "5ecef4ecb2df",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260716_DoubleRatchet_论文解读_评估指标与技能协同进化.md": {
     "hash": "ce06980a6551",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260716_FAFITM_论文解读_功能感知中间填充训练代码智能体基础模型.md": {
     "hash": "7118c9551fc5",
-    "topic": "其他"
+    "topic": "工程实践与 Coding Agent"
   },
   "202607/20260716_TeachThenSearch_论文解读_先把能学的教会剩下的再搜.md": {
     "hash": "2cdb082440fe",
-    "topic": "其他"
+    "topic": "评估与基准"
   },
   "202607/20260717_HarnessHandbook_论文解读_行为图谱让Agent Harness可读可改.md": {
     "hash": "47ec3275e893",
-    "topic": "其他"
+    "topic": "工程实践与 Coding Agent"
   },
   "202607/20260717_KnowActGUIClaw_论文解读_自演化记忆与技能的跨平台GUI智能体.md": {
     "hash": "dbd38d1a967b",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260717_LAPO_论文解读_多轮搜索的回溯单轮归因.md": {
     "hash": "1030ccd85574",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260717_RingZero_论文解读_把ZeroRL推到万亿参数.md": {
     "hash": "3bdf68eb83bd",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260717_SelfImprovementSurvey_论文解读_从自指学习到自改进Agent.md": {
     "hash": "b20194aef367",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260717_ShortOPD_论文解读_短到长蒸馏拯救剪枝LLM.md": {
     "hash": "0e992cc15009",
-    "topic": "其他"
+    "topic": "模型架构与训练"
   },
   "202607/20260720_AWA-RL_论文解读_弃答感知强化学习缓解搜索Agent幻觉.md": {
     "hash": "f0f9bc458076",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260720_ControlledMem_论文解读_可学习的自适应Agent记忆管理.md": {
     "hash": "102121338313",
-    "topic": "其他"
+    "topic": "记忆系统"
   },
   "202607/20260720_FFNIntervention_论文解读_幅度干预解码FFN结构化输出.md": {
     "hash": "d0c890db9cc9",
-    "topic": "其他"
+    "topic": "模型架构与训练"
   },
   "202607/20260720_GATS_论文解读_分层世界模型图增强树搜索免推理Agent规划.md": {
     "hash": "1af31603d782",
-    "topic": "其他"
+    "topic": "推理与思维链"
   },
   "202607/20260720_SSD_论文解读_苹果用极简自蒸馏让LLM代码生成涨12.9个点.md": {
     "hash": "5d9bebb69865",
-    "topic": "其他"
+    "topic": "模型架构与训练"
   },
   "202607/20260721_Agon_论文解读_对手互相评分_竞争式跨模型RL.md": {
     "hash": "24deace156bf",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260721_CPO_论文解读_对比驱动的策略优化.md": {
     "hash": "f0fe18565f97",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260721_OPD2_论文解读_delta信号重塑on-policy蒸馏.md": {
     "hash": "ade3ebb3a187",
-    "topic": "其他"
+    "topic": "模型架构与训练"
   },
   "202607/20260721_Pre2PostRL_论文解读_用国际象棋测出预训练到RL的缩放律.md": {
     "hash": "197a7ed6153d",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260721_R2S_论文解读_从教程视频蒸馏软件技能.md": {
     "hash": "901c4c2d9b16",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260721_RHI_论文解读_递归Harness自改进.md": {
     "hash": "6e92c6e50852",
-    "topic": "其他"
+    "topic": "工程实践与 Coding Agent"
   },
   "202607/20260722_DeepSearchWorld_论文解读_确定性环境下的自进化搜索智能体.md": {
     "hash": "461874d8d026",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260722_DistilledRL_论文解读_把教师监督嫁接进RL目标.md": {
     "hash": "d85821344352",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260722_EL_论文解读_当LLM化身教练_经验学习超越打分.md": {
     "hash": "0a1a7ad92d9b",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260722_ESAT_论文解读_无环境生成API调用智能体训练数据.md": {
     "hash": "d98911b3a313",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260722_GEPO_论文解读_让熵控制粒度细化到每个任务.md": {
     "hash": "fbbcd5738da6",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260722_SWEPrunerPro_论文解读_让模型自己决定删掉哪些行.md": {
     "hash": "045e6e3eb596",
-    "topic": "其他"
+    "topic": "工程实践与 Coding Agent"
   },
   "202607/20260723_AgentDebugX_论文解读_LLM智能体失败溯源与修复闭环.md": {
     "hash": "6749ea56e3cc",
-    "topic": "其他"
+    "topic": "Agent 智能体"
   },
   "202607/20260723_AutoIndex_论文解读_把文档预处理变成可优化对象.md": {
     "hash": "6327b0d50d8a",
-    "topic": "其他"
+    "topic": "RAG 检索增强"
   },
   "202607/20260723_DataFlow-Harness_论文解读_把代码Agent钉在数据平台上.md": {
     "hash": "251a1f81247a",
-    "topic": "其他"
+    "topic": "工程实践与 Coding Agent"
   },
   "202607/20260723_H2SD_论文解读_成功用幅度失败用KL_混合事后自蒸馏.md": {
     "hash": "27d907582b54",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260723_ISO_论文解读_等谱优化释放RLVR潜力.md": {
     "hash": "20440861d74a",
-    "topic": "其他"
+    "topic": "模型架构与训练"
   },
   "202607/20260723_SAT_论文解读_异步强化学习的稳定性.md": {
     "hash": "5cbb8b9a021e",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260724_ICAEBench_论文解读_交互式项目构建的智能体基准.md": {
     "hash": "d3bd071fa57e",
-    "topic": "其他"
+    "topic": "评估与基准"
   },
   "202607/20260724_RiemannianIsometric_论文解读_黎曼等距优化破解LLM强化学习探索坍缩.md": {
     "hash": "d175246c4514",
-    "topic": "其他"
+    "topic": "强化学习"
   },
   "202607/20260724_Rubric4Setwise_论文解读_nDCG满分却答错_用rubric重定义RAG文档集评估.md": {
     "hash": "22207c555294",
-    "topic": "其他"
+    "topic": "评估与基准"
   },
   "202607/20260724_SLPO_论文解读_用surrogate策略给潜空间推理装上outcome-RL.md": {
     "hash": "81d73b662154",
-    "topic": "其他"
+    "topic": "强化学习"
   }
 }

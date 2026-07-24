@@ -17,8 +17,9 @@
 - LLM 解析失败或返回非法标签 → 落 "其他"，不抛异常（外部 I/O 容错）
 
 调用：
-  python scripts/classify_topics.py            # 增量
-  python scripts/classify_topics.py --force    # 全量重跑
+  python scripts/classify_topics.py                          # 增量
+  python scripts/classify_topics.py --force                  # 全量重跑
+  python scripts/classify_topics.py --since 20260629         # 只重跑该日期及之后的文章
 """
 
 from __future__ import annotations
@@ -57,8 +58,8 @@ TAXONOMY = [
 ]
 
 HEAD_CHARS = 600
-CONCURRENCY = 10
-MODEL = "hy3-preview"
+CONCURRENCY = 3
+MODEL = "hy3"
 
 API_KEY = os.environ.get("HUNYUAN_API_KEY")
 if not API_KEY:
@@ -121,32 +122,42 @@ def head_hash(head: str) -> str:
     return hashlib.sha1(head.encode("utf-8")).hexdigest()[:12]
 
 
-async def classify_one(relpath: str, head: str, sem: asyncio.Semaphore) -> tuple[str, str]:
-    """返回 (relpath, topic)。LLM 失败/非法返回 → "其他"。"""
+async def classify_one(relpath: str, head: str, sem: asyncio.Semaphore) -> tuple[str, str, bool]:
+    """返回 (relpath, topic, ok)。ok=False 表示 LLM 调用失败（如 429），调用方应保留旧 cache。
+    ok=True 时 topic 为最终分类（含 "其他" 当 LLM 返回未知标签的容错情形）。"""
+    import asyncio as _aio
+    max_retries = 4
+    backoff = 2.0
     async with sem:
-        try:
-            resp = await client.chat.completions.create(
-                model=MODEL,
-                messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": head},
-                ],
-                stream=False,
-                temperature=0.0,
-                max_tokens=50,
-            )
-            raw = resp.choices[0].message.content.strip()
-            for t in TAXONOMY:
-                if t in raw:
-                    return relpath, t
-            print(f"[warn] {relpath}: LLM 返回未知标签 {raw!r}, 落 '其他'", file=sys.stderr)
-            return relpath, "其他"
-        except Exception as e:
-            print(f"[warn] {relpath}: LLM 调用失败 {e}, 落 '其他'", file=sys.stderr)
-            return relpath, "其他"
+        for attempt in range(max_retries):
+            try:
+                resp = await client.chat.completions.create(
+                    model=MODEL,
+                    messages=[
+                        {"role": "system", "content": SYSTEM_PROMPT},
+                        {"role": "user", "content": head},
+                    ],
+                    stream=False,
+                    temperature=0.0,
+                    max_tokens=50,
+                )
+                raw = resp.choices[0].message.content.strip()
+                for t in TAXONOMY:
+                    if t in raw:
+                        return relpath, t, True
+                print(f"[warn] {relpath}: LLM 返回未知标签 {raw!r}, 落 '其他'", file=sys.stderr)
+                return relpath, "其他", True
+            except Exception as e:
+                if "429" in str(e) and attempt < max_retries - 1:
+                    await _aio.sleep(backoff)
+                    backoff *= 2
+                    continue
+                print(f"[warn] {relpath}: LLM 调用失败 {e}, 保留旧分类", file=sys.stderr)
+                return relpath, "其他", False
+        return relpath, "其他", False
 
 
-async def main_async(force: bool) -> None:
+async def main_async(force: bool, since: str | None) -> None:
     cache: dict = {}
     if CACHE_FILE.exists() and not force:
         cache = json.loads(CACHE_FILE.read_text(encoding="utf-8"))
@@ -155,14 +166,23 @@ async def main_async(force: bool) -> None:
     skipped = 0
     month_dirs = discover_month_dirs(ROOT)
     print(f"[classify] 扫描到月份目录：{', '.join(month_dirs) or '(空)'}")
+    if since:
+        print(f"[classify] --since={since}：只重跑文件名前 8 位日期 >= {since} 的文章")
     for month in month_dirs:
         d = ROOT / month
         for md in sorted(d.glob("*.md")):
             relpath = f"{month}/{md.name}"
+            # --since 过滤：按文件名前 8 位日期判断
+            if since:
+                date_prefix = md.name[:8]
+                if not re.match(r"^\d{8}$", date_prefix) or date_prefix < since:
+                    skipped += 1
+                    continue
             head = read_head(md)
             h = head_hash(head)
             cached = cache.get(relpath)
-            if cached and cached.get("hash") == h and not force:
+            # --since 命中时强制重跑（忽略 hash 缓存）
+            if cached and cached.get("hash") == h and not force and not since:
                 skipped += 1
                 continue
             todo.append((relpath, head))
@@ -177,7 +197,10 @@ async def main_async(force: bool) -> None:
     tasks = [classify_one(rp, head, sem) for rp, head in todo]
     results = await asyncio.gather(*tasks)
 
-    for relpath, topic in results:
+    for relpath, topic, ok in results:
+        if not ok:
+            # LLM 调用失败：保留旧 cache 不覆盖
+            continue
         cache[relpath]["topic"] = topic
 
     CACHE_FILE.write_text(
@@ -197,8 +220,10 @@ async def main_async(force: bool) -> None:
 def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--force", action="store_true", help="忽略缓存，全量重新分类")
+    p.add_argument("--since", type=str, default=None,
+                   help="只重跑文件名前 8 位日期 >= 该值的文章，如 --since 20260629")
     args = p.parse_args()
-    asyncio.run(main_async(force=args.force))
+    asyncio.run(main_async(force=args.force, since=args.since))
 
 
 if __name__ == "__main__":
