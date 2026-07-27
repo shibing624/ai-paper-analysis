@@ -7,9 +7,9 @@
 
 AI 相关论文深度解读，每天中文解读前沿学术论文，涵盖 LLM、Agent、RAG、RL 等方向。
 
-> 📖 **在线阅读（官方部署，推荐）**：<https://paper.mulanai.com/>
-> 备用 Cloudflare Pages 镜像：<https://ai-paper-analysis.pages.dev/>
-> 备用 GitHub Pages 镜像：<https://shibing624.github.io/ai-paper-analysis/>
+- 📖 **在线阅读（官方部署，推荐）**：<https://paper.mulanai.com/>
+- 备用 Cloudflare Pages 镜像（国内直连）：<https://ai-paper-analysis.pages.dev/>
+- 备用 GitHub Pages 镜像：<https://shibing624.github.io/ai-paper-analysis/>
 
 ## 文章列表
 
