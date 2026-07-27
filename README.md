@@ -1,12 +1,14 @@
 # AI Paper Analysis
 
-[![Cloudflare Pages](https://img.shields.io/badge/在线阅读-ai--paper--analysis.pages.dev-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://ai-paper-analysis.pages.dev/)
+[![木兰论文解读](https://img.shields.io/badge/在线阅读-paper.mulanai.com-7C3AED?style=for-the-badge&logo=ribbon&logoColor=white)](https://paper.mulanai.com/)
+[![Cloudflare Pages](https://img.shields.io/badge/备用站-ai--paper--analysis.pages.dev-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://ai-paper-analysis.pages.dev/)
 [![GitHub Pages](https://img.shields.io/badge/备用站-shibing624.github.io-2962FF?style=for-the-badge&logo=github&logoColor=white)](https://shibing624.github.io/ai-paper-analysis/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge)](LICENSE)
 
 AI 相关论文深度解读，每天中文解读前沿学术论文，涵盖 LLM、Agent、RAG、RL 等方向。
 
-> 📖 **在线阅读（推荐，国内免梯子）**：<https://ai-paper-analysis.pages.dev/>
+> 📖 **在线阅读（官方部署，推荐）**：<https://paper.mulanai.com/>
+> 备用 Cloudflare Pages 镜像：<https://ai-paper-analysis.pages.dev/>
 > 备用 GitHub Pages 镜像：<https://shibing624.github.io/ai-paper-analysis/>
 
 ## 文章列表
