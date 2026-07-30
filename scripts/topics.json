@@ -2002,5 +2002,53 @@
   "202607/20260725_ReOPD_论文解读_多轮在线蒸馏的前缀陷阱与离线解药.md": {
     "hash": "019eae438976",
     "topic": "Agent 智能体"
+  },
+  "202607/20260728_JarvisHub_论文解读_画布即Workspace_长程创作可审计底座.md": {
+    "hash": "692967f1ef0f",
+    "topic": "Agent 智能体"
+  },
+  "202607/20260728_KimiK3_论文解读_KDA加AttnRes_把开放MoE推到3T级.md": {
+    "hash": "fabf5f629444",
+    "topic": "模型架构与训练"
+  },
+  "202607/20260728_MAPD_论文解读_协议蒸馏弥合闭源到开源分布差距.md": {
+    "hash": "bf291f30840a",
+    "topic": "Agent 智能体"
+  },
+  "202607/20260728_PAJAMA_论文解读_程序蒸馏驱动的可扩展LLM评估.md": {
+    "hash": "17eeb96e2e07",
+    "topic": "评估与基准"
+  },
+  "202607/20260728_PhysicsPlan_论文解读_多轮长程规划的物理.md": {
+    "hash": "e1b1a89e57d8",
+    "topic": "Agent 智能体"
+  },
+  "202607/20260728_StateAct_论文解读_程序状态先于像素驱动长程智能体.md": {
+    "hash": "cf93f13dcbcf",
+    "topic": "Agent 智能体"
+  },
+  "202607/20260729_CodeNib_论文解读_多视图数据系统服务CodingAgent仓库上下文.md": {
+    "hash": "e421d6fa7e8d",
+    "topic": "工程实践与 Coding Agent"
+  },
+  "202607/20260729_InMind_论文解读_隐式关联盲点.md": {
+    "hash": "2a62008c0f98",
+    "topic": "评估与基准"
+  },
+  "202607/20260729_LatentReasoning_论文解读_把模型暗藏的多策略显式拎出来.md": {
+    "hash": "2e4b5bdb8cd5",
+    "topic": "推理与思维链"
+  },
+  "202607/20260729_PassTheBaton_论文解读_接力式在线蒸馏.md": {
+    "hash": "ecaffd664d07",
+    "topic": "模型架构与训练"
+  },
+  "202607/20260729_RLCodeOpt_论文解读_让代码跑得更快.md": {
+    "hash": "95beca84f1fa",
+    "topic": "强化学习"
+  },
+  "202607/20260729_RelGuideSearch_论文解读_让相关性指导ripgrep搜索.md": {
+    "hash": "2745474e14e6",
+    "topic": "RAG 检索增强"
   }
 }
