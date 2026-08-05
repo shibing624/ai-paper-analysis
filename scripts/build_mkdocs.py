@@ -1,9 +1,9 @@
-"""扫描 202601~202604 月份目录，把所有论文解读 .md 拷到 docs/ 并生成 mkdocs.yml。
+"""扫描所有 YYYYMM 月份目录，把论文解读 .md 同步到 docs/ 并生成 mkdocs.yml。
 
 输出：
   docs/index.md                  ← 来自仓库根目录 README.md
-  docs/{月份}/{原文件名}.md      ← 拷贝过来的解读文章
-  mkdocs.yml                     ← Material 主题 + 按月份分组的 nav
+  docs/{月份}/{原文件名}.md      ← 同步过来的解读文章
+  mkdocs.yml                     ← readthedocs 主题 + 按主题/月份分组的 nav
 
 调用：
   python scripts/build_mkdocs.py
@@ -12,6 +12,10 @@
 - 用脚本生成 docs/ 而不是直接 docs_dir=., 因为 mkdocs 要求 nav 文件必须在 docs_dir 内
 - 月份目录用 02 表示 (e.g. 202604 → "2026 年 4 月"), 倒序展示, 让最新内容在最前
 - 文章标题优先取 H1 (第一行 "# xxx"), 取不到则从文件名解析
+- **增量同步而非 rmtree 重建**：docs/ 有 500+ 文件，整目录删重建会触发 agent
+  运行时的批量删除保护（阈值 50 文件），脚本被静默 kill、一行日志都不输出。
+  现在只拷贝内容有变化的文件，并单独清理孤儿（源文件已删/改名的残留副本），
+  日常增量场景删除数为 0。孤儿数超过 ORPHAN_ALERT 时只告警不删，避免误伤。
 """
 
 from __future__ import annotations
@@ -33,6 +37,52 @@ README_FILE = ROOT / "README.md"
 MONTH_RE = re.compile(r"^\d{6}$")
 README_LIST_START = "<!-- AUTO-LIST-START -->"
 README_LIST_END = "<!-- AUTO-LIST-END -->"
+
+# 孤儿文件（docs/ 里存在但源目录已没有的副本）一次删超过这个数就只告警不删。
+# 正常增量只会有 0~几个孤儿；一旦爆量说明源目录被误删或挂载异常，不该跟着删。
+ORPHAN_ALERT = 50
+
+
+def sync_file(src: Path, dst: Path) -> bool:
+    """按内容同步单个文件，内容一致则跳过。返回是否实际写入。"""
+    if dst.exists() and dst.stat().st_size == src.stat().st_size:
+        if dst.read_bytes() == src.read_bytes():
+            return False
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(src, dst)
+    return True
+
+
+def prune_orphans(expected: set[Path]) -> tuple[int, int]:
+    """删除 docs/ 下不在 expected 中的 .md 文件（源已删除/改名的残留）。
+
+    返回 (已删除数, 因超过 ORPHAN_ALERT 而跳过的数量)。
+    assets/ 与 index.md 不在清理范围内。
+    """
+    if not DOCS.exists():
+        return 0, 0
+    orphans = [
+        p
+        for p in DOCS.rglob("*.md")
+        if p not in expected and p != DOCS / "index.md" and "assets" not in p.parts
+    ]
+    if not orphans:
+        return 0, 0
+    if len(orphans) > ORPHAN_ALERT:
+        print(
+            f"[build_mkdocs] WARN: 检测到 {len(orphans)} 个孤儿文件，超过阈值 "
+            f"{ORPHAN_ALERT}，已跳过清理。请确认月份目录是否被误删；"
+            f"确认无误后手动 rm -rf docs/ 再重跑。"
+        )
+        return 0, len(orphans)
+    for p in orphans:
+        p.unlink()
+        print(f"[build_mkdocs] 清理孤儿：{p.relative_to(DOCS)}")
+    # 顺带清掉空目录（例如整个月份目录被移走）
+    for d in sorted((d for d in DOCS.rglob("*") if d.is_dir()), reverse=True):
+        if not any(d.iterdir()):
+            d.rmdir()
+    return len(orphans), 0
 
 
 def discover_month_dirs(root: Path) -> list[str]:
@@ -114,17 +164,17 @@ def update_readme_list(entries: list[dict]) -> None:
 
 
 def main() -> None:
-    if DOCS.exists():
-        shutil.rmtree(DOCS)
-    DOCS.mkdir()
+    # 增量同步：不再 rmtree 整个 docs/（500+ 文件会触发批量删除保护）。
+    DOCS.mkdir(exist_ok=True)
+    copied = 0
 
-    # 拷贝自定义 CSS/JS（拓宽正文 + 右侧浮动 TOC + scrollspy）。
+    # 同步自定义 CSS/JS（拓宽正文 + 右侧浮动 TOC + scrollspy）。
     if SITE_ASSETS.is_dir():
         dst_assets = DOCS / "assets"
         dst_assets.mkdir(parents=True, exist_ok=True)
         for f in SITE_ASSETS.iterdir():
             if f.is_file():
-                shutil.copy(f, dst_assets / f.name)
+                copied += sync_file(f, dst_assets / f.name)
 
     topics_map: dict[str, str] = {}
     if TOPICS_CACHE.exists():
@@ -136,6 +186,7 @@ def main() -> None:
     nav_by_month: dict[str, list[dict]] = defaultdict(list)
     nav_by_topic: dict[str, list[dict]] = defaultdict(list)
     all_entries: list[dict] = []
+    expected: set[Path] = set()
     total = 0
     month_dirs = discover_month_dirs(ROOT)
     print(f"[build_mkdocs] 扫描到月份目录：{', '.join(month_dirs) or '(空)'}")
@@ -144,7 +195,9 @@ def main() -> None:
         dst_dir = DOCS / month
         dst_dir.mkdir(parents=True, exist_ok=True)
         for md in sorted(src_dir.glob("*.md")):
-            shutil.copy(md, dst_dir / md.name)
+            dst = dst_dir / md.name
+            copied += sync_file(md, dst)
+            expected.add(dst)
             relpath = f"{month}/{md.name}"
             entry = {
                 "file": relpath,
@@ -158,10 +211,12 @@ def main() -> None:
                 nav_by_topic[topic].append(entry)
             total += 1
 
+    pruned, skipped = prune_orphans(expected)
+
     update_readme_list(sorted(all_entries, key=lambda x: (x["date"], x["file"]), reverse=True))
 
     if README_FILE.exists():
-        shutil.copy(README_FILE, DOCS / "index.md")
+        copied += sync_file(README_FILE, DOCS / "index.md")
 
     nav: list = [{"首页": "index.md"}]
 
@@ -257,7 +312,10 @@ def main() -> None:
     with (ROOT / "mkdocs.yml").open("w", encoding="utf-8") as f:
         yaml.safe_dump(config, f, allow_unicode=True, sort_keys=False, width=200)
 
-    print(f"[build_mkdocs] copied {total} articles into docs/")
+    print(
+        f"[build_mkdocs] synced {total} articles into docs/ "
+        f"(written {copied}, pruned {pruned}, orphan-alert {skipped})"
+    )
     print(f"[build_mkdocs] mkdocs.yml written: {len(nav)} nav sections")
 
 
