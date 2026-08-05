@@ -2050,5 +2050,45 @@
   "202607/20260729_RelGuideSearch_论文解读_让相关性指导ripgrep搜索.md": {
     "hash": "2745474e14e6",
     "topic": "RAG 检索增强"
+  },
+  "202607/20260731_CADENCE_论文解读_覆盖自适应蒸馏缩小推理差距.md": {
+    "hash": "3df8b25d00a1",
+    "topic": "模型架构与训练"
+  },
+  "202607/20260731_CAST_论文解读_游戏求解器当回合级老师.md": {
+    "hash": "e578e91963a6",
+    "topic": "强化学习"
+  },
+  "202607/20260731_CoRT_论文解读_反事实重放实现Token级信用分配.md": {
+    "hash": "d3a7bb6a3d80",
+    "topic": "强化学习"
+  },
+  "202607/20260731_MindForge_论文解读_小模型全生命周期软件工程.md": {
+    "hash": "cda96ea3d94c",
+    "topic": "工程实践与 Coding Agent"
+  },
+  "202607/20260731_SkillRise_论文解读_跨任务技能演化让Agent学会举一反三.md": {
+    "hash": "e78eacd2d12d",
+    "topic": "Agent 智能体"
+  },
+  "202608/20260802_ACM_论文解读_把Agent记忆升级为上下文生命周期管理.md": {
+    "hash": "19c6634778c9",
+    "topic": "记忆系统"
+  },
+  "202608/20260802_IDEAgent_论文解读_用质量多样性搜索生成科研点子.md": {
+    "hash": "bb79f87e9e71",
+    "topic": "AI 科研"
+  },
+  "202608/20260802_Molt_论文解读_PyTorch原生AgenticRL训练框架.md": {
+    "hash": "a02becc887b5",
+    "topic": "工程实践与 Coding Agent"
+  },
+  "202608/20260802_MultiHeadLatentControl_论文解读_隐状态驱动的LLM智能体统一决策控制.md": {
+    "hash": "f17b34a0e491",
+    "topic": "Agent 智能体"
+  },
+  "202608/20260802_SkillSP_论文解读_技能自弈破解自进化验证困境.md": {
+    "hash": "46bcc22440c8",
+    "topic": "强化学习"
   }
 }
