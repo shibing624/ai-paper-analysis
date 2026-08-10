@@ -2178,5 +2178,21 @@
   "202608/20260809_SkillHEX_论文解读_假设驱动的Agent技能自主进化.md": {
     "hash": "398bca005400",
     "topic": "Agent 智能体"
+  },
+  "202608/20260810_FailFastRestartSmart_论文解读_早停失败预测与智能重启降低SWE智能体成本.md": {
+    "hash": "679fb9d9d129",
+    "topic": "Agent 智能体"
+  },
+  "202608/20260810_LCGRPO_论文解读_Langevin校正缝合流模型RL训练推理鸿沟.md": {
+    "hash": "6422371c0f9a",
+    "topic": "强化学习"
+  },
+  "202608/20260810_TCPO_论文解读_把Verifier分数翻译成轮级信用.md": {
+    "hash": "7c8f019d198b",
+    "topic": "强化学习"
+  },
+  "202608/20260810_ToolLIFT_论文解读_函数级工作流图泛化工具规划.md": {
+    "hash": "117166ef2d0c",
+    "topic": "Agent 智能体"
   }
 }

@@ -60,7 +60,9 @@ extra_javascript:
 nav:
 - 首页: index.md
 - 按主题:
-  - Agent 智能体 (140):
+  - Agent 智能体 (142):
+    - Fail-Fast, Restart-Smart：SWE 智能体任务的早期失败预测与重启: 202608/20260810_FailFastRestartSmart_论文解读_早停失败预测与智能重启降低SWE智能体成本.md
+    - 把工具轨迹"升维"成函数图：ToolLIFT 让工具规划跨工具集泛化: 202608/20260810_ToolLIFT_论文解读_函数级工作流图泛化工具规划.md
     - CodeGrep：RL 训练的检索智能体，为 LLM 编码 Agent 提效: 202608/20260809_CodeGrep_论文解读_RL训练的检索智能体为编码Agent提效.md
     - 小模型装上"工具使用说明书"，反超了没用这招的大模型——ExpG 论文解读: 202608/20260809_ExpG_论文解读_经验驱动的工具使用自适应指导.md
     - 一次失败到底错在哪？SkillHEX：给 Agent 的技能进化装上"假设-验证"大脑: 202608/20260809_SkillHEX_论文解读_假设驱动的Agent技能自主进化.md
@@ -201,7 +203,9 @@ nav:
     - AI Agent 的分身术：深度解析 OpenClaw 子代理系统设计: 202602/20260203_OpenClaw_Subagent深度解读_AI_Agent的分身术.md
     - Plan-and-Act：让AI智能体学会"先想后做": 202601/20260125_Plan-and-Act_论文解读_规划与执行分离的长周期任务智能体.md
     - Voyager：让 GPT-4 在《我的世界》里自主探索、终身学习: 202601/20260125_Voyager_论文解读_LLM驱动的开放式具身智能体.md
-  - 强化学习 (118):
+  - 强化学习 (120):
+    - LC-GRPO：一步 Langevin 校正，缝合 Flow 模型 RL 训练与推理之间的那道缝: 202608/20260810_LCGRPO_论文解读_Langevin校正缝合流模型RL训练推理鸿沟.md
+    - TCPO：Verifier 给的分数很稠密，但"分数"和"信用"从来就不是一回事: 202608/20260810_TCPO_论文解读_把Verifier分数翻译成轮级信用.md
     - 别再给整条轨迹发"平均奖"了：AgentOPSD 用递归贝叶斯信念揪出真正立功的那几轮: 202608/20260808_AgentOPSD_论文解读_递归自蒸馏破解长时程智能体信用分配.md
     - 训练 Agent 不用真环境了？EnvACE 让模型自己"脑内排练"环境响应: 202608/20260808_EnvACE_论文解读_世界预演把环境装进策略参数.md
     - ABSeeker：把最终答案"倒推"成每一步的评分标准，4B 小模型打赢 30B 搜索智能体: 202608/20260807_ABSeeker_论文解读_答案回溯式信用分配训练搜索智能体.md
@@ -612,6 +616,10 @@ nav:
     - Qwen3-Coder-Next：80B参数只激活3B，如何用"小代价"训出最强编程智能体: 202603/20260307_Qwen3CoderNext_论文解读_80B参数3B激活的编程智能体如何登顶SWE-Bench.md
     - 扒开 Claude Code 的底裤：为什么你的 AI Agent 总是半途而废？: 202602/20260203_AI_Coding_Agent深度解读_高任务完成度背后的Prompt工程秘密.md
 - 2026 年 8 月:
+  - Fail-Fast, Restart-Smart：SWE 智能体任务的早期失败预测与重启: 202608/20260810_FailFastRestartSmart_论文解读_早停失败预测与智能重启降低SWE智能体成本.md
+  - LC-GRPO：一步 Langevin 校正，缝合 Flow 模型 RL 训练与推理之间的那道缝: 202608/20260810_LCGRPO_论文解读_Langevin校正缝合流模型RL训练推理鸿沟.md
+  - TCPO：Verifier 给的分数很稠密，但"分数"和"信用"从来就不是一回事: 202608/20260810_TCPO_论文解读_把Verifier分数翻译成轮级信用.md
+  - 把工具轨迹"升维"成函数图：ToolLIFT 让工具规划跨工具集泛化: 202608/20260810_ToolLIFT_论文解读_函数级工作流图泛化工具规划.md
   - CoEvo-Mem：检索策略和记忆库，谁也别想单独变强: 202608/20260809_CoEvoMem_论文解读_检索与记忆库的双人划船.md
   - CodeGrep：RL 训练的检索智能体，为 LLM 编码 Agent 提效: 202608/20260809_CodeGrep_论文解读_RL训练的检索智能体为编码Agent提效.md
   - 小模型装上"工具使用说明书"，反超了没用这招的大模型——ExpG 论文解读: 202608/20260809_ExpG_论文解读_经验驱动的工具使用自适应指导.md
