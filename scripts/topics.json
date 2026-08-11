@@ -2194,5 +2194,21 @@
   "202608/20260810_ToolLIFT_论文解读_函数级工作流图泛化工具规划.md": {
     "hash": "117166ef2d0c",
     "topic": "Agent 智能体"
+  },
+  "202608/20260811_AESHDC_论文解读_多模态智能体环境分布的多样性与难度设计.md": {
+    "hash": "beb369f6b40c",
+    "topic": "Agent 智能体"
+  },
+  "202608/20260811_DCAS_论文解读_把规划从脚手架搬进模型权重.md": {
+    "hash": "c7a0deff45cc",
+    "topic": "工程实践与 Coding Agent"
+  },
+  "202608/20260811_ParallelRL_论文解读_SFT冲突RL共存与并行多任务RL.md": {
+    "hash": "b27533ac9eab",
+    "topic": "强化学习"
+  },
+  "202608/20260811_ReASearch_论文解读_优化器即智能体.md": {
+    "hash": "a836d8899d7e",
+    "topic": "Agent 智能体"
   }
 }

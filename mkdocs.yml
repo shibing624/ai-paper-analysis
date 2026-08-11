@@ -60,7 +60,9 @@ extra_javascript:
 nav:
 - 首页: index.md
 - 按主题:
-  - Agent 智能体 (142):
+  - Agent 智能体 (144):
+    - 环境不是越多越好：中科院这篇论文教你给多模态智能体"配菜": 202608/20260811_AESHDC_论文解读_多模态智能体环境分布的多样性与难度设计.md
+    - 优化器即智能体：把进化搜索、Bandit 和文本梯度全部扔掉，一个 Agent 端到端搞定 Prompt、代码和训练流程优化: 202608/20260811_ReASearch_论文解读_优化器即智能体.md
     - Fail-Fast, Restart-Smart：SWE 智能体任务的早期失败预测与重启: 202608/20260810_FailFastRestartSmart_论文解读_早停失败预测与智能重启降低SWE智能体成本.md
     - 把工具轨迹"升维"成函数图：ToolLIFT 让工具规划跨工具集泛化: 202608/20260810_ToolLIFT_论文解读_函数级工作流图泛化工具规划.md
     - CodeGrep：RL 训练的检索智能体，为 LLM 编码 Agent 提效: 202608/20260809_CodeGrep_论文解读_RL训练的检索智能体为编码Agent提效.md
@@ -203,7 +205,8 @@ nav:
     - AI Agent 的分身术：深度解析 OpenClaw 子代理系统设计: 202602/20260203_OpenClaw_Subagent深度解读_AI_Agent的分身术.md
     - Plan-and-Act：让AI智能体学会"先想后做": 202601/20260125_Plan-and-Act_论文解读_规划与执行分离的长周期任务智能体.md
     - Voyager：让 GPT-4 在《我的世界》里自主探索、终身学习: 202601/20260125_Voyager_论文解读_LLM驱动的开放式具身智能体.md
-  - 强化学习 (120):
+  - 强化学习 (121):
+    - 多任务训练时 SFT 互相打架、RL 却能和平共处？这篇论文把原因算明白了: 202608/20260811_ParallelRL_论文解读_SFT冲突RL共存与并行多任务RL.md
     - LC-GRPO：一步 Langevin 校正，缝合 Flow 模型 RL 训练与推理之间的那道缝: 202608/20260810_LCGRPO_论文解读_Langevin校正缝合流模型RL训练推理鸿沟.md
     - TCPO：Verifier 给的分数很稠密，但"分数"和"信用"从来就不是一回事: 202608/20260810_TCPO_论文解读_把Verifier分数翻译成轮级信用.md
     - 别再给整条轨迹发"平均奖"了：AgentOPSD 用递归贝叶斯信念揪出真正立功的那几轮: 202608/20260808_AgentOPSD_论文解读_递归自蒸馏破解长时程智能体信用分配.md
@@ -577,7 +580,8 @@ nav:
     - MiroThinker-1.7 & H1：搜索 Agent 的天花板不在"搜得多"，而在"每步都靠谱": 202603/20260323_MiroThinker_论文解读_不卷速度卷验证的重型推理智能体.md
     - EvoScientist：让AI科学家学会"长记性"——多智能体进化框架如何实现端到端科研自动化: 202603/20260316_EvoScientist_论文解读_多智能体进化AI科学家的端到端科研发现.md
     - 🔬 Autoresearch 深度解读：Karpathy 的"AI 自主科研"到底有没有戏？: 202603/20260314_Autoresearch深度解读_AI自主科研循环的黎明还是幻觉.md
-  - 工程实践与 Coding Agent (37):
+  - 工程实践与 Coding Agent (38):
+    - 换个脚手架就掉 29 个点？DCAS：问题不在模型，在它没学会"怎么规划": 202608/20260811_DCAS_论文解读_把规划从脚手架搬进模型权重.md
     - 编程智能体部署之后就"死"了？这篇综述把"会自己进化的 Coding Agent"盘了个遍: 202608/20260807_SECA_论文解读_自进化编程智能体综述.md
     - LongHorizon-Harness：别再让智能体自己骗自己了——把长任务拆成"管、干、验"三权分立: 202608/20260805_LongHorizonHarness_论文解读_长时域智能体任务状态管理框架.md
     - 代码只有 8.6K 行，吞吐却打平 Megatron：NVIDIA 把"能读懂"做成了 RL 框架的核心能力: 202608/20260802_Molt_论文解读_PyTorch原生AgenticRL训练框架.md
@@ -616,6 +620,10 @@ nav:
     - Qwen3-Coder-Next：80B参数只激活3B，如何用"小代价"训出最强编程智能体: 202603/20260307_Qwen3CoderNext_论文解读_80B参数3B激活的编程智能体如何登顶SWE-Bench.md
     - 扒开 Claude Code 的底裤：为什么你的 AI Agent 总是半途而废？: 202602/20260203_AI_Coding_Agent深度解读_高任务完成度背后的Prompt工程秘密.md
 - 2026 年 8 月:
+  - 环境不是越多越好：中科院这篇论文教你给多模态智能体"配菜": 202608/20260811_AESHDC_论文解读_多模态智能体环境分布的多样性与难度设计.md
+  - 换个脚手架就掉 29 个点？DCAS：问题不在模型，在它没学会"怎么规划": 202608/20260811_DCAS_论文解读_把规划从脚手架搬进模型权重.md
+  - 多任务训练时 SFT 互相打架、RL 却能和平共处？这篇论文把原因算明白了: 202608/20260811_ParallelRL_论文解读_SFT冲突RL共存与并行多任务RL.md
+  - 优化器即智能体：把进化搜索、Bandit 和文本梯度全部扔掉，一个 Agent 端到端搞定 Prompt、代码和训练流程优化: 202608/20260811_ReASearch_论文解读_优化器即智能体.md
   - Fail-Fast, Restart-Smart：SWE 智能体任务的早期失败预测与重启: 202608/20260810_FailFastRestartSmart_论文解读_早停失败预测与智能重启降低SWE智能体成本.md
   - LC-GRPO：一步 Langevin 校正，缝合 Flow 模型 RL 训练与推理之间的那道缝: 202608/20260810_LCGRPO_论文解读_Langevin校正缝合流模型RL训练推理鸿沟.md
   - TCPO：Verifier 给的分数很稠密，但"分数"和"信用"从来就不是一回事: 202608/20260810_TCPO_论文解读_把Verifier分数翻译成轮级信用.md
