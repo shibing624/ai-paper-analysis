@@ -652,10 +652,13 @@ nav:
     - Harness Engineering 深度解读：AI Agent 时代的「缰绳与马鞍」: 202603/20260314_Harness_Engineering深度解读_AI_Agent时代的缰绳与马鞍.md
     - Qwen3-Coder-Next：80B参数只激活3B，如何用"小代价"训出最强编程智能体: 202603/20260307_Qwen3CoderNext_论文解读_80B参数3B激活的编程智能体如何登顶SWE-Bench.md
     - 扒开 Claude Code 的底裤：为什么你的 AI Agent 总是半途而废？: 202602/20260203_AI_Coding_Agent深度解读_高任务完成度背后的Prompt工程秘密.md
-  - 其他 (20):
+  - 其他 (23):
+    - 别再找"最优提示深度"了——Agent-G² 说正确答案是一个高斯分布: 202608/20260828_AgentG2_论文解读_高斯分布分配引导深度.md
     - 别再手搓 Agent 脚手架了：JIT-Agent 训练一个 27B 模型，现场给你的任务量身定制 harness: 202608/20260828_JITAgent_论文解读_训练一个会写Agent脚手架的模型.md
     - Mixed SFT：把 no-CoT 和长 CoT 混着训一遍，就把花里胡哨的"推理 RL"干掉了: 202608/20260828_MixedSFT_论文解读_混着训SFT干掉了花里胡哨的推理RL.md
+    - Prefix Sliding for efficient test-time scaling 论文解读: 202608/20260828_PrefixSliding_论文解读_前缀滑窗让推理无限变长且成本恒定.md
     - 检索系统不用二选一了：RetrievalRouter 给每条查询挑一条「刚好够用」的流水线: 202608/20260828_RetrievalRouter_论文解读_查询级检索流水线路由.md
+    - SWE Refactor Bench：智能体说"迁移做完了"，你信吗？: 202608/20260828_SWERefactorBench_论文解读_三阶段评测拆穿假迁移.md
     - VoiceMem：为实时语音交互打造的流式双脑记忆系统: 202608/20260828_VoiceMem_论文解读_实时交互流式双脑记忆.md
     - 多智能体编程的正确打开方式不是"更多并行"，而是"把协同显式化"：AgentRoom 用 CRDT 共享工作区把单人烂尾率打下去了: 202608/20260827_AgentRoom_论文解读_CRDT共享工作区多智能体并发编程.md
     - 调 Agent 不如调"鞍具"：AutoSaddler 把 Harness 优化变成了 mini-batch 训练: 202608/20260827_AutoSaddler_论文解读_把智能体Harness优化变成离线学习问题.md
@@ -674,9 +677,12 @@ nav:
     - 硬币的两面：在策略蒸馏到底迁移了什么？同源泛化，跨源拟合，多教师还会玩跷跷板: 202608/20260825_DualOPD_论文解读_在策略蒸馏泛化的双面性.md
     - 并行推理的算力不该平均分：ParaTempo 用一个"时序置信度"信号把延迟砍掉三成: 202608/20260825_ParaTempo_论文解读_时序置信度驱动的高效并行推理.md
 - 2026 年 8 月:
+  - 别再找"最优提示深度"了——Agent-G² 说正确答案是一个高斯分布: 202608/20260828_AgentG2_论文解读_高斯分布分配引导深度.md
   - 别再手搓 Agent 脚手架了：JIT-Agent 训练一个 27B 模型，现场给你的任务量身定制 harness: 202608/20260828_JITAgent_论文解读_训练一个会写Agent脚手架的模型.md
   - Mixed SFT：把 no-CoT 和长 CoT 混着训一遍，就把花里胡哨的"推理 RL"干掉了: 202608/20260828_MixedSFT_论文解读_混着训SFT干掉了花里胡哨的推理RL.md
+  - Prefix Sliding for efficient test-time scaling 论文解读: 202608/20260828_PrefixSliding_论文解读_前缀滑窗让推理无限变长且成本恒定.md
   - 检索系统不用二选一了：RetrievalRouter 给每条查询挑一条「刚好够用」的流水线: 202608/20260828_RetrievalRouter_论文解读_查询级检索流水线路由.md
+  - SWE Refactor Bench：智能体说"迁移做完了"，你信吗？: 202608/20260828_SWERefactorBench_论文解读_三阶段评测拆穿假迁移.md
   - VoiceMem：为实时语音交互打造的流式双脑记忆系统: 202608/20260828_VoiceMem_论文解读_实时交互流式双脑记忆.md
   - 多智能体编程的正确打开方式不是"更多并行"，而是"把协同显式化"：AgentRoom 用 CRDT 共享工作区把单人烂尾率打下去了: 202608/20260827_AgentRoom_论文解读_CRDT共享工作区多智能体并发编程.md
   - 调 Agent 不如调"鞍具"：AutoSaddler 把 Harness 优化变成了 mini-batch 训练: 202608/20260827_AutoSaddler_论文解读_把智能体Harness优化变成离线学习问题.md
