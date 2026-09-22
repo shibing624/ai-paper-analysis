@@ -652,7 +652,13 @@ nav:
     - Harness Engineering 深度解读：AI Agent 时代的「缰绳与马鞍」: 202603/20260314_Harness_Engineering深度解读_AI_Agent时代的缰绳与马鞍.md
     - Qwen3-Coder-Next：80B参数只激活3B，如何用"小代价"训出最强编程智能体: 202603/20260307_Qwen3CoderNext_论文解读_80B参数3B激活的编程智能体如何登顶SWE-Bench.md
     - 扒开 Claude Code 的底裤：为什么你的 AI Agent 总是半途而废？: 202602/20260203_AI_Coding_Agent深度解读_高任务完成度背后的Prompt工程秘密.md
-  - 其他 (123):
+  - 其他 (129):
+    - Code2Skill 论文解读：从代码仓库规模化合成可验证的智能体技能: 202609/20260922_Code2Skill_论文解读_从代码仓库规模化合成可验证智能体技能.md
+    - CodeMidas：不给 issue 不看 commit，只把源代码扔进炼丹炉，炼出 5545 个 RL 训练环境: 202609/20260922_CodeMidas_论文解读_把源代码直接炼成RL训练环境.md
+    - 不微调、不标数据，让设计智能体自己攒"经验手册"：Designer-RSI 的程序性记忆演化: 202609/20260922_DesignerRSI_论文解读_设计智能体的程序性记忆自演化.md
+    - 给数据智能体装一个会自己长大的语义大脑：EvoOntology 论文解读: 202609/20260922_EvoOntology_论文解读_自进化本体层弥合数据鸿沟.md
+    - 技能写得太长没人看？GraphSkillEvo：把 Agent 技能画成流程图，再用进化算法慢慢磨: 202609/20260922_GraphSkillEvo_论文解读_用进化算法优化图结构技能.md
+    - RecreationWorld：让智能体"照着真软件复刻一个"，GUI 和写代码终于合并成一件事: 202609/20260922_RecreationWorld_论文解读_可验证的五平台复刻环境.md
     - 把 Agent 线上事故变成 CI 里的回归测试：Chronicle 的 Cut-Point Replay: 202609/20260921_Chronicle_论文解读_把Agent事故变成CI回归测试.md
     - 一个反直觉的实验：给 Agent 团队配个能打回重做的 Manager，报告反而写得更差: 202609/20260921_LoopBackAuthority_论文解读_打回重做的Manager反而越管越差.md
     - 不动模型权重，也能给万亿参数的 Kimi 2.6 装上"科学家的大脑开关": 202609/20260921_MCS_论文解读_从科学家操作痕迹里蒸馏出的元认知控制器.md
@@ -777,6 +783,12 @@ nav:
     - 硬币的两面：在策略蒸馏到底迁移了什么？同源泛化，跨源拟合，多教师还会玩跷跷板: 202608/20260825_DualOPD_论文解读_在策略蒸馏泛化的双面性.md
     - 并行推理的算力不该平均分：ParaTempo 用一个"时序置信度"信号把延迟砍掉三成: 202608/20260825_ParaTempo_论文解读_时序置信度驱动的高效并行推理.md
 - 2026 年 9 月:
+  - Code2Skill 论文解读：从代码仓库规模化合成可验证的智能体技能: 202609/20260922_Code2Skill_论文解读_从代码仓库规模化合成可验证智能体技能.md
+  - CodeMidas：不给 issue 不看 commit，只把源代码扔进炼丹炉，炼出 5545 个 RL 训练环境: 202609/20260922_CodeMidas_论文解读_把源代码直接炼成RL训练环境.md
+  - 不微调、不标数据，让设计智能体自己攒"经验手册"：Designer-RSI 的程序性记忆演化: 202609/20260922_DesignerRSI_论文解读_设计智能体的程序性记忆自演化.md
+  - 给数据智能体装一个会自己长大的语义大脑：EvoOntology 论文解读: 202609/20260922_EvoOntology_论文解读_自进化本体层弥合数据鸿沟.md
+  - 技能写得太长没人看？GraphSkillEvo：把 Agent 技能画成流程图，再用进化算法慢慢磨: 202609/20260922_GraphSkillEvo_论文解读_用进化算法优化图结构技能.md
+  - RecreationWorld：让智能体"照着真软件复刻一个"，GUI 和写代码终于合并成一件事: 202609/20260922_RecreationWorld_论文解读_可验证的五平台复刻环境.md
   - 把 Agent 线上事故变成 CI 里的回归测试：Chronicle 的 Cut-Point Replay: 202609/20260921_Chronicle_论文解读_把Agent事故变成CI回归测试.md
   - 一个反直觉的实验：给 Agent 团队配个能打回重做的 Manager，报告反而写得更差: 202609/20260921_LoopBackAuthority_论文解读_打回重做的Manager反而越管越差.md
   - 不动模型权重，也能给万亿参数的 Kimi 2.6 装上"科学家的大脑开关": 202609/20260921_MCS_论文解读_从科学家操作痕迹里蒸馏出的元认知控制器.md
