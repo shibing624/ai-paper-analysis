@@ -125,7 +125,6 @@ def head_hash(head: str) -> str:
 async def classify_one(relpath: str, head: str, sem: asyncio.Semaphore) -> tuple[str, str, bool]:
     """返回 (relpath, topic, ok)。ok=False 表示 LLM 调用失败（如 429），调用方应保留旧 cache。
     ok=True 时 topic 为最终分类（含 "其他" 当 LLM 返回未知标签的容错情形）。"""
-    import asyncio as _aio
     max_retries = 4
     backoff = 2.0
     async with sem:
@@ -140,6 +139,9 @@ async def classify_one(relpath: str, head: str, sem: asyncio.Semaphore) -> tuple
                     stream=False,
                     temperature=0.0,
                     max_tokens=50,
+                    # hy3 已升级为默认开思考：答案走 reasoning_content，且 max_tokens 会把
+                    # 思考 token 一并截断导致 content 为空、全部落 "其他"。显式关闭思考。
+                    reasoning_effort="none",
                 )
                 raw = resp.choices[0].message.content.strip()
                 for t in TAXONOMY:
@@ -149,7 +151,7 @@ async def classify_one(relpath: str, head: str, sem: asyncio.Semaphore) -> tuple
                 return relpath, "其他", True
             except Exception as e:
                 if "429" in str(e) and attempt < max_retries - 1:
-                    await _aio.sleep(backoff)
+                    await asyncio.sleep(backoff)
                     backoff *= 2
                     continue
                 print(f"[warn] {relpath}: LLM 调用失败 {e}, 保留旧分类", file=sys.stderr)
@@ -162,7 +164,8 @@ async def main_async(force: bool, since: str | None) -> None:
     if CACHE_FILE.exists() and not force:
         cache = json.loads(CACHE_FILE.read_text(encoding="utf-8"))
 
-    todo: list[tuple[str, str]] = []
+    # todo: (relpath, head, old_cache_entry)。old 为调用前的缓存条目，失败时回滚
+    todo: list[tuple[str, str, dict | None]] = []
     skipped = 0
     month_dirs = discover_month_dirs(ROOT)
     print(f"[classify] 扫描到月份目录：{', '.join(month_dirs) or '(空)'}")
@@ -185,7 +188,7 @@ async def main_async(force: bool, since: str | None) -> None:
             if cached and cached.get("hash") == h and not force and not since:
                 skipped += 1
                 continue
-            todo.append((relpath, head))
+            todo.append((relpath, head, cached))
             cache[relpath] = {"topic": cached["topic"] if cached else None, "hash": h}
 
     print(f"[classify] 待分类 {len(todo)} 篇，命中缓存 {skipped} 篇")
@@ -194,12 +197,13 @@ async def main_async(force: bool, since: str | None) -> None:
         return
 
     sem = asyncio.Semaphore(CONCURRENCY)
-    tasks = [classify_one(rp, head, sem) for rp, head in todo]
+    tasks = [classify_one(rp, head, sem) for rp, head, _ in todo]
     results = await asyncio.gather(*tasks)
 
-    for relpath, topic, ok in results:
+    for (relpath, _, old), (_, topic, ok) in zip(todo, results):
         if not ok:
-            # LLM 调用失败：保留旧 cache 不覆盖
+            # LLM 调用失败：保留旧 topic 供展示，但清空 hash，下次增量运行会自动重试
+            cache[relpath] = {"topic": old["topic"] if old else None, "hash": ""}
             continue
         cache[relpath]["topic"] = topic
 
