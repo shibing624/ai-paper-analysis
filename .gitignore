@@ -260,3 +260,4 @@ _wiki/
 paper_filter_prompt.md
 ocr_result/
 ocr_results.csv
+tmp/
