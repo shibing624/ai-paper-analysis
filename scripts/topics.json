@@ -3162,5 +3162,9 @@
   "202610/20261021_SelfHPO_论文解读_Harness与Policy协同自进化.md": {
     "hash": "61fc237edb26",
     "topic": "工程实践与 Coding Agent"
+  },
+  "202610/20261022_FocusGUI_论文解读_全模态GUI智能体的聚焦感知.md": {
+    "hash": "d511a52c7b25",
+    "topic": "Agent 智能体"
   }
 }
