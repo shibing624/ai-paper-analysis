@@ -902,6 +902,7 @@ nav:
     - Qwen3-Coder-Next：80B参数只激活3B，如何用"小代价"训出最强编程智能体: 202603/20260307_Qwen3CoderNext_论文解读_80B参数3B激活的编程智能体如何登顶SWE-Bench.md
     - 扒开 Claude Code 的底裤：为什么你的 AI Agent 总是半途而废？: 202602/20260203_AI_Coding_Agent深度解读_高任务完成度背后的Prompt工程秘密.md
 - 2026 年 11 月:
+  - 不写思维链，450 个 Agent 直接交换 KV Cache：SwarmEvolve 把一小时搜索压到几分钟: 202611/20261110_SwarmEvolve_论文解读_隐空间蜂群进化搜索.md
   - 从 27 题到 7 题：OpenFrontiers 把科学再发现和答案检索分开了: 202611/20261109_OpenFrontiers_论文解读_科研再发现与答案检索分界.md
   - Drex：让模型只给决策，不写答案: 202611/20261108_Drex_论文解读_不生成文本的基础决策模型.md
   - 记忆不该只是一堆事实：EvoMemState 让个人 Agent 学会“现在该怎么用”: 202611/20261108_EvoMemState_论文解读_个人智能体的进化记忆状态.md
