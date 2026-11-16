@@ -3478,5 +3478,17 @@
   "202611/20261115_SkillAdapter_论文解读_通用技能个性化改造与在线路由.md": {
     "hash": "09f613998d86",
     "topic": "Agent 智能体"
+  },
+  "202611/20261116_DaVinciProver_论文解读_Agent原生中训练重塑Lean定理证明.md": {
+    "hash": "871c52a05265",
+    "topic": "模型架构与训练"
+  },
+  "202611/20261116_InsufficientHistories_论文解读_答案碰对不等于证据支持.md": {
+    "hash": "b1a90b07ec3a",
+    "topic": "评估与基准"
+  },
+  "202611/20261116_KLRegularizedRL_论文解读_KL正则RL的紧样本复杂度.md": {
+    "hash": "de8aa699953b",
+    "topic": "强化学习"
   }
 }
