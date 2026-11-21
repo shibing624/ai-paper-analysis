@@ -3586,5 +3586,33 @@
   "202611/20261120_ResolutionHypothesis_论文解读_进化停滞不是提议不够强是分辨不出好坏.md": {
     "hash": "f6b310b8d53d",
     "topic": "评估与基准"
+  },
+  "202611/20261121_AutoMaster_论文解读_让同一个模型成为更好的教师.md": {
+    "hash": "609b7910ef43",
+    "topic": "Agent 智能体"
+  },
+  "202611/20261121_CompoundingKernel_论文解读_从零起步的自改进GPU内核搜索.md": {
+    "hash": "5a293a336212",
+    "topic": "工程实践与 Coding Agent"
+  },
+  "202611/20261121_EmbVsGrep_论文解读_代码搜索稠密优势究竟衡量了什么.md": {
+    "hash": "c0c3fadf6550",
+    "topic": "评估与基准"
+  },
+  "202611/20261121_FlashMorph2_论文解读_on-policy混合注意力层选择.md": {
+    "hash": "272e6f6c5bd0",
+    "topic": "模型架构与训练"
+  },
+  "202611/20261121_LightningMoBA_论文解读_动态路由与KV中心执行加速块注意力.md": {
+    "hash": "6dfef2de2adf",
+    "topic": "模型架构与训练"
+  },
+  "202611/20261121_SelfRewriting_论文解读_模型无需梯度自我改写权重.md": {
+    "hash": "10c46915a06b",
+    "topic": "模型架构与训练"
+  },
+  "202611/20261121_System1Agents_论文解读_确定性编译让本地Agent零虚构调用工具.md": {
+    "hash": "2825a3c4a9f2",
+    "topic": "Agent 智能体"
   }
 }
